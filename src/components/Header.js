@@ -2,15 +2,16 @@ import React from 'react';
 import logo from './assets/logo.svg';
 import '../css/Header.css';
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header class="Header">
-        <img src={logo} alt="logo" />
-        <h1>Welcome to React</h1>
-      </header>
-    )
-  }
+function Header() {
+  return (
+    <header class="header">
+      <img src={logo} alt="logo"/>
+      <nav>
+        <a>Login</a>
+        <a>Cadastro</a>
+      </nav>
+    </header>
+  )
 }
 
 export default Header;
