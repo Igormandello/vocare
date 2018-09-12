@@ -18,9 +18,9 @@ function Home() {
       </section>
       <section>
         <h2>Por que Vocare?</h2>
-        <Feature content={features.autoconhecimento} />
-        <Feature content={features.ambienteDeDiscussao} />
-        <Feature content={features.conhecimentoDeProfissoes} />
+        <Feature {...features.autoconhecimento} />
+        <Feature {...features.ambienteDeDiscussao} />
+        <Feature {...features.conhecimentoDeProfissoes} />
 
         <span>Saiba mais sobre nossos</span>
         <Button text="Diferenciais" />
