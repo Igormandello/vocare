@@ -3,11 +3,11 @@ import Header from '../components/Header';
 import Differential from '../components/Differential';
 import Author from '../components/Author';
 import Footer from '../components/Footer';
-import '../css/Sobre.css';
+import '../css/About.css';
 
-function Sobre() {
+function About() {
   return (
-    <div className="sobre">
+    <div className="about">
       <Header />
       <h1>Sobre</h1>
       <section>
@@ -46,14 +46,14 @@ function Sobre() {
       </section>
       <section>
         <h2>Diferenciais</h2>
-        <Differential content={differentials.autoconhecimento}/>
-        <Differential content={differentials.ambienteDeDiscussao}/>
-        <Differential content={differentials.conhecimentoDeProfissoes}/>
+        <Differential {...differentials.autoconhecimento}/>
+        <Differential {...differentials.ambienteDeDiscussao}/>
+        <Differential {...differentials.conhecimentoDeProfissoes}/>
       </section>
       <section>
         <h2>Sobre nós</h2>
-        <Author content={authors.igor}/>
-        <Author content={authors.bart}/>
+        <Author {...authors.igor}/>
+        <Author {...authors.bart}/>
       </section>
       <Footer />
     </div>
@@ -96,4 +96,4 @@ const authors = {
   }
 };
 
-export default Sobre;
+export default About;
