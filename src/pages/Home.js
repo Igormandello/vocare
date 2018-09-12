@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Feature from '../components/Feature';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
+import '../Home.css';
 
 function Home() {
   return (
@@ -66,7 +67,7 @@ function Home() {
         <h2>E qual o preço disso?</h2>
 
         <span>Tudo isso de graça e para sempre!</span>
-        <Button text="Cadastre-se" fill={true} />
+        <Button text="Cadastre-se" fill />
       </section>
       <Footer />
     </div>
