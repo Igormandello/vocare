@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Feature from '../components/Feature';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
-import '../Home.css';
+import '../css/Home.css';
 
 function Home() {
   return (
