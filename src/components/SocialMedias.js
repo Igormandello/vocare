@@ -4,7 +4,7 @@ import '../css/SocialMedias.css';
 
 function SocialMedias(props) {
   return (
-    <ul class="socialMedias">
+    <ul className="socialMedias">
       <Button href="https://twitter.com" newTab>
         <img src="twitter.svg" alt="twitter"/>
       </Button>

@@ -4,7 +4,7 @@ import '../css/UserSocialMedias.css';
 
 function UserSocialMedias(props) {
   return (
-    <ul class="userSocialMedias">
+    <ul className="userSocialMedias">
       <Button>
         <img src="google.svg" alt="google plus"/>
       </Button>
