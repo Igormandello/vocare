@@ -1,14 +1,14 @@
 import React from 'react';
 import UserHeader from '../components/UserHeader';
 import ComboBox from '../components/ComboBox';
-import Post from '../components/Post';
+import PostCard from '../components/PostCard';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import '../css/Discussion.css';
 
 function Discover() {
   let postsElements = [];
-  posts.forEach(post => postsElements.push(<Post {...post}/>));
+  posts.forEach(post => postsElements.push(<PostCard {...post}/>));
 
   return (
     <div className="discussion">
