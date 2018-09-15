@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import Footer from '../components/Footer';
 import '../css/Discussion.css';
 
-function Discover() {
+function Discussion() {
   let postsElements = [];
   posts.forEach(post => postsElements.push(<PostCard {...post}/>));
 
@@ -51,4 +51,4 @@ const posts = [
   }
 ]
 
-export default Discover;
+export default Discussion;
