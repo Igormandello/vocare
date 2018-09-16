@@ -7,6 +7,7 @@ function Header() {
     <header className="header">
       <img src={logo} alt="logo"/>
       <nav>
+        <span></span>
         <a>Login</a>
         <a>Cadastro</a>
       </nav>
