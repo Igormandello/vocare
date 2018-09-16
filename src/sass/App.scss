@@ -1,3 +1,18 @@
-.app {
+@font-face {
+  font-family: CinzelDecorative;
+  src: url('../fonts/CinzelDecorative.ttf');
+}
+  
+@font-face {
+  font-family: NotoSans;
+  src: url('../fonts/NotoSans-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: NotoSans;
+}
+
+* {
   box-sizing: border-box;
 }
