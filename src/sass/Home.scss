@@ -1,3 +1,36 @@
-.home {
+@import './Consts.scss';
 
+.home {
+  .intro {
+    background: url('../imgs/homeBackground.jpg') no-repeat;
+    background-position: center 0;
+    background-size: cover;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: calc(100vh - #{$header-height});
+    color: white;
+
+    h1 {
+      font-family: CinzelDecorative;
+      font-weight: normal;
+      font-size: 5rem;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+      align-self: center;
+      &::after {
+        background-color: white;
+      }
+    }
+
+    blockquote {
+      margin: 20px 36%;
+      text-align: right;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
 }

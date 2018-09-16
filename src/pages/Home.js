@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="home">
       <Header />
-      <section>
+      <section className="intro">
         <h1>VOcAre</h1>
         <blockquote>
           <p>"Não haverá borboletas se a vida não passar por longas e silenciosas metamorfoses."</p>

@@ -8,11 +8,30 @@
   src: url('../fonts/NotoSans-Regular.ttf');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: NotoSans;
 }
 
-* {
-  box-sizing: border-box;
+section {
+  display: flex;
+}
+
+h1, h2, h3, h4 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  &::after {
+    content: " ";
+    display: block;
+    background-color: #252525;
+    width: 140px;
+    height: 3px;
+    align-self: inherit;
+  }
 }
