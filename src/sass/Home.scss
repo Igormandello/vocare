@@ -15,7 +15,7 @@
     margin-top: 40px;
   }
 
-  .intro {
+  section.intro {
     background: url('../imgs/homeBackground.jpg') no-repeat;
     background-position: center 0;
     background-size: cover;
@@ -46,7 +46,7 @@
     }
   }
 
-  .features {
+  section.features {
     & > div {
       display: inline-flex;
       margin-top: 20px;
@@ -116,6 +116,24 @@
           margin: 0;
         }
       }
+    }
+  }
+
+  section.price {
+    background-color: $purple-3;
+
+    h2, span {
+      color: white;
+    }
+
+    h2::after {
+      background-color: white;
+    }
+
+    span {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
   }
 }

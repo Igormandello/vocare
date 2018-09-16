@@ -65,7 +65,7 @@ function Home() {
         <span>Saiba mais sobre o</span>
         <Button text="Problema" />
       </section>
-      <section>
+      <section className="price">
         <h2>E qual o preço disso?</h2>
 
         <span>Tudo isso de graça e para sempre!</span>
