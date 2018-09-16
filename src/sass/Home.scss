@@ -7,6 +7,14 @@
     align-self: center;
   }
 
+  span {
+    color: #4c4c4c;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    margin-bottom: 3px;
+    margin-top: 40px;
+  }
+
   .intro {
     background: url('../imgs/homeBackground.jpg') no-repeat;
     background-position: center 0;
@@ -41,7 +49,7 @@
   .features {
     & > div {
       display: inline-flex;
-      margin: 20px 0;
+      margin-top: 20px;
 
       .feature {
         margin: 0 10px;
@@ -49,12 +57,65 @@
         flex-grow: 1;
       }
     }
+  }
 
-    span {
-      color: #4c4c4c;
-      font-size: 0.9rem;
-      margin: 0 auto;
-      margin-bottom: 3px;
+  .problem {
+    background-color: #fafafa;
+
+    div.data {
+      display: inline-flex;
+      align-content: center;
+      padding: 0 10px;
+
+      img {
+        padding: 15px;
+        border: 3px solid $purple-2;
+        border-radius: 100%;
+        
+        height: 150px;
+        width: 150px;
+
+        align-self: center;
+      }
+
+      div {
+        margin-left: 20px;
+
+        p {
+          font-size: 1.4rem;
+
+          span {
+            display: block;
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            font-weight: bold;
+            color: $purple-2;
+          }
+        }
+      }
+    }
+
+    div.explanation {
+      display: inline-flex;
+      margin-top: 20px;
+
+      div {
+        flex: 1;
+        padding: 0 10px;
+
+        h3 {
+          color: $purple-2;
+
+          &::after {
+            margin-bottom: 12px;
+            background-color: $purple-2;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+      }
     }
   }
 }

@@ -27,10 +27,10 @@ function Home() {
         <span>Saiba mais sobre nossos</span>
         <Button text="Diferenciais" />
       </section>
-      <section>
+      <section className="problem">
         <h2>Problema</h2>
-        <div>
-          <img src="exclamation.svg" alt="exclamation"/>
+        <div className="data">
+          <img src={require("../imgs/exclamation.svg")} alt="exclamation"/>
           <div>
             <p>
               <span>75%</span> 
@@ -42,7 +42,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="explanation">
           <div>
             <h3>Por que é preocupante?</h3>
             <p>
@@ -55,7 +55,7 @@ function Home() {
           <div>
             <h3>Como resolver esse problema?</h3>
             <p>
-              Com a plataforma Vocare você poderá <b>explorar, discutir e aprender</b> 
+              Com a plataforma Vocare você poderá <b>explorar, discutir e aprender </b>
               com outras pessoas sobre diferentes profissões em um ambiente totalmente
               interativo. Tudo isso para você escolher sua carreira com segurança!
             </p>
