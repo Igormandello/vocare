@@ -1,3 +1,36 @@
+@import './Consts';
+
 .feature {
-    
+  text-align: center;
+  background-color: $purple-1;
+  color: white;
+  padding: 15px;
+
+  & > div {
+    border: 3px solid $purple-2;
+    border-radius: 100%;
+    background-color: white;
+    padding: 25px;
+    height: 140px;
+    width: 140px;
+    margin: 0 auto;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  h3 {
+    margin-top: 20px;
+    align-self: center;
+
+    &::after {
+      background-color: white;
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
 }

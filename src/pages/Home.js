@@ -16,11 +16,13 @@ function Home() {
           <cite>Rubem Alves</cite>
         </blockquote>
       </section>
-      <section>
+      <section className="features">
         <h2>Por que Vocare?</h2>
-        <Feature {...features.autoconhecimento} />
-        <Feature {...features.ambienteDeDiscussao} />
-        <Feature {...features.conhecimentoDeProfissoes} />
+        <div>
+          <Feature {...features.autoconhecimento} />
+          <Feature {...features.ambienteDeDiscussao} />
+          <Feature {...features.conhecimentoDeProfissoes} />
+        </div>
 
         <span>Saiba mais sobre nossos</span>
         <Button text="Diferenciais" />
