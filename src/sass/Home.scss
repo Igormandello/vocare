@@ -41,13 +41,20 @@
   .features {
     & > div {
       display: inline-flex;
-      margin-top: 20px;
+      margin: 20px 0;
 
       .feature {
         margin: 0 10px;
         flex-basis: 0;
         flex-grow: 1;
       }
+    }
+
+    span {
+      color: #4c4c4c;
+      font-size: 0.9rem;
+      margin: 0 auto;
+      margin-bottom: 3px;
     }
   }
 }
