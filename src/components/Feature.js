@@ -3,8 +3,8 @@ import '../css/Feature.css';
 
 function Feature(props) {
   return (
-    <div className="feature">
-      <div>
+    <div className="feature card">
+      <div className="shadow">
         <img src={require('./assets/' + props.icon)} alt={props.title} />
       </div>
       <h3>{props.title}</h3>

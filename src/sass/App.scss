@@ -41,3 +41,12 @@ h1, h2, h3, h4 {
     align-self: inherit;
   }
 }
+
+.card {
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+.shadow {
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
