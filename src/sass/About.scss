@@ -46,5 +46,26 @@
 
   section.differentials {
     background-color: #fafafa;
+
+    .differential:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  section.aboutUs {
+    background-color: $purple-3;
+    
+    & > h2 {
+      color: white;
+
+      &::after {
+        background-color: white;
+        margin-bottom: 40px;
+      }
+    }
+
+    & > div {
+      display: inline-flex;
+    }
   }
 }

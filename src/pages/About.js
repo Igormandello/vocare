@@ -59,10 +59,12 @@ function About() {
         <Differential {...differentials.ambienteDeDiscussao}/>
         <Differential {...differentials.conhecimentoDeProfissoes}/>
       </section>
-      <section>
+      <section className="aboutUs">
         <h2>Sobre nós</h2>
-        <Author {...authors.igor}/>
-        <Author {...authors.bart}/>
+        <div>
+          <Author {...authors.igor}/>
+          <Author {...authors.bart}/>
+        </div>
       </section>
       <Footer />
     </div>
@@ -110,14 +112,14 @@ const differentials = {
 
 const authors = {
   igor: {
-    picture: 'igor.png',
+    picture: 'igor.jpg',
     name: 'Igor Mandello',
     description: 'Lorem ipsum dolor sit amet, cosectetur adipisicing elit, sed do eiusmod tempor',
     github: 'https://github.com/Igormandello'
   },
 
   bart: {
-    picture: 'bart.png',
+    picture: 'bart.jpg',
     name: 'Vitor Bartier',
     description: 'Lorem ipsum dolor sit amet, cosectetur adipisicing elit, sed do eiusmod tempor',
     github: 'https://github.com/bartier'

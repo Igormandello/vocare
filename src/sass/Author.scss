@@ -1,3 +1,31 @@
 .author {
-    
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  margin: 0 10px;
+  padding: 15px 60px;
+  align-items: center;
+  text-align: center;
+
+  background-color: white;
+
+  img {
+    border-radius: 100%;
+    width: calc(100% - 50px);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    align-self: center;
+
+    &::after {
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    margin-top: 0;
+  }
 }
