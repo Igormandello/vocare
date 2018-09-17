@@ -1,3 +1,43 @@
+@import './Consts';
+
 .input {
+  margin-bottom: 20px;
+
+  label {
+    position: absolute;
+    display: block;
+    color: #434343;
+    font-size: 0.8rem;
+    margin-top: -1.2rem;
+  }
+
+  input:not([type=submit]), textarea {
+    height: 2.5rem;
+    background-color: transparent;
+    color: #434343;
+    transition: border-color 0.4s, color 0.4s;
     
+    border: none;
+    border-bottom: 1px solid #434343;
+    border-left: 1px solid #434343;
+    border-bottom-left-radius: 3px;
+    margin-bottom: 1.2rem;
+
+    padding: 0 0 4px 8px;
+    font-size: 1.2rem;
+  }
+
+  textarea {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    width: 100%;
+    height: calc(9rem + 9px);
+    resize: none;
+  }
+
+  input:not([type=submit]):focus, textarea:focus {
+    border-color: $purple-1;
+    color: #252525;
+  }
 }
