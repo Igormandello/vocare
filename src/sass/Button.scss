@@ -15,7 +15,7 @@
   color: $purple-3;
   user-select: none;
 
-  transition: color 0.4s, background-color 0.4s;
+  transition: color 0.4s, background-color 0.4s, border 0.4s;
 
   &:hover {
     background-color: $purple-3;

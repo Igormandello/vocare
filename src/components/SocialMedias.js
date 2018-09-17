@@ -6,10 +6,10 @@ function SocialMedias(props) {
   return (
     <ul className="socialMedias">
       <Button href="https://twitter.com" newTab>
-        <img src="twitter.svg" alt="twitter"/>
+        <img src={require('./assets/twitter.svg')} alt="twitter"/>
       </Button>
       <Button href="https://facebook.com" newTab>
-        <img src="facebook.svg" alt="facebook"/>
+        <img src={require('./assets/facebook.svg')} alt="facebook"/>
       </Button>
     </ul>
   );

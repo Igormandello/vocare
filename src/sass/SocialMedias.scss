@@ -1,3 +1,29 @@
+@import './Consts';
+
 .socialMedias {
+  .button {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    padding: 10px;
+    border: 3px solid #252525;
     
+    img {
+      height: 30px;
+      width: 30px;
+      transition: filter 0.4s;
+    }
+  }
+
+  .button:hover {
+    border: 3px solid $purple-3;;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .button:not(:last-child) {
+    margin: 0 20px;
+  }
 }
