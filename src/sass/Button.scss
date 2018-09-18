@@ -27,5 +27,9 @@
     border: none;
     background-color: $purple-1;
     color: white;
+
+    &:hover {
+      background-color: $purple-4;
+    }
   }
 }
