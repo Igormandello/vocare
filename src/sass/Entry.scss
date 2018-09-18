@@ -1,6 +1,6 @@
 @import './Consts';
 
-.login {
+.login, .signup {
   section {
     min-height: calc(100vh - #{$header-height + $footer-height});
     display: inline-flex;

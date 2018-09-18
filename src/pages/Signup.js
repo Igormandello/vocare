@@ -4,7 +4,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import UserSocialMedias from '../components/UserSocialMedias';
 import Footer from '../components/Footer';
-import '../css/Signup.css';
+import '../css/Entry.css';
 
 function Signup() {
   return (
@@ -15,10 +15,10 @@ function Signup() {
           <h1>Cadastro</h1>
           <Input label="Usuário"/>
           <Input label="E-mail" type="email"/>
-          <Input label="Senha"/>
-          <Input label="Confirmar senha"/>
-          <Input value="Cadastrar-se" type="submit" />
-          <p>ou cadastre-se com:</p>
+          <Input label="Senha" type="password"/>
+          <Input label="Confirmar senha" type="password"/>
+          <Input value="Cadastrar-se" type="submit" className="button" />
+          <p className="divider">ou cadastre-se com:</p>
           <UserSocialMedias />
         </div>
         <div>

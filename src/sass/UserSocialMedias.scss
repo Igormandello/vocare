@@ -23,7 +23,7 @@
 
   .button:hover {
     img {
-      filter: brightness(0) invert(1);
+      filter: saturate(0) brightness(4);
     }
   }
 }

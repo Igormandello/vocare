@@ -4,7 +4,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import UserSocialMedias from '../components/UserSocialMedias';
 import Footer from '../components/Footer';
-import '../css/Login.css';
+import '../css/Entry.css';
 
 function Login() {
   return (
@@ -14,7 +14,7 @@ function Login() {
         <div>
           <h1>Login</h1>
           <Input label="Usuário"/>
-          <Input label="Senha"/>
+          <Input label="Senha" type="password"/>
           <Input value="Entrar" type="submit" className="button"/>
           <p class="divider">ou acesse com:</p>
           <UserSocialMedias />
