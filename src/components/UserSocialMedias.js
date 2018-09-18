@@ -6,19 +6,19 @@ function UserSocialMedias(props) {
   return (
     <ul className="userSocialMedias">
       <Button>
-        <img src="google.svg" alt="google plus"/>
+        <img src={require('./assets/google.svg')} alt="google plus"/>
       </Button>
       <Button>
-        <img src="github.svg" alt="github"/>
+        <img src={require('./assets/github.svg')} alt="github"/>
       </Button>
       <Button>
-        <img src="reddit.svg" alt="reddit"/>
+        <img src={require('./assets/reddit.svg')} alt="reddit"/>
       </Button>
       <Button>
-        <img src="twitter.svg" alt="twitter"/>
+        <img src={require('./assets/twitter.svg')} alt="twitter"/>
       </Button>
       <Button>
-        <img src="facebook.svg" alt="facebook"/>
+        <img src={require('./assets/facebook.svg')} alt="facebook"/>
       </Button>
     </ul>
   );
