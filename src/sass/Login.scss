@@ -1,3 +1,32 @@
 .login {
-  
+  section {
+    display: inline-flex;
+    flex-direction: row;
+
+    & > div {
+      margin: 0 10px;
+      flex: 1;
+    }
+
+    & > div:first-child {
+      margin-right: calc(100% / 6 + 40px);
+    }
+
+    div:not(.userSocialMedias) > .button {
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2.2rem;
+
+    &::after {
+      margin-bottom: 40px;
+    }
+  }
 }

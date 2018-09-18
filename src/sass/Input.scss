@@ -1,6 +1,7 @@
 @import './Consts';
 
 .input {
+  position: relative;
   margin-bottom: 20px;
 
   label {
@@ -8,11 +9,11 @@
     display: block;
     color: #434343;
     font-size: 0.8rem;
-    margin-top: -1.2rem;
   }
 
   input:not([type=submit]), textarea {
     height: 2.5rem;
+    width: 100%;
     background-color: transparent;
     color: #434343;
     transition: border-color 0.4s, color 0.4s;
@@ -21,10 +22,14 @@
     border-bottom: 1px solid #434343;
     border-left: 1px solid #434343;
     border-bottom-left-radius: 3px;
-    margin-bottom: 1.2rem;
 
+    margin-top: 1.2rem;
     padding: 0 0 4px 8px;
     font-size: 1.2rem;
+  }
+
+  input[type=submit] {
+    padding: 0;
   }
 
   textarea {
