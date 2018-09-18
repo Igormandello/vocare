@@ -11,6 +11,10 @@
     font-size: 0.8rem;
   }
 
+  input, textarea {
+    outline: none;
+  }
+
   input:not([type=submit]), textarea {
     height: 2.5rem;
     width: 100%;
