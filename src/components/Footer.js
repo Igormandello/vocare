@@ -6,7 +6,7 @@ function Footer(props) {
   return (
     <footer className={'footer' + (props.fill ? ' footer-filled' : '')}>
       <p>© Vocare 2018. Alguns direitos reservados.</p>
-      <SocialMedias />
+      <SocialMedias invert={props.fill}/>
     </footer>
   );
 }

@@ -1,8 +1,16 @@
+@import './Consts';
+
 .footer {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
 
   width: 100%;
+  height: $footer-height;
   padding: 0 calc(15% + 10px);
+
+  &.footer-filled {
+    color: white;
+    background-color: $purple-3;
+  }
 }

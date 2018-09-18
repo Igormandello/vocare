@@ -4,7 +4,7 @@ import '../css/SocialMedias.css';
 
 function SocialMedias(props) {
   return (
-    <ul className="socialMedias">
+    <ul className={'socialMedias' + (props.invert ? ' inverse' : '')}>
       <Button href="https://twitter.com" newTab>
         <img src={require('./assets/twitter.svg')} alt="twitter"/>
       </Button>
