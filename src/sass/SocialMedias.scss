@@ -1,6 +1,9 @@
 @import './Consts';
 
 .socialMedias {
+  margin: 0;
+  padding: 0;
+
   .button {
     height: 50px;
     width: 50px;
@@ -26,6 +29,10 @@
 
   .button:not(:last-child) {
     margin: 0 20px;
+  }
+
+  .button:first-child {
+    margin-left: 0;
   }
 
   &.inverse {

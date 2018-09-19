@@ -3,11 +3,11 @@ import Header from '../components/Header';
 import Input from '../components/Input';
 import SocialMedias from '../components/SocialMedias';
 import Footer from '../components/Footer';
-import '../css/Contact.css';
+import '../css/FormPages.css';
 
 function Contact() {
   return (
-    <div className="about">
+    <div className="contact">
       <Header />
       <section>
         <div>
@@ -15,7 +15,7 @@ function Contact() {
           <Input label="Nome"/>
           <Input label="E-mail"/>
           <Input label="Mensagem" type="textarea"/>
-          <Input value="Enviar" type="submit" />
+          <Input value="Enviar" type="submit" className="button" />
         </div>
         <div>
           <h1>Também estamos em...</h1>

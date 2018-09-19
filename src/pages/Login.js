@@ -4,7 +4,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import UserSocialMedias from '../components/UserSocialMedias';
 import Footer from '../components/Footer';
-import '../css/Entry.css';
+import '../css/FormPages.css';
 
 function Login() {
   return (
