@@ -1,3 +1,31 @@
+@import './Consts';
+
 .comboBox {
-  
+  position: relative;
+  width: fit-content;
+  align-items: center;
+
+  label {
+    color: #4c4c4c;
+    margin-right: 5px;
+  }
+
+  select {
+    color: #4c4c4c;
+    border: 1px solid $purple-3;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    appearance: none;
+    min-width: 160px;
+    padding: 3px;
+    outline: none;
+  }
+
+  img {
+    position: absolute;
+    height: .9rem;
+    right: .45rem;
+    top: calc(50% - 0.45rem);
+    pointer-events: none;
+  }
 }
