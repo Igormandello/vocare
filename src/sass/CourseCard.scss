@@ -1,5 +1,13 @@
 @import './Consts';
 
 .courseCard {
-    
+  color: white;
+  background-color: $purple-2;
+  padding: 15px;
+  flex-shrink: 1;
+
+  h2::after{
+    background-color: white;
+    margin-bottom: 0;
+  }
 }

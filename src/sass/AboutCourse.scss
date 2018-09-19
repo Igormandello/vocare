@@ -19,8 +19,12 @@
     }
   }
 
-  section.cards {
+  div.cards {
     display: inline-flex;
     flex-direction: row;
+
+    .courseCard {
+      margin: 20px 10px;
+    }
   }
 }

@@ -9,7 +9,7 @@ function CourseCard(props) {
     props.text.forEach(element => textArr.push(<p>{element}</p>));
 
   return (
-    <div className='courseCard card'>
+    <div className="courseCard card">
       <h2>{props.title}</h2>
       {textArr}
     </div>
