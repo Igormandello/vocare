@@ -17,15 +17,15 @@ class AboutCourse extends React.Component {
     return (
       <div className="aboutCourse">
         <UserHeader />
-        <section>
+        <section className="intro">
           <h1>Ciência da Computação</h1>
-          <img src="computerScience.png" alt="course"/>
+          <img src={require('../imgs/computerScience.jpg')} alt="course"/>
         </section>
-        <section>
-          <div>
+        <section className="cards">
+          <div className="left">
             {this.cardsLeft}
           </div>
-          <div>
+          <div className="right">
             {this.cardsRight}
           </div>
         </section>
