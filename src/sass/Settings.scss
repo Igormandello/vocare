@@ -12,10 +12,10 @@
   h1 {
     font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 40px;
+    align-self: center;
 
     &::after {
-      content: none;
+      margin-bottom: 40px;
     }
   }
 
