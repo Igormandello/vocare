@@ -21,7 +21,9 @@
     }
   }
 
-  .button:hover {
+  .button.active, .button:hover {
+    background-color: $purple-3;
+    
     img {
       filter: saturate(0) brightness(4);
     }

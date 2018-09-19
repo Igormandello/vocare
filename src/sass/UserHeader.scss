@@ -38,7 +38,8 @@
       width: $header-height - 50px;
 
       img {
-        height: auto;
+        height: inherit;
+        padding: inherit;
         filter: saturate(0) brightness(4);
       }
     }
@@ -73,7 +74,7 @@
         padding: 3px;
 
         img {
-          height: auto;
+          height: inherit;
           filter: saturate(0) brightness(4);
         }
       }

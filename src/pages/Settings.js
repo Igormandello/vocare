@@ -8,24 +8,27 @@ import '../css/Settings.css';
 
 function Settings() {
   return (
-    <div className="dashboard">
+    <div className="settings">
       <UserHeader />
       <section>
         <h1>Configurações</h1>
-        <div>
-          <img src="profile.png" alt="profile"/>
+        <div className="avatar card">
+          <img src={require('../components/assets/igor.jpg')} alt="profile"/>
           <Button>
-            <img src="edit.svg" alt="edit" />
+            <img src={require('../components/assets/edit.svg')} alt="edit" />
           </Button>
         </div>
-        <p>conectado com:</p>
-        <UserSocialMedias />
+        <p className="divider">conectado com:</p>
+        <UserSocialMedias actives={[true, true]}/>
         <Input label="Nome"/>
         <Input label="E-mail" type="email"/>
         <Input label="Senha" type="password"/>
         <Input label="Confirmar senha" type="password"/>
-        <Button text="Salvar"/>
-        <Button text="Excluir conta"/>
+
+        <div className="options">
+          <Button text="Salvar"/>
+          <Button text="Excluir conta"/>
+        </div>
       </section>
       <Footer fill />
     </div>
