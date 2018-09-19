@@ -18,21 +18,29 @@ function Discover() {
       <section className="professions">
         <ComboBox label="Área:" options={['a', 'b']}/>
         <h2>Sua jornada começa aqui</h2>
-        <div>
-          <span></span>
-          <span></span>
+        <div className="path">
+          <div className="profession">
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+            <img src={require('../imgs/computerEngineering.jpg')} alt="computer engineering" />
+          </div>
+          <div className="profession">
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+            <img src={require('../imgs/mechanicalEngineering.jpg')} alt="mechanical engineering" />
+          </div>
+          <div className="profession">
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+            <img src={require('../imgs/medicine.jpg')} alt="medicine" />
+          </div>
         </div>
-        <img src="computingEngineering.png" alt="computing engineering" />
-        <div>
-          <span></span>
-          <span></span>
-        </div>
-        <img src="mechanicalEngineering.png" alt="mechanical engineering" />
-        <div>
-          <span></span>
-          <span></span>
-        </div>
-        <img src="medicine.png" alt="medicine" />
       </section>
       <Footer fill />
     </div>

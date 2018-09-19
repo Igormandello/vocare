@@ -1,3 +1,7 @@
+@import './Consts';
+
+$circle-size: 120px;
+
 .discover {
   section.info {
     padding-top: 40px;
@@ -38,6 +42,103 @@
 
     .comboBox {
       margin-bottom: 10px;
+    }
+
+    .path {
+      width: 100%;
+
+      .profession {
+        display: flex;
+        flex-direction: column;
+
+        & > div {
+          display: inline-flex;
+        }
+
+        img {
+          width: $circle-size;
+          height: $circle-size;
+          border: 3px solid $purple-3;
+          border-radius: 100%;
+          object-fit: cover;
+          margin-top: -4px;
+          transition: filter 0.4s;
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(120%);
+          }
+        }
+      }
+
+      .profession:nth-child(even) {
+        div:first-child {
+          width: 100%;
+          height: 120px;
+        }
+
+        img {
+          align-self: flex-end;
+        }
+  
+        & > div span {
+          display: block;
+          height: 50%;
+          width: 50%;
+  
+          &:last-child {
+            margin-top: 56px;
+            margin-right: $circle-size / 2 - 2px;
+            border-right: 4px solid $purple-3;
+            border-top: 4px solid $purple-3;
+            border-top-right-radius: 20px;
+          }
+
+          &:first-child {
+            margin-left: $circle-size / 2 - 2px;
+            border-left: 4px solid $purple-3;
+            border-bottom: 4px solid $purple-3;
+            border-bottom-left-radius: 20px;
+          }
+        }
+      }
+
+      .profession:nth-child(odd) {
+        div:first-child {
+          width: 100%;
+          height: 120px;
+        }
+  
+        & > div span {
+          display: block;
+          height: 50%;
+          width: 50%;
+  
+          &:first-child {
+            margin-top: 56px;
+            margin-left: $circle-size / 2 - 2px;
+            border-left: 4px solid $purple-3;
+            border-top: 4px solid $purple-3;
+            border-top-left-radius: 20px;
+          }
+
+          &:last-child {
+            margin-right: $circle-size / 2 - 2px;
+            border-right: 4px solid $purple-3;
+            border-bottom: 4px solid $purple-3;
+            border-bottom-right-radius: 20px;
+          }
+        }
+      }
+
+      .profession:first-child div:first-child {
+        width: 50%;
+        height: 120px;
+
+        span:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
