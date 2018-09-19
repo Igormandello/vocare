@@ -8,15 +8,15 @@ function Discover() {
   return (
     <div className="discover">
       <UserHeader />
-      <section>
+      <section className="info">
         <h1>Conhecendo profissões</h1>
         <p>
           Nessa seção você poderá descobrir áreas que nunca imaginou 
           que existiam, quem sabe não acaba achando uma que gosta?
         </p>
       </section>
-      <section>
-        <ComboBox label="area" options={['a', 'b']}/>
+      <section className="professions">
+        <ComboBox label="Área:" options={['a', 'b']}/>
         <h2>Sua jornada começa aqui</h2>
         <div>
           <span></span>

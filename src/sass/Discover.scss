@@ -1,3 +1,43 @@
 .discover {
-  
+  section.info {
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      align-self: center;
+
+      &::after {
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      color: #4c4c4c;
+      font-style: italic;
+      width: 500px;
+      text-align: center;
+      align-self: center;
+      margin: 0;
+    }
+  }
+
+  section.professions {
+    padding-top: 40px;
+    align-items: center;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: bold;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .comboBox {
+      margin-bottom: 10px;
+    }
+  }
 }
