@@ -1,3 +1,142 @@
+@import './Consts';
+
+$level-dot-size: 20px;
+
 .dashboard {
-    
+  h2 {
+    font-size: 1.8rem;
+
+    &::after {
+      margin-bottom: 0;
+    }
+  }
+
+  section.userData {
+    padding-bottom: 0;
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      align-self: center;
+      margin-bottom: 20px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    & > div {
+      align-content: center;
+
+      span {
+        display: block;
+        color: #4c4c4c;
+        text-align: center;
+      }
+    }
+
+    .level {
+      position: relative;
+      display: flex;
+      width: 35%;
+      margin: 0 auto;
+      margin-top: 10px;
+      justify-content: space-between;
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        margin: 0 auto;
+        background-color: $purple-3;
+        align-self: center;
+      }
+
+      div {
+        width: $level-dot-size;
+        height: $level-dot-size;
+        border-radius: 100%;
+        background-color: $purple-3;
+        z-index: 2;
+
+        &.active {
+          border: $level-dot-size / 4 solid $purple-3;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  section.objectives {
+    display: inline-flex;
+    flex-direction: row;
+    padding-top: 40px;
+
+    & > div {
+      flex: 1;
+    }
+
+    & > div:first-child {
+      div:not(.courses) {
+        padding: 0 10px;
+      }
+
+      .courses {
+        display: flex;
+        flex-flow: row wrap;
+
+        .button {
+          flex: 1;
+          text-align: center;
+          margin: 5px 10px;
+        }
+      }
+    }
+
+    & > div:last-child {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+
+      .post {
+        color: white;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: $purple-3;
+
+        & > div {
+          display: inline-flex;
+          margin-bottom: 20px;
+        
+          & > div {
+            flex: 7;
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 0 10px;
+
+            h3 {
+              &::after {
+                background-color: white;
+                margin-bottom: 10px;
+              }
+            }
+
+            p {
+              margin: 0;
+            }
+          }
+
+          & > div:first-child {
+            flex: 3;
+            margin: 0 10px 0 0;
+
+            img {
+              width: 100%;
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
