@@ -9,15 +9,15 @@ function UserHeader() {
       <img src={logo} alt="logo" />
       <div>
         <Button>
-          <img src="notification.svg" alt="notification" />
+          <img src={require('./assets/notification.svg')} alt="notification" />
         </Button>
-        <div />
-        <a>Igor</a>
+        <span></span>
+        <a className="name">Igor</a>
 
         <div>
-          <img src="profile.png" alt="profile"/>
+          <img src={require('./assets/igor.jpg')} alt="profile"/>
           <Button>
-            <img src="config.svg" alt="configuration" />
+            <img src={require('./assets/config.svg')} alt="configuration" />
           </Button>
         </div>
       </div>
