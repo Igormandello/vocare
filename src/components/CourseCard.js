@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Card.css';
+import '../css/CourseCard.css';
 
-function Card(props) {
+function CourseCard(props) {
   let textArr = [];
   if (!Array.isArray(props.text))
     textArr.push(<p>{props.text}</p>);
@@ -9,11 +9,11 @@ function Card(props) {
     props.text.forEach(element => textArr.push(<p>{element}</p>));
 
   return (
-    <div className='card'>
+    <div className='courseCard card'>
       <h2>{props.title}</h2>
       {textArr}
     </div>
   );
 }
 
-export default Card;
+export default CourseCard;

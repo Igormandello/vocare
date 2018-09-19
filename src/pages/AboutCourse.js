@@ -1,6 +1,6 @@
 import React from 'react';
 import UserHeader from '../components/UserHeader';
-import Card from '../components/Card';
+import CourseCard from '../components/CourseCard';
 import Footer from '../components/Footer';
 import '../css/AboutCourse.css';
 
@@ -9,8 +9,8 @@ class AboutCourse extends React.Component {
     super(props);
 
     this.cardsLeft = this.cardsRight = [];
-    cardsLeft.forEach(card => this.cardsLeft.push(<Card {...card} />));
-    cardsRight.forEach(card => this.cardsRight.push(<Card {...card} />));
+    cardsLeft.forEach(card => this.cardsLeft.push(<CourseCard {...card} />));
+    cardsRight.forEach(card => this.cardsRight.push(<CourseCard {...card} />));
   }
 
   render () {
