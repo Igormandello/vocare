@@ -41,15 +41,18 @@ const posts = [
   {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.jpg'
+    image: 'bart.jpg',
+    link: '/post'
   }, {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.jpg'
+    image: 'bart.jpg',
+    link: '/post'
   }, {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.jpg'
+    image: 'bart.jpg',
+    link: '/post'
   }
 ]
 

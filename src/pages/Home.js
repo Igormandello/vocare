@@ -25,7 +25,7 @@ function Home() {
         </div>
 
         <span>Saiba mais sobre nossos</span>
-        <Button text="Diferenciais" />
+        <Button text="Diferenciais" href="/about" />
       </section>
       <section className="problem">
         <h2>Problema</h2>
@@ -63,13 +63,13 @@ function Home() {
         </div>
 
         <span>Saiba mais sobre o</span>
-        <Button text="Problema" />
+        <Button text="Problema" href="/about" />
       </section>
       <section className="price">
         <h2>E qual o preço disso?</h2>
 
         <span>Tudo isso de graça e para sempre!</span>
-        <Button text="Cadastre-se" fill />
+        <Button text="Cadastre-se" href="/signup" fill />
       </section>
       <Footer />
     </div>

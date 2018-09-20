@@ -24,7 +24,9 @@ function Discover() {
               <span></span>
               <span></span>
             </div>
-            <img src={require('../imgs/computerEngineering.jpg')} alt="computer engineering" />
+            <a href="/aboutCourse">
+              <img src={require('../imgs/computerEngineering.jpg')} alt="computer engineering" />
+            </a>
           </div>
           <div className="profession">
             <div>

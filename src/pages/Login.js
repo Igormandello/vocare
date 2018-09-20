@@ -13,16 +13,18 @@ function Login() {
       <section>
         <div>
           <h1>Login</h1>
-          <Input label="Usuário"/>
-          <Input label="Senha" type="password"/>
-          <Input value="Entrar" type="submit" className="button"/>
-          <p class="divider">ou acesse com:</p>
+          <form action="/dashboard">
+            <Input label="Usuário"/>
+            <Input label="Senha" type="password"/>
+            <Input value="Entrar" type="submit" className="button"/>
+          </form>
+          <p className="divider">ou acesse com:</p>
           <UserSocialMedias />
         </div>
         <div>
           <h1>Não possui uma conta?</h1>
           <p>Se você não possui uma conta, basta se cadastrar gratuitamente!</p>
-          <Button text="Cadastre-se" fill/>
+          <Button text="Cadastre-se" href="/signup" fill/>
         </div>
       </section>
       <Footer fill/>

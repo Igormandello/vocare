@@ -6,17 +6,19 @@ import '../css/UserHeader.css';
 function UserHeader() {
   return (
     <header className="userHeader">
-      <img src={logo} alt="logo" />
+      <a href="/dashboard">
+        <img src={logo} alt="logo" />
+      </a>
       <div>
         <Button>
           <img src={require('./assets/notification.svg')} alt="notification" />
         </Button>
         <span></span>
-        <a className="name">Igor</a>
+        <a className="name" href="/dashboard">Igor</a>
 
         <div>
           <img src={require('./assets/igor.jpg')} alt="profile"/>
-          <Button>
+          <Button href="/settings">
             <img src={require('./assets/config.svg')} alt="configuration" />
           </Button>
         </div>

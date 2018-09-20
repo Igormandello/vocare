@@ -40,7 +40,7 @@ function Dashboard() {
 
           <div className="courses">
             <Button text="Engenharia da Computação" />
-            <Button text="Ciência da Computação" />
+            <Button text="Ciência da Computação" href="/aboutCourse" />
             <Button text="Análise e Desenvolvimento de Sistemas" />
           </div>
 
@@ -49,7 +49,7 @@ function Dashboard() {
               Também é possível debater com os outros usuários do site para decidir 
               qual a profissão que mais combina com você em nosso espaço de discussão.
             </p>
-            <Button text="Acessar Fórum" />
+            <Button text="Acessar Fórum" href="/discussion" />
           </div>
         </div>
         <div>
@@ -67,9 +67,9 @@ function Dashboard() {
                 </p>
               </div>
             </div>
-            <Button text="Acesse essa discussão" fill/>
+            <Button text="Acesse essa discussão" href="/post" fill />
           </div>
-          <Button text="Veja outras discussões" />
+          <Button text="Veja outras discussões" href="/discussion" />
         </div>
       </section>
       <Footer fill />

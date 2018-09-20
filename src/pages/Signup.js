@@ -13,18 +13,20 @@ function Signup() {
       <section>
         <div>
           <h1>Cadastro</h1>
-          <Input label="Usuário"/>
-          <Input label="E-mail" type="email"/>
-          <Input label="Senha" type="password"/>
-          <Input label="Confirmar senha" type="password"/>
-          <Input value="Cadastrar-se" type="submit" className="button" />
+          <form action="/dashboard">
+            <Input label="Usuário"/>
+            <Input label="E-mail" type="email"/>
+            <Input label="Senha" type="password"/>
+            <Input label="Confirmar senha" type="password"/>
+            <Input value="Cadastrar-se" type="submit" className="button" />
+          </form>
           <p className="divider">ou cadastre-se com:</p>
           <UserSocialMedias />
         </div>
         <div>
           <h1>Já possui uma conta?</h1>
           <p>Se você já possui uma conta, basta fazer login.</p>
-          <Button text="Entrar" fill/>
+          <Button text="Entrar" href="/login" fill/>
         </div>
       </section>
       <Footer fill/>
