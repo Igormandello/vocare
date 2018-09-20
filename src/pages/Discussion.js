@@ -13,21 +13,23 @@ function Discussion() {
   return (
     <div className="discussion">
       <UserHeader />
-      <section>
+      <section className="info">
         <h1>Discussão</h1>
         <p>lorem lorem lorem lorem lorem lorem lorem</p>
       </section>
-      <section>
-        <div>
-          <ComboBox label="Filtrar por:" />
-          <ComboBox label="Ordenar por:" />
+      <section className="filters">
+        <ComboBox label="Filtrar por:" />
+        <ComboBox label="Ordenar por:" />
+      </section>
+      <section className="posts">
+        <div className="postCards">
           {postsElements}
           <span></span>
         </div>
-        <div>
+        <div className="optionsColumn">
           <Button text="Criar novo post"/>
-          <div></div>
-          <div></div>
+          <div className="card"></div>
+          <div className="card"></div>
         </div>
       </section>
       <Footer fill />
@@ -39,15 +41,15 @@ const posts = [
   {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.png'
+    image: 'bart.jpg'
   }, {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.png'
+    image: 'bart.jpg'
   }, {
     title: 'O que é melhor? Ciência da Computação ou Engenharia?',
     message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.png'
+    image: 'bart.jpg'
   }
 ]
 

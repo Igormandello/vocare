@@ -1,3 +1,85 @@
+@import './Consts';
+
 .discussion {
-  
+  .filters {
+    flex-direction: row;
+    padding-bottom: 0;
+
+    .comboBox {
+      margin-right: 20px;
+    }
+  }
+
+  section.posts {
+    flex-direction: row;
+    padding-top: 20px;
+
+    & > div {
+      margin: 0 10px;
+    }
+
+    .postCards {
+      flex: 7;
+      
+      span {
+        position: relative;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: $purple-3;
+        margin: 0 auto;
+        animation: load 3s infinite 1s;
+
+        &::before, &::after {
+          content: "";      
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          background-color: $purple-3;
+        }
+
+        &::before {
+          left: -14px;
+          animation: load 3s infinite;
+        }
+
+        &::after {
+          right: -14px;
+          animation: load 3s infinite 2s;
+        }
+      }
+    }
+
+    .optionsColumn {
+      flex: 3;
+
+      .button {
+        width: 100%;
+      }
+
+      div {
+        width: 100%;
+        height: 200px;
+        border: 3px solid $purple-3;
+        margin: 20px 0;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes load {
+  0% { 
+    background-color: $purple-3;
+  }
+
+  50% {
+    background-color: $purple-4;
+  }
+
+  100% {
+    background-color: $purple-3;
+  }
 }
