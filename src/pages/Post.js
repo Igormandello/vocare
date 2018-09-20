@@ -13,12 +13,16 @@ function Post() {
     <div className="post">
       <UserHeader />
       <section>
-        <div>
-          <Message {...post.question}/>
+        <div className="messages">
+          <Message {...post.question}>
+            <Button text="Responder"/>
+          </Message>
           <h1>Respostas</h1>
-          {answers}
+          <div className="answers">
+            {answers}
+          </div>
         </div>
-        <div>
+        <div className="optionsColumn">
           <Button text="Voltar para a discussão" />
           <div></div>
           <div></div>
@@ -34,14 +38,14 @@ const users = {
     name: 'Vitor Bartier',
     level: 3,
     messages: 666,
-    picture: 'bart.png'
+    image: 'bart.jpg'
   },
 
   igor: {
     name: 'Igor Mandello',
     level: 4,
     messages: 333,
-    picture: 'igor.png'
+    image: 'igor.jpg'
   }
 };
 
