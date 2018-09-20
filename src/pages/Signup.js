@@ -13,7 +13,7 @@ function Signup() {
       <section>
         <div>
           <h1>Cadastro</h1>
-          <form action="/dashboard">
+          <form action="/vocare/dashboard">
             <Input label="Usuário"/>
             <Input label="E-mail" type="email"/>
             <Input label="Senha" type="password"/>
@@ -26,7 +26,7 @@ function Signup() {
         <div>
           <h1>Já possui uma conta?</h1>
           <p>Se você já possui uma conta, basta fazer login.</p>
-          <Button text="Entrar" href="/login" fill/>
+          <Button text="Entrar" href="/vocare/login" fill/>
         </div>
       </section>
       <Footer fill/>

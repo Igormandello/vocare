@@ -24,7 +24,7 @@ function Discover() {
               <span></span>
               <span></span>
             </div>
-            <a href="/aboutCourse">
+            <a href="/vocare/aboutCourse">
               <img src={require('../imgs/computerEngineering.jpg')} alt="computer engineering" />
             </a>
           </div>

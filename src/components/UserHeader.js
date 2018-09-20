@@ -6,7 +6,7 @@ import '../css/UserHeader.css';
 function UserHeader() {
   return (
     <header className="userHeader">
-      <a href="/dashboard">
+      <a href="/vocare/dashboard">
         <img src={logo} alt="logo" />
       </a>
       <div>
@@ -14,11 +14,11 @@ function UserHeader() {
           <img src={require('./assets/notification.svg')} alt="notification" />
         </Button>
         <span></span>
-        <a className="name" href="/dashboard">Igor</a>
+        <a className="name" href="/vocare/dashboard">Igor</a>
 
         <div>
           <img src={require('./assets/igor.jpg')} alt="profile"/>
-          <Button href="/settings">
+          <Button href="/vocare/settings">
             <img src={require('./assets/config.svg')} alt="configuration" />
           </Button>
         </div>

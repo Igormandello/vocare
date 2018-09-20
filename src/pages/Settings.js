@@ -26,7 +26,7 @@ function Settings() {
         <Input label="Confirmar senha" type="password"/>
 
         <div className="options">
-          <Button text="Salvar" href="/dashboard" />
+          <Button text="Salvar" href="/vocare/dashboard" />
           <Button text="Excluir conta"/>
         </div>
       </section>

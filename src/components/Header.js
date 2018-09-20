@@ -5,13 +5,13 @@ import '../css/Header.css';
 function Header() {
   return (
     <header className="header">
-      <a href="/">
+      <a href="/vocare/">
         <img src={logo} alt="logo"/>
       </a>
       <nav>
         <span></span>
-        <a href="/login">Login</a>
-        <a href="/signup">Cadastro</a>
+        <a href="/vocare/login">Login</a>
+        <a href="/vocare/signup">Cadastro</a>
       </nav>
     </header>
   )

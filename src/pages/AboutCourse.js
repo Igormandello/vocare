@@ -33,7 +33,7 @@ class AboutCourse extends React.Component {
             </div>
           </div>
 
-          <Button text="Voltar para Conhecendo Profissões" href="/discover"/>
+          <Button text="Voltar para Conhecendo Profissões" href="/vocare/discover"/>
         </section>
         <Footer fill />
       </div>

@@ -13,7 +13,7 @@ function Login() {
       <section>
         <div>
           <h1>Login</h1>
-          <form action="/dashboard">
+          <form action="/vocare/dashboard">
             <Input label="Usuário"/>
             <Input label="Senha" type="password"/>
             <Input value="Entrar" type="submit" className="button"/>
@@ -24,7 +24,7 @@ function Login() {
         <div>
           <h1>Não possui uma conta?</h1>
           <p>Se você não possui uma conta, basta se cadastrar gratuitamente!</p>
-          <Button text="Cadastre-se" href="/signup" fill/>
+          <Button text="Cadastre-se" href="/vocare/signup" fill/>
         </div>
       </section>
       <Footer fill/>

@@ -23,7 +23,7 @@ function Post() {
           </div>
         </div>
         <div className="optionsColumn">
-          <Button text="Voltar para a discussão" href="/discussion" />
+          <Button text="Voltar para a discussão" href="/vocare/discussion" />
           <div></div>
           <div></div>
         </div>

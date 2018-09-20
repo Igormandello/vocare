@@ -18,17 +18,17 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/signup" component={Signup}/>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/dashboard" component={Dashboard}/>
-          <Route path="/settings" component={Settings}/>
-          <Route path="/discover" component={Discover}/>
-          <Route path="/aboutCourse" component={AboutCourse}/>
-          <Route path="/discussion" component={Discussion}/>
-          <Route path="/post" component={Post}/>
+          <Route exact path="/vocare/" component={Home}/>
+          <Route path="/vocare/about" component={About}/>
+          <Route path="/vocare/login" component={Login}/>
+          <Route path="/vocare/signup" component={Signup}/>
+          <Route path="/vocare/contact" component={Contact}/>
+          <Route path="/vocare/dashboard" component={Dashboard}/>
+          <Route path="/vocare/settings" component={Settings}/>
+          <Route path="/vocare/discover" component={Discover}/>
+          <Route path="/vocare/aboutCourse" component={AboutCourse}/>
+          <Route path="/vocare/discussion" component={Discussion}/>
+          <Route path="/vocare/post" component={Post}/>
         </div>
       </BrowserRouter>
     );
