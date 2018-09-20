@@ -3,10 +3,12 @@ import '../css/PostCard.css';
 
 function PostCard(props) {
   return (
-    <div className="post">
-      <img src={props.image} alt="user"/>
+    <div className="postCard card">
       <div>
-        <p>
+        <img src={require('./assets/' + props.image)} alt="user" className="card"/>
+      </div>
+      <div>
+        <p className="title">
           {props.title}
         </p>
         <p>
