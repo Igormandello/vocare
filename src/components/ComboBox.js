@@ -12,7 +12,7 @@ function ComboBox(props) {
       <select>
         {selectOptions}
       </select>
-      <img src={require('./assets/downarrow.svg')} />
+      <img src={require('./assets/downarrow.svg')} alt="down arrow"/>
     </div>
   );
 }

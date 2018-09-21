@@ -32,3 +32,7 @@
     }
   }
 }
+
+.login nav a:not(:last-child), .signup nav a:last-child {
+  background-color: $purple-4;
+}

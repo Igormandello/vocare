@@ -1,0 +1,32 @@
+.popover {
+  position: absolute;
+  margin-top: 20px;
+  
+  .arrowShadow {
+    position: absolute;
+    top: -11px;
+    left: -1.5px;
+    height: 11px;
+    width: 33px;
+    background-color: rgba(0, 0, 0, 0.4);
+    clip-path: polygon(50% 0, 50% 0%, 100% 100%, 0% 100%); 
+    align-self: flex-end;
+    filter: blur(8px);
+  }
+
+  .arrow {
+    position: absolute;
+    top: -10px;
+    height: 10px;
+    width: 30px;
+    background-color: #fafafa;
+    clip-path: polygon(50% 0, 50% 0%, 100% 100%, 0% 100%); 
+    align-self: flex-end;
+    z-index: 2;
+  } 
+
+  .body {
+    padding: 15px;
+    background-color: #fafafa;
+  }
+}

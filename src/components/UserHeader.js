@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Popover from './Popover';
 import logo from './assets/logo.svg';
 import '../css/UserHeader.css';
 
@@ -21,6 +22,7 @@ function UserHeader() {
           <Button href="/vocare/settings">
             <img src={require('./assets/config.svg')} alt="configuration" />
           </Button>
+          <Popover />
         </div>
       </div>
     </header>
