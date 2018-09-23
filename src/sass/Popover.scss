@@ -1,32 +1,75 @@
 .popover {
   position: absolute;
-  margin-top: 20px;
+  margin-top: 5px;
+  transition: opacity 0.4s, margin-top 0.4s;
+  max-width: 400px;
   
   .arrowShadow {
     position: absolute;
-    top: -11px;
-    left: -1.5px;
+    top: -1px;
     height: 11px;
-    width: 33px;
+    width: 34px;
     background-color: rgba(0, 0, 0, 0.4);
     clip-path: polygon(50% 0, 50% 0%, 100% 100%, 0% 100%); 
-    align-self: flex-end;
-    filter: blur(8px);
+    filter: blur(12px);
+
+    &.right {
+      right: -2px;
+    }
+
+    &.left {
+      left: -2px;
+    }
+
+    &.center {
+      left: calc(50% - 17px);
+    }
   }
 
   .arrow {
-    position: absolute;
-    top: -10px;
     height: 10px;
     width: 30px;
     background-color: #fafafa;
     clip-path: polygon(50% 0, 50% 0%, 100% 100%, 0% 100%); 
-    align-self: flex-end;
     z-index: 2;
+
+    &.right {
+      margin-left: auto;
+    }
+
+    &.center {
+      margin: 0 auto;
+    }
   } 
 
   .body {
-    padding: 15px;
+    right: 0;
     background-color: #fafafa;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 10px 15px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+        }
+      }
+    }
+  }
+
+  &.hidden {
+    margin-top: 2px;
+    opacity: 0;
+    pointer-events: none;
   }
 }
