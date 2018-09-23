@@ -22,7 +22,7 @@ function Dashboard() {
           </div>
         </div>
       </section>
-      <section class="objectives">
+      <section className="objectives">
         <div>
           <div>
             <h2>Objetivo atual</h2>

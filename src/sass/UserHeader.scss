@@ -12,7 +12,7 @@
     height: 80px;
   }
 
-  & > div {
+  & > div:not(.popover) {
     display: inline-flex;
 
     .button {
@@ -23,7 +23,7 @@
         transition: filter 0.4s;
       }
 
-      &:hover {
+      &:hover, &.active {
         background-color: white;
 
         img {
@@ -76,6 +76,11 @@
         img {
           height: inherit;
           filter: saturate(0) brightness(4);
+          transition: transform 0.4s;
+        }
+
+        &.active img {
+          transform: rotateZ(90deg);
         }
       }
     }
