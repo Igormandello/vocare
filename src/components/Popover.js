@@ -16,19 +16,19 @@ class Popover extends React.Component {
   }
 
   componentDidMount() {
-    document.body.appendChild(this.refs[this.props.id]);
+    document.body.appendChild(this.refs.pop);
   }
 
   openPopover() {
-    let width = this.refs[this.props.id].clientWidth;
+    let width = this.refs.pop.clientWidth;
 
     if (this.props.target) {
       let targetBounds = this.props.target.getBoundingClientRect();
 
       let offsetX = targetBounds.width / 2;
-      if (this.props.position == 'center')
+      if (this.props.caret == 'center')
         offsetX -= width / 2;
-      else if (this.props.position == 'right')
+      else if (this.props.caret == 'right')
         offsetX -= width - 14;
 
       console.log(offsetX);
@@ -57,15 +57,10 @@ class Popover extends React.Component {
   }
 
   render() {
-    let pos = this.props.position;
-
-    if (!this.props.position)
-      pos = 'right';
-
     return (
-      <div ref={this.props.id} style={this.style} className={'popover' + (this.state.hidden ? ' hidden' : '')}>
-        <div className={'arrowShadow ' + pos} />
-        <div className={'arrow ' + pos} />
+      <div ref="pop" style={this.style} className={'popover' + (this.state.hidden ? ' hidden' : '')}>
+        <div className={'arrowShadow ' + this.props.caret} />
+        <div className={'arrow ' + this.props.caret} />
         <div className="body">
           {this.props.children}
         </div>

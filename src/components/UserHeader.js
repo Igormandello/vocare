@@ -52,7 +52,7 @@ class UserHeader extends React.Component {
           <Button onClick={this.toggleNotifications} className={this.state.notificationsOpen ? 'active' : ''}>
             <img src={require('./assets/notification.svg')} alt="notification" ref="notifications" />
           </Button>
-          <Popover id="notificationsPop" ref="notificationsPop" target={this.refs.notifications} position="center">
+          <Popover ref="notificationsPop" caret="center" target={this.refs.notifications}>
             <ul>
               <a>Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!</a>
               <a>O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?</a>
@@ -71,7 +71,7 @@ class UserHeader extends React.Component {
               <img src={require('./assets/config.svg')} alt="configuration" ref="settings" />
             </Button>
 
-            <Popover id="settingsPop" ref="settingsPop" target={this.refs.settings} position="right">
+            <Popover ref="settingsPop" caret="right" target={this.refs.settings}>
               <ul>
                 <a onClick={() => console.log('To Do')}>Alto Contraste</a>
                 <a href="/vocare/settings">Configurações</a>
