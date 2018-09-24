@@ -106,3 +106,17 @@ p.divider {
     margin-left: 10px;
   }
 }
+
+.Popover {
+  .Popover-body {
+    background-color: #fafafa;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+    padding: 15px;
+  }
+
+  .Popover-tip {
+    fill: #fafafa;
+    stroke: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+}
