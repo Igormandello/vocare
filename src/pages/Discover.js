@@ -1,7 +1,8 @@
 import React from 'react';
+import Popover from 'react-popover';
 import UserHeader from '../components/UserHeader';
 import ComboBox from '../components/ComboBox';
-import Popover from 'react-popover';
+import Button from '../components/Button';
 import Footer from '../components/Footer';
 import '../css/Discover.css';
 
@@ -78,17 +79,29 @@ class Discover extends React.Component {
 const popoversData = {
   computerEngineering: [
     <h3>Engenharia da Computação</h3>,
-    <p>Lorem ipsum dolor sit amet</p>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s.
+    </p>,
+    <Button text="Saiba mais" fill/>
   ],
 
   mechanicalEngineering: [
     <h3>Engenharia Mecânica</h3>,
-    <p>Lorem ipsum dolor sit amet</p>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s.
+    </p>,
+    <Button text="Saiba mais" fill/>
   ],
 
   medicine: [
     <h3>Medicina</h3>,
-    <p>Lorem ipsum dolor sit amet</p>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+      standard dummy text ever since the 1500s.
+    </p>,
+    <Button text="Saiba mais" fill/>
   ]
 }
 
