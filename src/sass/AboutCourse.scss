@@ -23,8 +23,21 @@
     display: inline-flex;
     flex-direction: row;
 
+    .left, .right {
+      flex: 1;
+    }
+
     .courseCard {
       margin: 20px 10px;
+
+      iframe {
+        width: 100%;
+        height: 250px;
+      }
+
+      *:last-child {
+        margin-bottom: 0; 
+      }
     }
   }
 }
