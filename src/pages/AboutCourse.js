@@ -108,8 +108,10 @@ const cardsRight = [
     title: 'Veja o que estão discutindo!',
     text: 
       <PostCard
-        title='O que é melhor? Ciência da Computação ou Engenharia?'
-        message='Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem'
+        title='Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?'
+        message='Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
+          (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
+          qual eu...'
         image='bart.jpg'
         link='/vocare/post'
       />

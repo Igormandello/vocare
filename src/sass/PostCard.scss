@@ -33,6 +33,7 @@
       &.title {
         font-weight: bold;
         margin: 0;
+        max-height: calc(4.5rem + 13px);
 
         &::after {
           content: " ";

@@ -90,8 +90,8 @@ const popoversData = {
   mechanicalEngineering: [
     <h3>Engenharia Mecânica</h3>,
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-      standard dummy text ever since the 1500s.
+      A Engenharia Mecânica é o ramo da engenharia que cuida do projeto, 
+      construção, análise, operação e manutenção de sistemas mecânicos. 
     </p>,
     <Button text="Saiba mais" fill/>
   ],
@@ -99,8 +99,8 @@ const popoversData = {
   medicine: [
     <h3>Medicina</h3>,
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-      standard dummy text ever since the 1500s.
+      A função do Médico é pesquisar as doenças e suas causas para poder 
+      posteriormente combatê-las e curá-las. Conheça mais sobre a carreira de Medicina.
     </p>,
     <Button text="Saiba mais" fill/>
   ]
