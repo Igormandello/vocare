@@ -26,9 +26,9 @@ class Popover extends React.Component {
       let targetBounds = this.props.target.getBoundingClientRect();
 
       let offsetX = targetBounds.width / 2;
-      if (this.props.caret == 'center')
+      if (this.props.caret === 'center')
         offsetX -= width / 2;
-      else if (this.props.caret == 'right')
+      else if (this.props.caret === 'right')
         offsetX -= width - 14;
 
       console.log(offsetX);

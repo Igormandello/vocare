@@ -32,7 +32,7 @@ class Discover extends React.Component {
           </p>
         </section>
         <section className="professions">
-          <ComboBox label="Área:" options={['a', 'b']}/>
+          <ComboBox label="Área:" options={['Escolha uma área...', 'Exatas', 'Humanas', 'Biológicas']}/>
           <h2>Sua jornada começa aqui</h2>
           <div className="path">
             <div className="profession">
@@ -40,9 +40,9 @@ class Discover extends React.Component {
                 <span></span>
                 <span></span>
               </div>
-              <Popover isOpen={this.state.computerEngineering} place="right" body={popoversData.computerEngineering}>
-                <a id="computerEngineering" onClick={this.popoverTrigger}>
-                  <img src={require('../imgs/computerEngineering.jpg')} alt="computer engineering" />
+              <Popover isOpen={this.state.computerScience} place="right" body={popoversData.computerScience}>
+                <a id="computerScience" onClick={this.popoverTrigger}>
+                  <img src={require('../imgs/computerScienceThumb.jpg')} alt="computer science" />
                 </a>
               </Popover>
             </div>
@@ -77,13 +77,14 @@ class Discover extends React.Component {
 }
 
 const popoversData = {
-  computerEngineering: [
-    <h3>Engenharia da Computação</h3>,
+  computerScience: [
+    <h3>Ciência da Computação</h3>,
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-      standard dummy text ever since the 1500s.
+      O estudante de <b>Ciência da Computação</b> trabalha principalmente com 
+      o desenvolvimento de programas para as mais diversas plataformas, como 
+      celulares, tablets e computadores.
     </p>,
-    <Button text="Saiba mais" fill/>
+    <Button text="Saiba mais" href="/vocare/aboutCourse/" fill/>
   ],
 
   mechanicalEngineering: [
