@@ -15,11 +15,11 @@ function Discussion() {
       <UserHeader />
       <section className="info">
         <h1>Discussão</h1>
-        <p>lorem lorem lorem lorem lorem lorem lorem</p>
+        <p>Aqui você pode discutir com outros usuários e finalmente decidir o que você mais gosta de fazer!</p>
       </section>
       <section className="filters">
-        <ComboBox label="Filtrar por:" />
-        <ComboBox label="Ordenar por:" />
+        <ComboBox label="Filtrar por:" options={['Áreas de interesse', 'Exatas', 'Humanas', 'Biológicas']}/>
+        <ComboBox label="Ordenar por:" options={['Mais recente', 'Mais antigo']}/>
       </section>
       <section className="posts">
         <div className="postCards">
@@ -39,19 +39,23 @@ function Discussion() {
 
 const posts = [
   {
-    title: 'O que é melhor? Ciência da Computação ou Engenharia?',
-    message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
+    title: 'Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?',
+    message: `Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
+      (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
+      qual eu...`,
     image: 'bart.jpg',
     link: '/vocare/post'
   }, {
-    title: 'O que é melhor? Ciência da Computação ou Engenharia?',
-    message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.jpg',
+    title: 'Análise e Desenvolvimento de Sistemas vale a pena?',
+    message: `Galera, tava bem em dúvida entre ela, ciência da computação e engenharia da computação,
+      hoje em dia ainda vale a pena fazer esse curso? Se sim, por quê? Obrigado.`,
+    image: 'igor.jpg',
     link: '/vocare/post'
   }, {
-    title: 'O que é melhor? Ciência da Computação ou Engenharia?',
-    message: 'Lorem lorem lorem é ipsum dolor sit amet, lorem lorem lorem',
-    image: 'bart.jpg',
+    title: 'Engenharia da Computação é muito corrido?',
+    message: `Eu estou terminando meu técnico e provavelmente vou estagiar, será que se eu escolher
+      cursar Engenharia, eu vou acabar não dando conta do trabalho?`,
+    image: 'valente.jpg',
     link: '/vocare/post'
   }
 ]
