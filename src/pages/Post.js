@@ -43,57 +43,54 @@ const users = {
 
   igor: {
     name: 'Igor Mandello',
-    level: 4,
+    level: 3,
     messages: 333,
     image: 'igor.jpg'
-  }
+  },
+
+  hideki: {
+    name: 'Lucas Hideki',
+    level: 4,
+    messages: 757,
+    image: 'hideki.jpg'
+  },
 };
 
 const post = {
   question: {
-    title: 'Eu tenho uma dúvida: o que é melhor entre a e b?',
+    title: 'Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?',
     date: '04/09/2018',
-    time: '19h00',
-    message: `Lorem Ipsum is simply dummy text of the printing and typesetting 
-      industry. Lorem Ipsum has been the industry's standard dummy text ever 
-      since the 1500s, when an unknown printer took a galley of type and 
-      scrambled it to make a type specimen book. It has survived not only 
-      five centuries, but also the leap into electronic typesetting, remaining 
-      essentially unchanged. It was popularised in the 1960s with the release 
-      of Letraset sheets containing Lorem Ipsum passages, and more recently 
-      with desktop publishing software like Aldus PageMaker including versions 
-      of Lorem Ipsum.
-    `,
+    time: '19h02',
+    message: `Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
+      (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
+      qual eu deveria cursar? Se alguém conseguir ajudar ficaria bem feliz!! `,
     user: users.bart
   },
   answers: [
     {
       date: '04/09/2018',
-      time: '19h00',
-      message: `Lorem Ipsum is simply dummy text of the printing and typesetting 
-        industry. Lorem Ipsum has been the industry's standard dummy text ever 
-        since the 1500s, when an unknown printer took a galley of type and 
-        scrambled it to make a type specimen book. It has survived not only 
-        five centuries, but also the leap into electronic typesetting, remaining 
-        essentially unchanged. It was popularised in the 1960s with the release 
-        of Letraset sheets containing Lorem Ipsum passages, and more recently 
-        with desktop publishing software like Aldus PageMaker including versions 
-        of Lorem Ipsum.
-      `,
+      time: '19h32',
+      message: `Olha cara, eu to com a mesma dúvida que você, e sinceramente, eu
+        estou indo mais para o lado da ciência, estou fazendo isso porque a carga
+        horária, além de ser menor, é mais viável para mim, pois fiz técnico e 
+        gostaria de estagiar também... Outro motivo também é o currículo, já que
+        em engenharia, acabamos tendo matérias que eu não gostaria de fazer, como
+        física e química.`,
       user: users.igor
     }, {
       date: '04/09/2018',
-      time: '19h00',
-      message: `Lorem Ipsum is simply dummy text of the printing and typesetting 
-        industry. Lorem Ipsum has been the industry's standard dummy text ever 
-        since the 1500s, when an unknown printer took a galley of type and 
-        scrambled it to make a type specimen book. It has survived not only 
-        five centuries, but also the leap into electronic typesetting, remaining 
-        essentially unchanged. It was popularised in the 1960s with the release 
-        of Letraset sheets containing Lorem Ipsum passages, and more recently 
-        with desktop publishing software like Aldus PageMaker including versions 
-        of Lorem Ipsum.
-      `,
+      time: '20h17',
+      message: `Oi galera! Estou cursando o bacharel em ciência da computação e estou
+        gostando bastante da decisão que fiz. Quando precisei acatar qual curso eu iria
+        escolher, fui bastante pelo ponto do Igor, por isso estou fazendo esse. Mas na
+        faculdade tenho amigos que fazem engenharia também, e eles dizem que não é tão ruim,
+        apenas mais puxado.`,
+      user: users.hideki
+    }, {
+      date: '05/09/2018',
+      time: '12h45',
+      message: `Obrigado gente 😄! As respostas ajudaram bastante, agora vou dar uma pensada
+        melhor e ver se eu chego em uma conclusão, qualquer coisa, vou reabrir essa discussão.`,
       user: users.bart
     }
   ]
