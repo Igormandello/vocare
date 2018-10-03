@@ -26,6 +26,9 @@
 
     p {
       color: white;
+      line-height: 1.5rem;
+      max-height: 4.5rem;
+      overflow: hidden;
 
       &.title {
         font-weight: bold;
