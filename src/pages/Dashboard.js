@@ -60,10 +60,9 @@ function Dashboard() {
                 <img src={require('../components/assets/bart.jpg')} alt="user" className="card"/>
               </div>
               <div>
-                <h3>O que é melhor? Ciência da Computação ou Engenharia?</h3>
+                <h3>Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?</h3>
                 <p>
-                  Lorem ipsum dolor site amet, consectetur adipiscing elit, sed 
-                  do elusmod tempor incididunt ut labore et dolore magna...
+                  Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui...
                 </p>
               </div>
             </div>
