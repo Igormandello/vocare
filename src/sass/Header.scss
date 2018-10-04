@@ -7,7 +7,7 @@ $login-shrink: 20;
 .header {
   display: inline-flex;
   background-color: $purple-3;
-  height: 100px;
+  height: $header-height;
   width: 100%;
   padding: 10px calc(15% + 10px);
   justify-content: space-between;
@@ -17,15 +17,15 @@ $login-shrink: 20;
   }
 
   nav {
-    position: relative;
-    display: inline-flex;
+    display: none;
     height: $button-height;
     align-self: center;
 
     span {
       position: absolute;
       background-color: white;
-      height: 100%;
+      top: .5px;
+      height: calc(100% - 1px);
       left: $button-height / 2;
       right: $button-height / 2;
     }
@@ -65,6 +65,25 @@ $login-shrink: 20;
       &:hover {
         background-color: $purple-4;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: $header-height-sm;
+    padding: 10px 5%;
+  
+    a {
+      margin: 0 auto;
+
+      img {
+        height: $header-height-sm - 20px;
+      }
+    }
+  
+    nav {
+      display: none;
     }
   }
 }
