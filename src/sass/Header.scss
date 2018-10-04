@@ -5,6 +5,7 @@ $button-height: 50px;
 $login-shrink: 20;
 
 .header {
+  position: relative;
   display: inline-flex;
   background-color: $purple-3;
   height: $header-height;
@@ -17,7 +18,8 @@ $login-shrink: 20;
   }
 
   nav {
-    display: none;
+    position: relative;
+    display: inline-flex;
     height: $button-height;
     align-self: center;
 
@@ -67,6 +69,14 @@ $login-shrink: 20;
       }
     }
   }
+
+  .slideMenu .menu-button {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    height: $header-height-sm - 30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -84,6 +94,10 @@ $login-shrink: 20;
   
     nav {
       display: none;
+    }
+
+    .slideMenu .menu-button {
+      display: flex;
     }
   }
 }

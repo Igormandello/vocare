@@ -1,0 +1,40 @@
+@import './consts';
+
+.slideMenu {
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 50vw;
+    z-index: 1001;
+  }
+
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    justify-content: space-between;
+
+    span {
+      flex: 1;
+      width: 100%;
+      background-color: black;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
