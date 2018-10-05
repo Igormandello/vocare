@@ -1,4 +1,4 @@
-@import './consts';
+@import './Consts';
 
 .slideMenu {
   .menu-overlay {
@@ -7,34 +7,52 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 1000;
+    pointer-events: none;
+    transition: background-color 0.4s;
   }
 
   .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 500px;
-    width: 50vw;
+    height: 100vh;
+    width: 70vw;
+    transform: translateX(-70vw);
     z-index: 1001;
+    background-color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s;
+  }
+
+  &.open {
+    .menu-overlay, .menu {
+      display: block;
+    }
+
+    .menu-overlay {
+      pointer-events: all;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .menu {
+      transform: none;
+    }
   }
 
   .menu-button {
     display: flex;
     flex-direction: column;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     justify-content: space-between;
 
     span {
-      flex: 1;
       width: 100%;
+      height: 2px;
+      border-radius: 5px;
       background-color: black;
-
-      &:not(:last-child) {
-        margin-bottom: 8px;
-      }
     }
   }
 }

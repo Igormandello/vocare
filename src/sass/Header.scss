@@ -70,12 +70,28 @@ $login-shrink: 20;
     }
   }
 
-  .slideMenu .menu-button {
+  .slideMenu {
     display: none;
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    height: $header-height-sm - 30px;
+
+    .menu-button {
+      position: absolute;
+      top: calc(50% - #{$header-height-sm - 40px} / 2);
+      left: 20px;
+      align-self: center;
+      height: $header-height-sm - 40px;
+      width: $header-height-sm - 34px;
+
+      span {
+        background-color: white;
+        transition: background-color 0.4s;
+      }
+
+      &:hover {
+        span {
+          background-color: #c0c0c0;
+        }
+      }
+    }
   }
 }
 
@@ -96,8 +112,8 @@ $login-shrink: 20;
       display: none;
     }
 
-    .slideMenu .menu-button {
-      display: flex;
+    .slideMenu {
+      display: block;
     }
   }
 }
