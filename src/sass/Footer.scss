@@ -14,3 +14,9 @@
     background-color: $purple-3;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    padding: 0 5%;
+  }
+}

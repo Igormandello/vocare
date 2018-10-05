@@ -1,7 +1,9 @@
 @import './Consts';
 
 .socialMedias {
+  display: inline-flex;
   margin: 0;
+  margin-left: 20px;
   padding: 0;
 
   .button {
@@ -17,22 +19,23 @@
       filter: saturate(0) brightness(.45);
       transition: filter 0.4s;
     }
-  }
 
-  .button:hover {
-    border: 3px solid $purple-3;;
-
-    img {
-      filter: saturate(0) brightness(4);
+    &:hover {
+      border: 3px solid $purple-3;;
+  
+      img {
+        filter: saturate(0) brightness(4);
+      }
     }
-  }
 
-  .button:not(:last-child) {
-    margin: 0 20px;
-  }
+    &:not(:last-child) {
+      margin: 0 20px;
+    }
 
-  .button:first-child {
-    margin-left: 0;
+    &:first-child {
+      margin-left: 0;
+    }
+  
   }
 
   &.inverse {
@@ -51,6 +54,29 @@
       img {
         filter: none;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .socialMedias .button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    padding: 6px;
+    border: 3px solid #252525;
+    
+    img {
+      height: 26px;
+      width: 26px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 10px;
+    }
+
+    &:first-child {
+      margin-left: 0;
     }
   }
 }
