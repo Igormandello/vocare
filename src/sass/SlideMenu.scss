@@ -15,6 +15,7 @@
 
   .menu {
     position: fixed;
+    opacity: 0;
     top: 0;
     left: 0;
     height: 100vh;
@@ -23,7 +24,7 @@
     z-index: 1001;
     background-color: #fafafa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s;
+    transition: transform 0.4s, opacity 0.4s 0s;
   }
 
   &.open {
@@ -37,6 +38,7 @@
     }
 
     .menu {
+      opacity: 1;
       transform: none;
     }
   }

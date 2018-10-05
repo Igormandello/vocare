@@ -67,6 +67,7 @@ h1, h2, h3, h4 {
   flex-direction: column;
   margin: 0;
   font-weight: normal;
+  text-align: center;
 
   &::after {
     content: " ";
@@ -109,5 +110,37 @@ p.divider {
 
   &::after {
     margin-left: 10px;
+  }
+}
+
+.row {
+  display: inline-flex;
+  flex-flow: row wrap;
+
+  & > div {
+    flex: 1;
+    flex-basis: 0;
+    margin: 0 10px 20px 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .row {
+    display: inline-flex;
+    flex-flow: row wrap;
+  
+    & > div {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 40px 5%;
   }
 }

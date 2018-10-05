@@ -18,7 +18,7 @@ function Home() {
       </section>
       <section className="features">
         <h2>Por que Vocare?</h2>
-        <div>
+        <div className="row">
           <Feature {...features.autoconhecimento} />
           <Feature {...features.ambienteDeDiscussao} />
           <Feature {...features.conhecimentoDeProfissoes} />
@@ -29,7 +29,7 @@ function Home() {
       </section>
       <section className="problem">
         <h2>Problema</h2>
-        <div className="data">
+        <div className="data row">
           <img className="shadow" src={require("../imgs/exclamation.svg")} alt="exclamation"/>
           <div>
             <p>
@@ -42,7 +42,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="explanation">
+        <div className="explanation row">
           <div>
             <h3>Por que é preocupante?</h3>
             <p>
