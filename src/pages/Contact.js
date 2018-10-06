@@ -9,7 +9,7 @@ function Contact() {
   return (
     <div className="contact">
       <Header />
-      <section>
+      <section className="row">
         <div>
           <h1>Contato</h1>
           <Input label="Nome"/>

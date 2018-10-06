@@ -5,6 +5,7 @@
     font-size: 2.2rem;
     font-weight: bold;
     align-self: center;
+    text-align: center;
   }
 
   section span {
@@ -13,6 +14,7 @@
     margin: 0 auto;
     margin-bottom: 3px;
     margin-top: 20px;
+    text-align: center;
   }
 
   section.intro {
@@ -93,6 +95,7 @@
             line-height: 2.5rem;
             font-weight: bold;
             color: $purple-2;
+            text-align: left;
           }
         }
       }

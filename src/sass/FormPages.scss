@@ -36,3 +36,27 @@
 .login nav a:not(:last-child), .signup nav a:last-child {
   background-color: $purple-4;
 }
+
+@media only screen and (max-width: 992px) {
+  .login, .signup, .contact {
+    section {
+      & > div:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login, .signup, .contact {
+    section {
+      & > div {
+        flex-basis: 100%;
+
+        &:first-child {
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+}

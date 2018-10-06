@@ -12,7 +12,7 @@ function About() {
       <section className="problem">
         <h1>Sobre</h1>
         <h2>Problema</h2>
-        <div>
+        <div className="row">
           <div>
             <p>
               Contrary to popular belief, Lorem Ipsum is not simply random text. 
@@ -61,7 +61,7 @@ function About() {
       </section>
       <section className="aboutUs">
         <h2>Sobre nós</h2>
-        <div>
+        <div className="row">
           <Author {...authors.igor}/>
           <Author {...authors.bart}/>
         </div>

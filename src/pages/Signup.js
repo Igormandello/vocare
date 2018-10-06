@@ -10,7 +10,7 @@ function Signup() {
   return (
     <div className="signup">
       <Header />
-      <section>
+      <section className="row">
         <div>
           <h1>Cadastro</h1>
           <form action="/vocare/dashboard">

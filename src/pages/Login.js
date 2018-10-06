@@ -10,7 +10,7 @@ function Login() {
   return (
     <div className="login">
       <Header />
-      <section>
+      <section className="row">
         <div>
           <h1>Login</h1>
           <form action="/vocare/dashboard">
