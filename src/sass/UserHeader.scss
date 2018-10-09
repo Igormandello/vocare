@@ -1,6 +1,7 @@
 @import './Consts';
 
 .userHeader {
+  position: relative;
   display: inline-flex;
   background-color: $purple-3;
   height: $header-height;
@@ -12,7 +13,7 @@
     height: 80px;
   }
 
-  & > div:not(.popover) {
+  & > .nav {
     display: inline-flex;
 
     .button {
@@ -83,6 +84,53 @@
           transform: rotateZ(90deg);
         }
       }
+    }
+  }
+
+  .slideMenu {
+    display: none;
+
+    .menu-button {
+      position: absolute;
+      top: calc(50% - #{$header-height-sm - 40px} / 2);
+      left: 20px;
+      align-self: center;
+      height: $header-height-sm - 40px;
+      width: $header-height-sm - 34px;
+
+      span {
+        background-color: white;
+        transition: background-color 0.4s;
+      }
+
+      &:hover {
+        span {
+          background-color: #c0c0c0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .userHeader {
+    height: $header-height-sm;
+    padding: 10px 5%;
+  
+    a {
+      margin: 0 auto;
+
+      img {
+        height: $header-height-sm - 20px;
+      }
+    }
+  
+    & > .nav {
+      display: none;
+    }
+
+    .slideMenu {
+      display: block;
     }
   }
 }

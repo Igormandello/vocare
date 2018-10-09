@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Popover from './Popover';
+import SlideMenu from './SlideMenu';
 import logo from './assets/logo.svg';
 import '../css/UserHeader.css';
 
@@ -45,10 +46,12 @@ class UserHeader extends React.Component {
   render() {
     return (
       <header className="userHeader">
+        <SlideMenu>
+        </SlideMenu>
         <a href="/vocare/dashboard">
           <img src={logo} alt="logo" />
         </a>
-        <div>
+        <div className="nav">
           <Button onClick={this.toggleNotifications} className={this.state.notificationsOpen ? 'active' : ''}>
             <img src={require('./assets/notification.svg')} alt="notification" ref="notifications" />
           </Button>
