@@ -133,9 +133,20 @@ $level-dot-size: 20px;
             img {
               width: 100%;
               border-radius: 100%;
+              min-width: 80px;
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    section.userData {
+      .level {
+        width: 60%;
       }
     }
   }
