@@ -12,7 +12,7 @@ function Post() {
   return (
     <div className="post">
       <UserHeader />
-      <section>
+      <section className="row">
         <div className="messages">
           <Message {...post.question}>
             <Button text="Responder"/>

@@ -25,7 +25,7 @@ class AboutCourse extends React.Component {
           <img src={require('../imgs/computerScience.jpg')} alt="course"/>
         </section>
         <section>
-          <div className="cards">
+          <div className="cards row">
             <div className="left">
               {this.cardsLeft}
             </div>

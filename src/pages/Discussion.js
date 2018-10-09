@@ -21,7 +21,7 @@ function Discussion() {
         <ComboBox label="Filtrar por:" options={['Áreas de interesse', 'Exatas', 'Humanas', 'Biológicas']}/>
         <ComboBox label="Ordenar por:" options={['Mais recente', 'Mais antigo']}/>
       </section>
-      <section className="posts">
+      <section className="posts row">
         <div className="postCards">
           {postsElements}
           <span></span>
