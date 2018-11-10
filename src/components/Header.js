@@ -1,6 +1,6 @@
 import React from 'react';
 import SlideMenu from './SlideMenu';
-import logo from './assets/logo.svg';
+import Button from './Button';
 import '../css/Header.css';
 
 function Header() {
@@ -8,13 +8,16 @@ function Header() {
     <header className="header">
       <SlideMenu>
       </SlideMenu>
+      <nav>
+        <a href="/vocare/about">Sobre o projeto</a>
+        <a href="/vocare/contact">Contato</a>
+      </nav>
       <a href="/vocare/">
-        <img src={logo} alt="logo"/>
+        VOcAre
       </a>
       <nav>
-        <span></span>
         <a href="/vocare/login">Login</a>
-        <a href="/vocare/signup">Cadastro</a>
+        <Button color="secondary" href="/vocare/signup" text="Cadastro"/>
       </nav>
     </header>
   );
