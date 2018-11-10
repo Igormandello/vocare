@@ -4,14 +4,14 @@
   "private": true,
   "homepage": "https://igormandello.github.io/vocare",
   "dependencies": {
+    "@material-ui/core": "^3.4.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-popover": "^0.5.10",
     "react-router-dom": "^4.3.1"
   },
   "scripts": {
-    "start": "concurrently 'gulp' 'npm:start-react'",
-    "start-react": "react-scripts start",
+    "start": "concurrently \"sass --watch src/sass:src/css\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -21,9 +21,7 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "gh-pages": "^2.0.0",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.9.4",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "sass": "^1.14.3"
   }
 }
