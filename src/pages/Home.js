@@ -51,7 +51,7 @@ function Home() {
         </div>
 
         <span>Saiba mais sobre nossos</span>
-        <Button text="Diferenciais" href="/vocare/about" />
+        <Button variant="outlined" text="Diferenciais" href="/vocare/about" />
       </section>
       <section className="problem">
         <h2>Problema</h2>
@@ -89,7 +89,7 @@ function Home() {
         </div>
 
         <span>Saiba mais sobre o</span>
-        <Button text="Problema" href="/vocare/about" />
+        <Button variant="outlined" text="Problema" href="/vocare/about" />
       </section>
       <section className="price">
         <h2>E qual o preço disso?</h2>
