@@ -1,20 +1,26 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import Header from '../components/Header';
 import Feature from '../components/Feature';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import '../css/Home.css';
 
+import butterfly from '../imgs/butterfly.png';
+
 function Home() {
   return (
     <div className="home">
       <Header />
       <section className="intro">
-        <h1>VOcAre</h1>
-        <blockquote>
-          <p>"Não haverá borboletas se a vida não passar por longas e silenciosas metamorfoses."</p>
-          <cite>Rubem Alves</cite>
-        </blockquote>
+        <div>
+          <h2>A melhor maneira de entrar no mercado de trabalho.</h2>
+          <p>Seja guiado pelas melhores empresas e descubra sua vocação.</p>
+        </div>
+        <div>
+          <img src={butterfly} alt=""/>
+        </div>
+        <Paper className="ellipse" elevation={8}/>
       </section>
       <section className="features">
         <h2>Por que Vocare?</h2>

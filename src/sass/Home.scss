@@ -18,32 +18,54 @@
   }
 
   section.intro {
-    background: url('../imgs/homeBackground.jpg') no-repeat;
-    background-position: center 0;
-    background-size: cover;
+    position: relative;
+    flex-direction: row;
+    background-color: $purple-3;
+    padding-bottom: 0px;
+    margin-bottom: 40px;
 
-    justify-content: center;
-    height: calc(100vh - #{$header-height});
-    color: white;
-
-    h1 {
-      font-family: CinzelDecorative;
-      font-weight: normal;
-      font-size: 5rem;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-
-      align-self: center;
-      &::after {
-        background-color: white;
-      }
+    .ellipse {
+      content: "";
+      background-color: $purple-3;
+      z-index: -1;
+      width: 120%;
+      display: block;
+      height: 170px;
+      position: absolute;
+      left: -10%;
+      bottom: -60px;
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
     }
 
-    blockquote {
-      margin: 0 26%;
-      text-align: right;
+    div {
+      flex: 3;
+      margin: 0 50px;
+      color: white;
+      align-self: center;
+      
+      h2 {
+        text-align: left;
+
+        &::after {
+          content: none;
+        }
+      }
 
       p {
-        text-align: center;
+        font-size: 1.2rem;
+      }
+
+      img {
+        height: 100%;
+        mix-blend-mode: hard-light;
+        object-fit: contain;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      &:nth-child(2) {
+        flex: 2;
       }
     }
   }
