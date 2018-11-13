@@ -1,7 +1,16 @@
 @import './Consts.scss';
 
 .home {
+  h1, h2, h3, h4 {
+    margin-bottom: 10px;
+
+    &::after{
+      content: none;
+    }
+  }
+
   h2 {
+    margin-bottom: 40px;
     font-size: 2.2rem;
     font-weight: bold;
     align-self: center;
@@ -22,7 +31,7 @@
     flex-direction: row;
     background-color: $purple-3;
     padding-bottom: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 
     .ellipse {
       content: "";
@@ -46,10 +55,7 @@
       
       h2 {
         text-align: left;
-
-        &::after {
-          content: none;
-        }
+        margin-bottom: 10px;
       }
 
       p {
@@ -70,10 +76,35 @@
     }
   }
 
+  section.headline {
+    & > div > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10px;
+      font-size: 1.2rem;
+
+      &:nth-child(1) {
+        flex: 3;
+      }
+
+      &:nth-child(2) {
+        flex: 2;
+
+        img {
+          width: 100%;
+          max-width: 600px;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+
   section.features {
+    background-color: #fafafa;
+    
     & > div {
       display: inline-flex;
-      margin-top: 20px;
 
       .feature {
         flex-grow: 1;
@@ -82,8 +113,6 @@
   }
 
   .problem {
-    background-color: #fafafa;
-
     div.data {
       display: inline-flex;
       align-content: center;

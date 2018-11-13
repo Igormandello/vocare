@@ -9,14 +9,14 @@ function Header() {
       <SlideMenu>
       </SlideMenu>
       <nav>
-        <Button variant="flat" color="secondary" href="/vocare/about" text="Sobre o projeto"/>
-        <Button variant="flat" color="secondary" href="/vocare/contact" text="Contato"/>
+        <Button variant="text" color="secondary" href="/vocare/about" text="Sobre o projeto"/>
+        <Button variant="text" color="secondary" href="/vocare/contact" text="Contato"/>
       </nav>
       <a href="/vocare/">
         VOcAre
       </a>
       <nav>
-        <Button variant="flat" color="secondary" href="/vocare/login" text="Login"/>
+        <Button variant="text" color="secondary" href="/vocare/login" text="Login"/>
         <Button color="secondary" href="/vocare/signup" text="Cadastre-se" noShadow/>
       </nav>
     </header>

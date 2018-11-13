@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import '../css/Home.css';
 
 import butterfly from '../imgs/butterfly.png';
+import suit from '../imgs/suit.jpg';
 
 function Home() {
   return (
@@ -21,6 +22,25 @@ function Home() {
           <img src={butterfly} alt=""/>
         </div>
         <Paper className="ellipse" elevation={8}/>
+      </section>
+      <section className="headline">
+        <h2>Gostar do que faz é a chave para o sucesso</h2>
+        <div className="row">
+          <div>
+            <p>
+              Descubra como é a real experiência das diversas profissões com 
+              profissionais do mercado de trabalho.
+            </p>
+            <p>
+              Nossa plataforma foi desenvolvida para te guiar com foco e clareza 
+              pelas diversas áreas e profissões, de modo que você possa escolher 
+              aquilo que realmente tem a ver com você.
+            </p>
+          </div>
+          <div>
+            <img src={suit} alt=""/>
+          </div>
+        </div>
       </section>
       <section className="features">
         <h2>Por que Vocare?</h2>
