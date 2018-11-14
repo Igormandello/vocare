@@ -99,10 +99,13 @@ $level-dot-size: 20px;
       padding: 0 10px;
 
       .post {
+        border: 1px solid rgba(151, 151, 151, 0.2);
         color: white;
         margin: 20px 0;
         padding: 15px;
         background-color: $purple-3;
+        transition: box-shadow 0.5s;
+        cursor: pointer;
 
         & > div {
           display: inline-flex;
