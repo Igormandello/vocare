@@ -13,10 +13,10 @@ function Login() {
       <section className="row">
         <div>
           <h1>Login</h1>
-          <form action="/vocare/dashboard">
+          <form>
             <Input label="Usuário"/>
             <Input label="Senha" type="password"/>
-            <Input value="Entrar" type="submit" className="button"/>
+            <Button variant="outlined" href="/vocare/dashboard" text="Entrar"/>
           </form>
           <p className="divider">ou acesse com:</p>
           <UserSocialMedias />
@@ -24,7 +24,7 @@ function Login() {
         <div>
           <h1>Não possui uma conta?</h1>
           <p>Se você não possui uma conta, basta se cadastrar gratuitamente!</p>
-          <Button text="Cadastre-se" href="/vocare/signup" fill/>
+          <Button text="Cadastre-se" href="/vocare/signup"/>
         </div>
       </section>
       <Footer fill/>

@@ -18,7 +18,7 @@ function Signup() {
             <Input label="E-mail" type="email"/>
             <Input label="Senha" type="password"/>
             <Input label="Confirmar senha" type="password"/>
-            <Input value="Cadastrar-se" type="submit" className="button" />
+            <Button variant="outlined" href="/vocare/login" text="Cadastrar-se"/>
           </form>
           <p className="divider">ou cadastre-se com:</p>
           <UserSocialMedias />

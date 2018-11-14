@@ -14,13 +14,8 @@
       margin: 0 calc(100% / 6 + 40px) 0 10px;
     }
 
-    div:not(.userSocialMedias) > .button {
+    div:not(.userSocialMedias) form > a {
       width: 100%;
-      font-size: 1.2rem;
-    }
-
-    p {
-      margin-top: 0;
     }
   }
 
