@@ -56,7 +56,7 @@ function Home() {
       <section className="problem">
         <h2>Problema</h2>
         <div className="data row">
-          <img className="shadow" src={require("../imgs/exclamation.svg")} alt="exclamation"/>
+          <img src={require("../imgs/exclamation.svg")} alt="exclamation"/>
           <div>
             <p>
               <span>75%</span> 

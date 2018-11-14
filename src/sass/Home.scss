@@ -84,6 +84,14 @@
       margin: 0 10px;
       font-size: 1.2rem;
 
+      p {
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
+
       &:nth-child(1) {
         flex: 3;
       }
@@ -102,20 +110,10 @@
 
   section.features {
     background-color: #fafafa;
-    
-    & > div {
-      display: inline-flex;
-
-      .feature {
-        flex-grow: 1;
-      }
-    }
   }
 
-  .problem {
+  section.problem {
     div.data {
-      display: inline-flex;
-      align-content: center;
       padding: 0 10px;
 
       div {
@@ -124,7 +122,7 @@
 
       img {
         padding: 15px;
-        border: 3px solid $purple-2;
+        border: 1px solid $purple-2;
         border-radius: 100%;
         
         height: 150px;
@@ -139,6 +137,11 @@
 
         p {
           font-size: 1.4rem;
+          margin: 0;
+
+          &:first-child {
+            margin-bottom: 20px;
+          }
 
           span {
             display: block;
@@ -154,7 +157,7 @@
 
     div.explanation {
       display: inline-flex;
-      margin-top: 20px;
+      margin-top: 40px;
 
       div {
         flex: 1;
