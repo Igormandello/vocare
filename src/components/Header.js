@@ -19,7 +19,7 @@ function Header() {
         </a>
         <nav>
           <Button variant="text" color="secondary" href="/vocare/login" text="Login"/>
-          <Button color="secondary" href="/vocare/signup" text="Cadastre-se" noShadow/>
+          <Button color="secondary" href="/vocare/signup" text="Cadastre-se" noShadow thickBorder/>
         </nav>
       </header>
     </Paper>

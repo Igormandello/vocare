@@ -16,7 +16,7 @@ function Login() {
           <form>
             <Input label="Usuário"/>
             <Input label="Senha" type="password"/>
-            <Button variant="outlined" href="/vocare/dashboard" text="Entrar"/>
+            <Button href="/vocare/dashboard" text="Entrar"/>
           </form>
           <p className="divider">ou acesse com:</p>
           <UserSocialMedias />
@@ -24,7 +24,7 @@ function Login() {
         <div>
           <h1>Não possui uma conta?</h1>
           <p>Se você não possui uma conta, basta se cadastrar gratuitamente!</p>
-          <Button text="Cadastre-se" href="/vocare/signup"/>
+          <Button variant="contained" text="Cadastre-se" href="/vocare/signup"/>
         </div>
       </section>
       <Footer fill/>

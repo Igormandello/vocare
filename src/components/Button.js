@@ -4,13 +4,13 @@ import MaterialButton from '@material-ui/core/Button';
 import classNames from 'classnames';
 
 function Button(props) {
-  const { classes, children, className, text, newTab, href, variant, color, noShadow, onClick } = props;
+  const { classes, children, className, text, newTab, href, variant, color, noShadow, thickBorder, onClick } = props;
 
   return (
     <MaterialButton 
-      variant={variant || 'contained'}
+      variant={variant || 'outlined'}
       color={color || 'primary'}
-      className={classNames(classes.root, className, noShadow ? classes.noShadow : {})}
+      className={classNames(classes.root, className, noShadow ? classes.noShadow : {}, thickBorder ? classes.thick : {})}
       onClick={onClick}
       href={href}
       target={newTab ? '_blank' : '_self'}
@@ -33,5 +33,11 @@ export default withStyles({
   },
   noShadow: {
     boxShadow: 'none'
+  },
+  thick: {
+    borderWidth: '2px',
+    '&:hover': {
+      borderWidth: '2px'
+    }
   }
 })(Button);

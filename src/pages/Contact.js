@@ -17,7 +17,7 @@ function Contact() {
             <Input label="Nome"/>
             <Input label="E-mail"/>
             <Input label="Mensagem" type="textarea"/>
-            <Button variant="outlined" text="Enviar" href="/vocare/"/>
+            <Button text="Enviar" href="/vocare/"/>
           </form>
         </div>
         <div>
