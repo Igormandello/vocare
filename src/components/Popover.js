@@ -1,51 +1,40 @@
 import React from 'react';
-import '../css/Popover.css';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
 
 class Popover extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      hidden: true
-    };
+    let items = [];
+    if (props.items)
+      for (let item of props.items)
+        items.push(<MenuItem onClick={item.onClick || (() => this.closePopover())}>{item.text}</MenuItem>);
 
-    this.style = {
-      top: 0,
-      left: 0
+    this.state = {
+      hidden: true,
+      items: items
     };
   }
 
-  componentDidMount() {
-    document.body.appendChild(this.refs.pop);
+  togglePopover() {
+    this.setState((prev) => {
+      return {
+        hidden: !prev.hidden
+      }
+    });
   }
 
   openPopover() {
-    let width = this.refs.pop.clientWidth;
-
-    if (this.props.target) {
-      let targetBounds = this.props.target.getBoundingClientRect();
-
-      let offsetX = targetBounds.width / 2;
-      if (this.props.caret === 'center')
-        offsetX -= width / 2;
-      else if (this.props.caret === 'right')
-        offsetX -= width - 14;
-
-      console.log(offsetX);
-      if (Number.isNaN(offsetX))
-        offsetX = 0;
-
-      this.style = {
-        top: targetBounds.y + targetBounds.height,
-        left: targetBounds.x + offsetX
-      };
-    }
-
     this.setState(() => {
       return {
         hidden: false
       }
-    })
+    });
   }
 
   closePopover() {
@@ -53,18 +42,30 @@ class Popover extends React.Component {
       return {
         hidden: true
       }
-    })
+    });
   }
 
   render() {
     return (
-      <div ref="pop" style={this.style} className={'popover' + (this.state.hidden ? ' hidden' : '')}>
-        <div className={'arrowShadow ' + this.props.caret} />
-        <div className={'arrow ' + this.props.caret} />
-        <div className="body">
-          {this.props.children}
-        </div>
-      </div>
+      <Popper open={!this.state.hidden} anchorEl={this.props.target} transition disablePortal>
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            id="menu-list-grow"
+            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+          >
+            <Paper>
+              <ClickAwayListener onClickAway={() => this.closePopover()}>
+                <MenuList>
+                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
     );
   }
 }
