@@ -33,10 +33,6 @@
   }
 }
 
-.login nav a:not(:last-child), .signup nav a:last-child {
-  background-color: $purple-4;
-}
-
 @media only screen and (max-width: 992px) {
   .login, .signup, .contact {
     section {
