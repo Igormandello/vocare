@@ -34,7 +34,7 @@
     margin-bottom: 80px;
 
     .ellipse {
-      content: "";
+      margin: 0;
       background-color: $purple-3;
       z-index: -1;
       width: 120%;
@@ -195,12 +195,8 @@
 
 @media only screen and (max-width: 768px) {
   .home {
-    section.intro {
-      height: calc(100vh - #{$header-height-sm});
-
-      blockquote {
-        margin: 0 15%;
-      }
+    section.intro blockquote {
+      margin: 0 15%;
     }
 
     .problem div.data img {

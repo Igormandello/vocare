@@ -1,7 +1,5 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import Icon from '@material-ui/core/Icon';
-import Button from './Button';
 import '../css/SocialMedias.css';
 
 function SocialMedias(props) {
