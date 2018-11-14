@@ -182,18 +182,12 @@
 
   section.price {
     background-color: $purple-3;
+    color: white;
 
-    h2, span {
+    & > span {
       color: white;
-    }
-
-    h2::after {
-      background-color: white;
-    }
-
-    span {
       font-size: 1.4rem;
-      margin-top: 20px;
+      margin-top: 0;
       margin-bottom: 10px;
     }
   }

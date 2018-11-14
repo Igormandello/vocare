@@ -94,8 +94,8 @@ function Home() {
       <section className="price">
         <h2>E qual o preço disso?</h2>
 
-        <span>Tudo isso de graça e para sempre!</span>
-        <Button text="Cadastre-se" href="/vocare/signup" fill />
+        <span>Simplesmente grátis.</span>
+        <Button color="secondary" text="Cadastre-se" href="/vocare/signup" noShadow/>
       </section>
       <Footer />
     </div>
