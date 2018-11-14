@@ -6,26 +6,10 @@
   margin-left: 20px;
   padding: 0;
 
-  .button {
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    padding: 10px;
-    border: 3px solid #252525;
-    
+  a {
     img {
       height: 30px;
       width: 30px;
-      filter: saturate(0) brightness(.45);
-      transition: filter 0.4s;
-    }
-
-    &:hover {
-      border: 3px solid $purple-3;;
-  
-      img {
-        filter: saturate(0) brightness(4);
-      }
     }
 
     &:not(:last-child) {
@@ -35,12 +19,10 @@
     &:first-child {
       margin-left: 0;
     }
-  
   }
 
   &.inverse {
-    .button {
-      border: 3px solid white;
+    a {
       transition: background-color 0.4s;
 
       img {
