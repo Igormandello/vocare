@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import Button from './Button';
 import Popover from './Popover';
 import SlideMenu from './SlideMenu';
@@ -45,45 +46,47 @@ class UserHeader extends React.Component {
 
   render() {
     return (
-      <header className="userHeader">
-        <SlideMenu>
-        </SlideMenu>
-        <a href="/vocare/dashboard">
-          <img src={logo} alt="logo" />
-        </a>
-        <div className="nav">
-          <Button onClick={this.toggleNotifications} className={this.state.notificationsOpen ? 'active' : ''}>
-            <img src={require('./assets/notification.svg')} alt="notification" ref="notifications" />
-          </Button>
-          <Popover ref="notificationsPop" caret="center" target={this.refs.notifications}>
-            <ul>
-              <a>Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!</a>
-              <a>O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?</a>
-              <a>10 usuários gostaram de sua pergunta!</a>
-            </ul>
-          </Popover>
-
-          <span></span>
-          <a className="name" href="/vocare/dashboard">Igor</a>
-
-          <div>
-            <a href="/vocare/dashboard">
-              <img src={require('./assets/igor.jpg')} alt="profile"/>
-            </a>
-            <Button onClick={this.toggleSettings} className={this.state.settingsOpen ? 'active' : ''}>
-              <img src={require('./assets/config.svg')} alt="configuration" ref="settings" />
+      <Paper elevation={4}>
+        <header className="userHeader">
+          <SlideMenu>
+          </SlideMenu>
+          <a href="/vocare/dashboard">
+            <img src={logo} alt="logo" />
+          </a>
+          <div className="nav">
+            <Button onClick={this.toggleNotifications} className={this.state.notificationsOpen ? 'active' : ''}>
+              <img src={require('./assets/notification.svg')} alt="notification" ref="notifications" />
             </Button>
-
-            <Popover ref="settingsPop" caret="right" target={this.refs.settings}>
+            <Popover ref="notificationsPop" caret="center" target={this.refs.notifications}>
               <ul>
-                <a onClick={() => console.log('To Do')}>Alto Contraste</a>
-                <a href="/vocare/settings">Configurações</a>
-                <a href="/vocare/">Sair</a>
+                <a>Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!</a>
+                <a>O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?</a>
+                <a>10 usuários gostaram de sua pergunta!</a>
               </ul>
             </Popover>
+
+            <span></span>
+            <a className="name" href="/vocare/dashboard">Igor</a>
+
+            <div>
+              <a href="/vocare/dashboard">
+                <img src={require('./assets/igor.jpg')} alt="profile"/>
+              </a>
+              <Button onClick={this.toggleSettings} className={this.state.settingsOpen ? 'active' : ''}>
+                <img src={require('./assets/config.svg')} alt="configuration" ref="settings" />
+              </Button>
+
+              <Popover ref="settingsPop" caret="right" target={this.refs.settings}>
+                <ul>
+                  <a onClick={() => console.log('To Do')}>Alto Contraste</a>
+                  <a href="/vocare/settings">Configurações</a>
+                  <a href="/vocare/">Sair</a>
+                </ul>
+              </Popover>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </Paper>
     )
   }
 }
