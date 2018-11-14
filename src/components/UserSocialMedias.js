@@ -6,29 +6,29 @@ function UserSocialMedias(props) {
   let actives = [];
   if (!props.actives || !Array.isArray(props.actives))
     for (let n = 0; n < 5; n++)
-      actives.push(false);
+      actives.push({ variant: 'outlined' });
   else
     for (let n = 0; n < 5; n++)
       if (props.actives[n])
-        actives.push(true);
+        actives.push({ variant: 'contained', className: 'active' });
       else
-        actives.push(false);
+        actives.push({ variant: 'outlined' });
 
   return (
     <ul className="userSocialMedias">
-      <Button className={actives[0] ? 'active' : ''} >
+      <Button {...actives[0]}>
         <img src={require('./assets/google.svg')} alt="google plus"/>
       </Button>
-      <Button className={actives[1] ? 'active' : ''}>
+      <Button {...actives[1]}>
         <img src={require('./assets/github.svg')} alt="github" />
       </Button>
-      <Button className={actives[2] ? 'active' : ''}>
+      <Button {...actives[2]}>
         <img src={require('./assets/reddit.svg')} alt="reddit" />
       </Button>
-      <Button className={actives[3] ? 'active' : ''}>
+      <Button {...actives[3]}>
         <img src={require('./assets/twitter.svg')} alt="twitter" />
       </Button>
-      <Button className={actives[4] ? 'active' : ''}>
+      <Button {...actives[4]}>
         <img src={require('./assets/facebook.svg')} alt="facebook" />
       </Button>
     </ul>
