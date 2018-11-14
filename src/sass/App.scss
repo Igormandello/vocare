@@ -23,9 +23,14 @@
 a {
   text-decoration: none;
   color: #252525;
+  -webkit-user-drag: none;
 }
 
 ul {
+  margin-top: 0;
+}
+
+p {
   margin-top: 0;
 }
 
@@ -101,6 +106,7 @@ p.divider {
   display: inline-flex;
   justify-content: center;
   width: 100%;
+  margin: 1rem 0;
 
   &::before, &::after {
     content: " ";

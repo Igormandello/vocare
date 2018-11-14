@@ -9,6 +9,10 @@
   height: $footer-height;
   padding: 0 calc(15% + 10px);
 
+  p {
+    margin: 0;
+  }
+
   &.footer-filled {
     color: white;
     background-color: $purple-3;
