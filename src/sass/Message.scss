@@ -17,10 +17,6 @@
         height: inherit;
         padding: inherit;
         border-radius: 100%;
-        border: 3px solid $purple-3;
-        box-shadow: 0px 0px 20px 0px $purple-3 inset,
-                    0px 0px 20px 0px $purple-3 inset, 
-                    0px 0px 20px 0px $purple-3 inset;
       }
   
       span {
@@ -31,11 +27,12 @@
         width: 40px;
         height: 40px;
         border-radius: 100%;
-        background-color: white;
+        background-color: rgba($color: white, $alpha: 0.9);
         color: $purple-3;
-        border: 3px solid $purple-3;
+        border: 1px solid $purple-3;
         justify-content: center;
         align-items: center;
+        font-weight: bold;
       }
 
       &::after {
