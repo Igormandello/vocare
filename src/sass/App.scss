@@ -111,7 +111,7 @@ p.divider {
   &::before, &::after {
     content: " ";
     align-self: center;
-    height: 3px;
+    height: 1px;
     background-color: $purple-3;
     flex-grow: 1;
   }
