@@ -84,7 +84,7 @@ const popoversData = {
       o desenvolvimento de programas para as mais diversas plataformas, como 
       celulares, tablets e computadores.
     </p>,
-    <Button text="Saiba mais" href="/vocare/aboutCourse/" fill/>
+    <Button variant="contained" color="secondary" text="Saiba mais" href="/vocare/aboutCourse/" noShadow/>
   ],
 
   mechanicalEngineering: [
@@ -93,7 +93,7 @@ const popoversData = {
       A Engenharia Mecânica é o ramo da engenharia que cuida do projeto, 
       construção, análise, operação e manutenção de sistemas mecânicos. 
     </p>,
-    <Button text="Saiba mais" fill/>
+    <Button variant="contained" color="secondary" text="Saiba mais" noShadow/>
   ],
 
   medicine: [
@@ -102,7 +102,7 @@ const popoversData = {
       A função do Médico é pesquisar as doenças e suas causas para poder 
       posteriormente combatê-las e curá-las. Conheça mais sobre a carreira de Medicina.
     </p>,
-    <Button text="Saiba mais" fill/>
+    <Button variant="contained" color="secondary" text="Saiba mais" noShadow/>
   ]
 }
 
