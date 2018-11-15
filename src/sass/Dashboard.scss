@@ -83,10 +83,10 @@ $level-dot-size: 20px;
 
       .courses {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column;
+        margin-bottom: 1rem;
 
-        .button {
-          flex: 1;
+        button, a {
           text-align: center;
           margin: 5px 10px;
         }
@@ -101,7 +101,7 @@ $level-dot-size: 20px;
       .post {
         border: 1px solid rgba(151, 151, 151, 0.2);
         color: white;
-        margin: 20px 0;
+        margin-bottom: 20px;
         padding: 15px;
         background-color: $purple-3;
         transition: box-shadow 0.5s;

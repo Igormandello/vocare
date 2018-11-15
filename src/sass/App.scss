@@ -79,17 +79,7 @@ h1, h2, h3, h4 {
   flex-direction: column;
   margin: 0;
   font-weight: normal;
-
-  &::after {
-    content: " ";
-    display: block;
-    background-color: #252525;
-    width: 140px;
-    height: 3px;
-    margin-top: 4px;
-    margin-bottom: 20px;
-    align-self: inherit;
-  }
+  margin-bottom: 20px;
 }
 
 .card {
