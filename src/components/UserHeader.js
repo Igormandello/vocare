@@ -1,8 +1,10 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Button from './Button';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import Badge from '@material-ui/core/Badge';
 import Popover from './Popover';
-import SlideMenu from './SlideMenu';
 import logo from './assets/logo.svg';
 import '../css/UserHeader.css';
 
@@ -46,47 +48,49 @@ class UserHeader extends React.Component {
 
   render() {
     return (
-      <Paper elevation={4}>
-        <header className="userHeader">
-          <SlideMenu>
-          </SlideMenu>
-          <a href="/vocare/dashboard">
-            <img src={logo} alt="logo" />
+      <AppBar position="static">
+        <Toolbar className="userHeader">
+          <a href="/vocare/dashboard"> 
+            <img src={logo} alt="logo" /> 
           </a>
-          <div className="nav">
-            <Button onClick={this.toggleNotifications} className={this.state.notificationsOpen ? 'active' : ''}>
-              <img src={require('./assets/notification.svg')} alt="notification" ref="notifications" />
-            </Button>
-            <Popover ref="notificationsPop" caret="center" target={this.refs.notifications}>
-              <ul>
-                <a>Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!</a>
-                <a>O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?</a>
-                <a>10 usuários gostaram de sua pergunta!</a>
-              </ul>
-            </Popover>
-
-            <span></span>
-            <a className="name" href="/vocare/dashboard">Igor</a>
-
+          <div className="nav"> 
             <div>
-              <a href="/vocare/dashboard">
-                <img src={require('./assets/igor.jpg')} alt="profile"/>
-              </a>
-              <Button onClick={this.toggleSettings} className={this.state.settingsOpen ? 'active' : ''}>
-                <img src={require('./assets/config.svg')} alt="configuration" ref="settings" />
-              </Button>
-
-              <Popover ref="settingsPop" caret="right" target={this.refs.settings}>
-                <ul>
-                  <a onClick={() => console.log('To Do')}>Alto Contraste</a>
-                  <a href="/vocare/settings">Configurações</a>
-                  <a href="/vocare/">Sair</a>
-                </ul>
-              </Popover>
+              <IconButton color="inherit">
+                <Badge badgeContent={13} color="secondary">
+                  <Icon>notifications</Icon>
+                </Badge>
+              </IconButton>
             </div>
+            <Popover ref="notificationsPop" caret="center" target={this.refs.notifications}> 
+              <ul> 
+                <a>Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!</a> 
+                <a>O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?</a> 
+                <a>10 usuários gostaram de sua pergunta!</a> 
+              </ul> 
+            </Popover> 
+ 
+            <span></span> 
+            <a className="name" href="/vocare/dashboard">Igor</a> 
+ 
+            <div> 
+              <a href="/vocare/dashboard"> 
+                <img src={require('./assets/igor.jpg')} alt="profile"/> 
+              </a> 
+              <IconButton nClick={this.toggleNotifications} color="secondary" className={this.state.settingsOpen ? 'active' : ''}>
+                <Icon>settings</Icon>
+              </IconButton>
+ 
+              <Popover ref="settingsPop" caret="right" target={this.refs.settings}> 
+                <ul> 
+                  <a onClick={() => console.log('To Do')}>Alto Contraste</a> 
+                  <a href="/vocare/settings">Configurações</a> 
+                  <a href="/vocare/">Sair</a> 
+                </ul> 
+              </Popover> 
+            </div> 
           </div>
-        </header>
-      </Paper>
+        </Toolbar>
+      </AppBar>
     )
   }
 }
