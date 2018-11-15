@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import '../css/CourseCard.css';
 
 function CourseCard(props) {
@@ -10,7 +11,7 @@ function CourseCard(props) {
       props.text.forEach(element => textArr.push(<p>{element}</p>));
 
   return (
-    <div className="courseCard card">
+    <Paper className="courseCard" elevation={2}>
       <h2>{props.title}</h2>
       {textArr}
       {
@@ -18,7 +19,7 @@ function CourseCard(props) {
         <iframe src={props.video} title="courseVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
         </iframe>
       }
-    </div>
+    </Paper>
   );
 }
 
