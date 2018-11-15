@@ -4,58 +4,27 @@
   position: relative;
   display: inline-flex;
   background-color: $purple-3;
-  height: $header-height;
+  height: $header-height - 20px;
   width: 100%;
   padding: 10px 10px 10px calc(15% + 10px);
   justify-content: space-between;
 
+  & > a {
+    height: 100%;
+  }
+
   img {
-    height: 80px;
+    height: 60px;
   }
 
   & > .nav {
     display: inline-flex;
     height: 100%;
 
-    .button {
-      border: 2px solid white;
-      background-color: $purple-3;
-
-      img {
-        transition: filter 0.4s;
-      }
-
-      &:hover, &.active {
-        background-color: white;
-
-        img {
-          filter: none;
-        }
-      }
-    }
-
-    & > .button {
-      padding: 10px;
-      height: $header-height - 50px;
-      width: $header-height - 50px;
-
-      img {
-        height: inherit;
-        padding: inherit;
-        filter: saturate(0) brightness(4);
-      }
-    }
-
-    & > span {
-      width: 1px;
-      margin: 6px 20px;
-      background-color: white;
-    }
-
     .name {
       color: white;
       font-size: 2rem;
-      margin-right: 10px;
+      margin: 0 10px 0 20px;
       align-self: center;
     }
 
@@ -78,25 +47,15 @@
 
         button {
           position: absolute;
-          right: 0;
+          right: -5px;
           bottom: 0;
           width: 25px;
           height: 25px;
           border: 1px solid white;
-          background-color: rgba($color: $purple-3, $alpha: 0.75);
+          background-color: rgba($color: $purple-3, $alpha: 0.85);
 
           .material-icons {
             font-size: 16px;
-          }
-
-          img {
-            height: inherit;
-            filter: saturate(0) brightness(4);
-            transition: transform 0.4s;
-          }
-
-          &.active img {
-            transform: rotateZ(90deg);
           }
         }
       }

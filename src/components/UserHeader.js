@@ -1,8 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import Badge from '@material-ui/core/Badge';
 import Popover from './Popover';
@@ -30,7 +28,6 @@ class UserHeader extends React.Component {
                 </Badge>
               </div>
             </Popover> 
-            <span></span> 
             <a className="name" href="/vocare/dashboard">Igor</a> 
  
             <div> 
