@@ -58,7 +58,13 @@ const cardsLeft = [
       e a conexões com a internet. Pode, ainda, implantar e gerenciar bancos 
       de dados e instalar sistemas de segurança para as operações de compra e 
       venda pela rede.`,
-      <Button text="Fonte" href="https://guiadoestudante.abril.com.br/profissoes/ciencia-da-computacao/" fill newTab/>
+      <Button 
+        variant="contained"
+        color="secondary"
+        text="Fonte"
+        href="https://guiadoestudante.abril.com.br/profissoes/ciencia-da-computacao/"
+        noShadow newTab
+      />
     ]
   }, {
     title: 'Qual é o salário?',
@@ -85,7 +91,13 @@ const cardsLeft = [
           <li>Em grandes empresas: de R$ 10 mil a R$ 15 mil. </li>
         </ul>
       </div>,
-      <Button text="Fonte" href="https://ultimosegundo.ig.com.br/educacao/guia-de-profissoes/ciencia-da-computacao/4edd0d5a51881c5a34000001.html" fill newTab/>
+      <Button 
+        variant="contained"
+        color="secondary"
+        text="Fonte"
+        href="https://ultimosegundo.ig.com.br/educacao/guia-de-profissoes/ciencia-da-computacao/4edd0d5a51881c5a34000001.html"
+        noShadow newTab
+      />
     ],
   }
 ];
@@ -106,15 +118,21 @@ const cardsRight = [
     ]
   }, {
     title: 'Veja o que estão discutindo!',
-    text: 
-      <PostCard
-        title='Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?'
-        message='Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
-          (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
-          qual eu...'
-        image='bart.jpg'
-        link='/vocare/post'
-      />
+    text:
+      <p style={{ color: 'gray' }}>
+        <PostCard
+          title='Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?'
+          message='Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
+            (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
+            qual eu...'
+          user={{
+            name: 'Vitor Bartier',
+            image: 'bart.jpg'
+          }}
+          data='07 de Setembro de 2018'
+          link='/vocare/post'
+        />
+      </p>
   }, {
     title: 'Quer saber mais sobre?',
     text: 'Abaixo temos um vídeo do Guia de Profissões sobre Ciência da Computação!',

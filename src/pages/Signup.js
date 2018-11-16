@@ -18,7 +18,7 @@ function Signup() {
             <Input label="E-mail" type="email"/>
             <Input label="Senha" type="password"/>
             <Input label="Confirmar senha" type="password"/>
-            <Input value="Cadastrar-se" type="submit" className="button" />
+            <Button href="/vocare/login" text="Cadastrar-se"/>
           </form>
           <p className="divider">ou cadastre-se com:</p>
           <UserSocialMedias />
@@ -26,7 +26,7 @@ function Signup() {
         <div>
           <h1>Já possui uma conta?</h1>
           <p>Se você já possui uma conta, basta fazer login.</p>
-          <Button text="Entrar" href="/vocare/login" fill/>
+          <Button variant="contained" text="Entrar" href="/vocare/login" fill/>
         </div>
       </section>
       <Footer fill/>

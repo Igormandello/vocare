@@ -1,24 +1,44 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import { withStyles } from '@material-ui/core/styles';
 import '../css/PostCard.css';
 
+const styles = theme => ({
+  header: {
+    paddingBottom: 0
+  }
+})
+
 function PostCard(props) {
+  const { classes } = props;
+
   return (
-    <a href={props.link}>
-      <div className="postCard card">
-        <div>
-          <img src={require('./assets/' + props.image)} alt="user" className="card"/>
-        </div>
-        <div>
-          <p className="title">
+    <Card className="postCard" elevation={2}>
+      <CardActionArea href={props.link}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="User" src={require('./assets/' + props.user.image)}/>
+          }
+          title={props.user.name}
+          subheader={props.data}
+          className={classes.header}
+        />
+        <CardContent>
+          <Typography component="p" className="title">
             {props.title}
-          </p>
-          <p>
+          </Typography>
+          <Typography component="p">
             {props.message}
-          </p>
-        </div>
-      </div>
-    </a>
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }
 
-export default PostCard;
+export default withStyles(styles)(PostCard);

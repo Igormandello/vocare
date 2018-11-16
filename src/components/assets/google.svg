@@ -1,44 +1,117 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
-<g>
-	<g>
-		<polygon points="448,224 448,160 416,160 416,224 352,224 352,256 416,256 416,320 448,320 448,256 512,256 512,224   " fill="#5543d2"/>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 512 512"
+   style="enable-background:new 0 0 512 512;"
+   xml:space="preserve"
+   width="512px"
+   height="512px"
+   sodipodi:docname="google.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata1552"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs1550" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1533"
+   inkscape:window-height="845"
+   id="namedview1548"
+   showgrid="false"
+   inkscape:zoom="0.4609375"
+   inkscape:cx="256"
+   inkscape:cy="256"
+   inkscape:window-x="67"
+   inkscape:window-y="27"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Capa_1" />
+<g
+   id="g1509"
+   style="fill:#7159c1;fill-opacity:1">
+	<g
+   id="g1507"
+   style="fill:#7159c1;fill-opacity:1">
+		<polygon
+   points="448,224 448,160 416,160 416,224 352,224 352,256 416,256 416,320 448,320 448,256 512,256 512,224   "
+   fill="#5543d2"
+   id="polygon1505"
+   style="fill:#7159c1;fill-opacity:1" />
 	</g>
 </g>
-<g>
-	<g>
-		<path d="M160,224v64h90.528c-13.216,37.248-48.8,64-90.528,64c-52.928,0-96-43.072-96-96c0-52.928,43.072-96,96-96    c22.944,0,45.024,8.224,62.176,23.168l42.048-48.256C235.424,109.824,198.432,96,160,96C71.776,96,0,167.776,0,256    s71.776,160,160,160s160-71.776,160-160v-32H160z" fill="#5543d2"/>
+<g
+   id="g1515"
+   style="fill:#7159c1;fill-opacity:1">
+	<g
+   id="g1513"
+   style="fill:#7159c1;fill-opacity:1">
+		<path
+   d="M160,224v64h90.528c-13.216,37.248-48.8,64-90.528,64c-52.928,0-96-43.072-96-96c0-52.928,43.072-96,96-96    c22.944,0,45.024,8.224,62.176,23.168l42.048-48.256C235.424,109.824,198.432,96,160,96C71.776,96,0,167.776,0,256    s71.776,160,160,160s160-71.776,160-160v-32H160z"
+   fill="#5543d2"
+   id="path1511"
+   style="fill:#7159c1;fill-opacity:1" />
 	</g>
 </g>
-<g>
+<g
+   id="g1517">
 </g>
-<g>
+<g
+   id="g1519">
 </g>
-<g>
+<g
+   id="g1521">
 </g>
-<g>
+<g
+   id="g1523">
 </g>
-<g>
+<g
+   id="g1525">
 </g>
-<g>
+<g
+   id="g1527">
 </g>
-<g>
+<g
+   id="g1529">
 </g>
-<g>
+<g
+   id="g1531">
 </g>
-<g>
+<g
+   id="g1533">
 </g>
-<g>
+<g
+   id="g1535">
 </g>
-<g>
+<g
+   id="g1537">
 </g>
-<g>
+<g
+   id="g1539">
 </g>
-<g>
+<g
+   id="g1541">
 </g>
-<g>
+<g
+   id="g1543">
 </g>
-<g>
+<g
+   id="g1545">
 </g>
 </svg>

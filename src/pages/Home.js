@@ -1,20 +1,46 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import Header from '../components/Header';
 import Feature from '../components/Feature';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import '../css/Home.css';
 
+import butterfly from '../imgs/butterfly.png';
+import suit from '../imgs/suit.jpg';
+
 function Home() {
   return (
     <div className="home">
       <Header />
       <section className="intro">
-        <h1>VOcAre</h1>
-        <blockquote>
-          <p>"Não haverá borboletas se a vida não passar por longas e silenciosas metamorfoses."</p>
-          <cite>Rubem Alves</cite>
-        </blockquote>
+        <div>
+          <h2>A melhor maneira de entrar no mercado de trabalho.</h2>
+          <p>Seja guiado pelas melhores empresas e descubra sua vocação.</p>
+        </div>
+        <div>
+          <img src={butterfly} alt=""/>
+        </div>
+        <Paper className="ellipse" elevation={8}/>
+      </section>
+      <section className="headline">
+        <h2>Gostar do que faz é a chave para o sucesso</h2>
+        <div className="row">
+          <div>
+            <p>
+              Descubra como é a real experiência das diversas profissões com 
+              profissionais do mercado de trabalho.
+            </p>
+            <p>
+              Nossa plataforma foi desenvolvida para te guiar com foco e clareza 
+              pelas diversas áreas e profissões, de modo que você possa escolher 
+              aquilo que realmente tem a ver com você.
+            </p>
+          </div>
+          <div>
+            <img src={suit} alt=""/>
+          </div>
+        </div>
       </section>
       <section className="features">
         <h2>Por que Vocare?</h2>
@@ -30,7 +56,7 @@ function Home() {
       <section className="problem">
         <h2>Problema</h2>
         <div className="data row">
-          <img className="shadow" src={require("../imgs/exclamation.svg")} alt="exclamation"/>
+          <img src={require("../imgs/exclamation.svg")} alt="exclamation"/>
           <div>
             <p>
               <span>75%</span> 
@@ -68,8 +94,8 @@ function Home() {
       <section className="price">
         <h2>E qual o preço disso?</h2>
 
-        <span>Tudo isso de graça e para sempre!</span>
-        <Button text="Cadastre-se" href="/vocare/signup" fill />
+        <span>Simplesmente grátis.</span>
+        <Button variant="contained" color="secondary" text="Cadastre-se" href="/vocare/signup" noShadow/>
       </section>
       <Footer />
     </div>

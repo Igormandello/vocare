@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import UserHeader from '../components/UserHeader';
 import ComboBox from '../components/ComboBox';
 import PostCard from '../components/PostCard';
@@ -28,8 +29,8 @@ function Discussion() {
         </div>
         <div className="optionsColumn">
           <Button text="Criar novo post"/>
-          <div className="card"></div>
-          <div className="card"></div>
+          <Paper/>
+          <Paper/>
         </div>
       </section>
       <Footer fill />
@@ -43,19 +44,31 @@ const posts = [
     message: `Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
       (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
       qual eu...`,
-    image: 'bart.jpg',
+    data: '07 de Setembro de 2018',
+    user: {
+      name: 'Vitor Bartier',
+      image: 'bart.jpg'
+    },
     link: '/vocare/post'
   }, {
     title: 'Análise e Desenvolvimento de Sistemas vale a pena?',
     message: `Galera, tava bem em dúvida entre ela, ciência da computação e engenharia da computação,
       hoje em dia ainda vale a pena fazer esse curso? Se sim, por quê? Obrigado.`,
-    image: 'igor.jpg',
+    data: '03 de Setembro de 2018',
+    user: {
+      name: 'Igor Mandello',
+      image: 'igor.jpg'
+    },
     link: '/vocare/post'
   }, {
     title: 'Engenharia da Computação é muito corrido?',
     message: `Eu estou terminando meu técnico e provavelmente vou estagiar, será que se eu escolher
       cursar Engenharia, eu vou acabar não dando conta do trabalho?`,
-    image: 'valente.jpg',
+    data: '28 de Agosto de 2018',
+    user: {
+      name: 'Lucas Valente',
+      image: 'valente.jpg'
+    },
     link: '/vocare/post'
   }
 ]

@@ -10,6 +10,11 @@
   src: url('../fonts/NotoSans-Regular.ttf');
 }
 
+@font-face {
+  font-family: RobotoMedium;
+  src: url('../fonts/Roboto-Medium.ttf');
+}
+
 * {
   box-sizing: border-box;
   outline: none;
@@ -18,9 +23,14 @@
 a {
   text-decoration: none;
   color: #252525;
+  -webkit-user-drag: none;
 }
 
 ul {
+  margin-top: 0;
+}
+
+p {
   margin-top: 0;
 }
 
@@ -28,6 +38,8 @@ body {
   margin: 0;
   font-family: NotoSans;
   color: #252525;
+  overflow-x: hidden;
+  line-height: 1.5;
 }
 
 section {
@@ -67,17 +79,7 @@ h1, h2, h3, h4 {
   flex-direction: column;
   margin: 0;
   font-weight: normal;
-
-  &::after {
-    content: " ";
-    display: block;
-    background-color: #252525;
-    width: 140px;
-    height: 3px;
-    margin-top: 4px;
-    margin-bottom: 20px;
-    align-self: inherit;
-  }
+  margin-bottom: 20px;
 }
 
 .card {
@@ -94,11 +96,12 @@ p.divider {
   display: inline-flex;
   justify-content: center;
   width: 100%;
+  margin: 1rem 0;
 
   &::before, &::after {
     content: " ";
     align-self: center;
-    height: 3px;
+    height: 1px;
     background-color: $purple-3;
     flex-grow: 1;
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import UserHeader from '../components/UserHeader';
 import Message from '../components/Message';
 import Button from '../components/Button';
@@ -24,8 +25,8 @@ function Post() {
         </div>
         <div className="optionsColumn">
           <Button text="Voltar para a discussão" href="/vocare/discussion" />
-          <div></div>
-          <div></div>
+          <Paper/>
+          <Paper/>
         </div>
       </section>
       <Footer fill />

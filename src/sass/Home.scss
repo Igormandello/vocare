@@ -2,13 +2,14 @@
 
 .home {
   h2 {
+    margin-bottom: 40px;
     font-size: 2.2rem;
     font-weight: bold;
     align-self: center;
     text-align: center;
   }
 
-  section span {
+  section > span {
     color: #4c4c4c;
     font-size: 0.9rem;
     margin: 0 auto;
@@ -18,53 +19,93 @@
   }
 
   section.intro {
-    background: url('../imgs/homeBackground.jpg') no-repeat;
-    background-position: center 0;
-    background-size: cover;
+    position: relative;
+    flex-direction: row;
+    background-color: $purple-3;
+    padding-bottom: 0px;
+    margin-bottom: 80px;
 
-    justify-content: center;
-    height: calc(100vh - #{$header-height});
-    color: white;
-
-    h1 {
-      font-family: CinzelDecorative;
-      font-weight: normal;
-      font-size: 5rem;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-
-      align-self: center;
-      &::after {
-        background-color: white;
-      }
+    .ellipse {
+      margin: 0;
+      background-color: $purple-3;
+      z-index: -1;
+      width: 120%;
+      display: block;
+      height: 170px;
+      position: absolute;
+      left: -10%;
+      bottom: -60px;
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
     }
 
-    blockquote {
-      margin: 0 26%;
-      text-align: right;
+    div {
+      flex: 3;
+      margin: 0 50px;
+      color: white;
+      align-self: center;
+      
+      h2 {
+        text-align: left;
+        margin-bottom: 20px;
+      }
 
       p {
-        text-align: center;
+        font-size: 1.2rem;
+      }
+
+      img {
+        height: 100%;
+        mix-blend-mode: hard-light;
+        object-fit: contain;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      &:nth-child(2) {
+        flex: 2;
+      }
+    }
+  }
+
+  section.headline {
+    & > div > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10px;
+      font-size: 1.2rem;
+
+      p {
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
+
+      &:nth-child(1) {
+        flex: 3;
+      }
+
+      &:nth-child(2) {
+        flex: 2;
+
+        img {
+          width: 100%;
+          max-width: 600px;
+          border-radius: 30px;
+        }
       }
     }
   }
 
   section.features {
-    & > div {
-      display: inline-flex;
-      margin-top: 20px;
-
-      .feature {
-        flex-grow: 1;
-      }
-    }
+    background-color: #fafafa;
   }
 
-  .problem {
-    background-color: #fafafa;
-
+  section.problem {
     div.data {
-      display: inline-flex;
-      align-content: center;
       padding: 0 10px;
 
       div {
@@ -73,7 +114,7 @@
 
       img {
         padding: 15px;
-        border: 3px solid $purple-2;
+        border: 1px solid $purple-2;
         border-radius: 100%;
         
         height: 150px;
@@ -88,6 +129,11 @@
 
         p {
           font-size: 1.4rem;
+          margin: 0;
+
+          &:first-child {
+            margin-bottom: 20px;
+          }
 
           span {
             display: block;
@@ -103,7 +149,7 @@
 
     div.explanation {
       display: inline-flex;
-      margin-top: 20px;
+      margin-top: 40px;
 
       div {
         flex: 1;
@@ -128,18 +174,12 @@
 
   section.price {
     background-color: $purple-3;
+    color: white;
 
-    h2, span {
+    & > span {
       color: white;
-    }
-
-    h2::after {
-      background-color: white;
-    }
-
-    span {
       font-size: 1.4rem;
-      margin-top: 20px;
+      margin-top: 0;
       margin-bottom: 10px;
     }
   }
@@ -147,12 +187,8 @@
 
 @media only screen and (max-width: 768px) {
   .home {
-    section.intro {
-      height: calc(100vh - #{$header-height-sm});
-
-      blockquote {
-        margin: 0 15%;
-      }
+    section.intro blockquote {
+      margin: 0 15%;
     }
 
     .problem div.data img {

@@ -1,4 +1,6 @@
 import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
 import UserHeader from '../components/UserHeader';
 import UserSocialMedias from '../components/UserSocialMedias';
 import Input from '../components/Input';
@@ -12,11 +14,13 @@ function Settings() {
       <UserHeader />
       <section>
         <h1>Configurações</h1>
-        <div className="avatar card">
+        <div className="avatar">
           <img src={require('../components/assets/igor.jpg')} alt="profile"/>
-          <Button>
-            <img src={require('../components/assets/edit.svg')} alt="edit" />
-          </Button>
+          <div>
+            <IconButton color="primary">
+              <Icon>edit</Icon>
+            </IconButton>
+          </div>
         </div>
         <p className="divider">conectado com:</p>
         <UserSocialMedias actives={[true, true]}/>

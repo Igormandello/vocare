@@ -2,18 +2,21 @@
 
 .feature {
   text-align: center;
-  background-color: $purple-1;
-  color: white;
   padding: 15px;
 
   & > div {
-    border: 3px solid $purple-2;
+    border: 1px solid rgba($color: $purple-2, $alpha: 0.5);
     border-radius: 100%;
-    background-color: white;
     padding: 25px;
     height: 140px;
     width: 140px;
     margin: 0 auto;
+    transition: border-color 0.25s, background-color 0.25s;
+
+    &:hover {
+      border-color: $purple-2;
+      background-color: rgba($color: $purple-2, $alpha: 0.05);
+    }
 
     img {
       height: 100%;
@@ -23,6 +26,7 @@
   h3 {
     margin-top: 20px;
     align-self: center;
+    font-weight: bold;
 
     &::after {
       background-color: white;
