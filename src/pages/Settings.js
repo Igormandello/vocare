@@ -1,5 +1,4 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import UserHeader from '../components/UserHeader';
 import UserSocialMedias from '../components/UserSocialMedias';
@@ -17,9 +16,9 @@ function Settings() {
         <div className="avatar">
           <img src={require('../components/assets/igor.jpg')} alt="profile"/>
           <div>
-            <IconButton color="primary">
+            <Button color="primary">
               <Icon>edit</Icon>
-            </IconButton>
+            </Button>
           </div>
         </div>
         <p className="divider">conectado com:</p>

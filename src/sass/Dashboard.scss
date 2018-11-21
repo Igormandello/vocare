@@ -104,8 +104,12 @@ $level-dot-size: 20px;
         margin-bottom: 20px;
         padding: 15px;
         background-color: $purple-3;
-        transition: box-shadow 0.5s;
+        transition: box-shadow 0.5s, transform 0.5s;
         cursor: pointer;
+
+        &:hover {
+          transform: translateY(-4px);
+        }
 
         & > div {
           display: inline-flex;
