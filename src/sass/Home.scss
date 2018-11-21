@@ -154,6 +154,7 @@
       div {
         flex: 1;
         padding: 0 10px;
+        min-width: 200px;
 
         h3 {
           color: $purple-2;
@@ -185,16 +186,64 @@
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .home {
+    section.intro {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      div:nth-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .home {
-    section.intro blockquote {
-      margin: 0 15%;
+    section.intro {
+      h2 {
+        font-size: 1.8rem;
+      }
     }
 
     .problem div.data img {
       padding: 15px;
       height: 100px;
       width: 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .home {
+    section.intro {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      div:not(:last-child) {
+        margin: 0 25px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .home {
+    section.intro {
+      div h2 {
+        font-size: 1.2rem;
+      }
+
+      div p {
+        font-size: 1rem;
+      }
+
+      div:not(:last-child) {
+        margin: 0 10px;
+      }
     }
   }
 }
