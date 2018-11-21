@@ -12,6 +12,7 @@ $login-shrink: 20;
   width: 100%;
   padding: 10px 20px;
   justify-content: space-between;
+  align-items: center;
 
   nav {
     flex: 1;
@@ -58,13 +59,14 @@ $login-shrink: 20;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .header {
     height: $header-height-sm;
     padding: 10px 5%;
   
     a {
       margin: 0 auto;
+      font-size: 2.2rem;
 
       img {
         height: $header-height-sm - 20px;
