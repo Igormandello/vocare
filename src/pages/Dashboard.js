@@ -3,6 +3,8 @@ import Card from '@material-ui/core/Card';
 import UserHeader from '../components/UserHeader';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
+import store from '../reducers';
+import { addTodo } from '../reducers/actions';
 import '../css/Dashboard.css';
 
 class Dashboard extends Component {
@@ -11,6 +13,10 @@ class Dashboard extends Component {
   }
 
   render() {
+    console.log(store.getState());
+    store.dispatch(addTodo('Learn about actions'));
+    store.dispatch(addTodo('Learn more about actions'));
+    console.log(store.getState());
     return (
       <div className="dashboard">
         <UserHeader />
