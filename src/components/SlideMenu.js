@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import '../css/SlideMenu.css';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import Drawer from '@material-ui/core/Drawer';
+import { withStyles } from '@material-ui/core/styles';
+
+const style = theme => ({
+  root: {
+    position: 'absolute',
+    '@media only screen and (min-width: 993px)': {
+      display: 'none'
+    }
+  }
+});
 
 class SlideMenu extends Component {
   constructor(props) {
@@ -10,7 +22,7 @@ class SlideMenu extends Component {
     };
   }
 
-  openMenu = () => {
+  handleOpen = () => {
     this.setState(() => {
       return {
         open: true
@@ -18,7 +30,7 @@ class SlideMenu extends Component {
     });
   }
 
-  closeMenu = () => {
+  handleClose = () => {
     this.setState(() => {
       return {
         open: false
@@ -27,20 +39,22 @@ class SlideMenu extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className={'slideMenu' + (this.state.open ? ' open' : '')}>
-        <div className="menu-overlay" onClick={this.closeMenu}/>
-        <div className="menu">
+      <div className={classes.root}>
+        <Drawer
+          open={this.state.open}
+          onClose={this.handleClose}
+        >
           {this.props.children}
-        </div>
-        <div className="menu-button" onClick={this.openMenu}>
-          <span/>
-          <span/>
-          <span/>
-        </div>
+        </Drawer>
+        <IconButton onClick={this.handleOpen} color="secondary" aria-label="menu">
+          <Icon>menu</Icon>
+        </IconButton>
       </div>
     );
   }
 }
 
-export default SlideMenu;
+export default withStyles(style)(SlideMenu);
