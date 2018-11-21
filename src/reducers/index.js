@@ -1,38 +1,19 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers } from 'redux';
 import {
-  ADD_TODO,
-  SET_VISIBILITY_FILTER,
-  VisibilityFilters
-} from './actions'
-const { SHOW_ALL } = VisibilityFilters
+  USER_FETCH_SUCCEEDED,
+} from './actions';
 
-function visibilityFilter(state = SHOW_ALL, action) {
+function users(state = [], action) {
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return action.filter
+    case USER_FETCH_SUCCEEDED:
+      return action.user
     default:
-      return state
+      return state;
   }
 }
 
-function todos(state = [], action) {
-  switch (action.type) {
-    case ADD_TODO:
-      return [
-        ...state,
-        {
-          text: action.text,
-          completed: false
-        }
-      ]
-    default:
-      return state
-  }
-}
+const reducer = combineReducers({
+  users
+});
 
-const todoApp = combineReducers({
-  visibilityFilter,
-  todos
-})
-
-export default createStore(todoApp);
+export default reducer;

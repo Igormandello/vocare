@@ -1,14 +1,3 @@
-export const ADD_TODO = 'ADD_TODO';
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL'
-}
-
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
-}
-
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
-}
+export const USER_FETCH_REQUESTED = 'USER_FETCH_REQUESTED';
+export const USER_FETCH_SUCCEEDED = 'USER_FETCH_SUCCEEDED';
+export const USER_FETCH_FAILED = 'USER_FETCH_FAILED';
