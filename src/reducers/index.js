@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import {
-  USER_FETCH_SUCCEEDED,
+  USERS_FETCH_SUCCEEDED,
 } from './actions';
 
 function users(state = [], action) {
   switch (action.type) {
-    case USER_FETCH_SUCCEEDED:
-      return action.user
+    case USERS_FETCH_SUCCEEDED:
+      return action.users;
     default:
       return state;
   }

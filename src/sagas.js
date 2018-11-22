@@ -1,4 +1,5 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { USERS_FETCH_REQUESTED, USERS_FETCH_SUCCEEDED, USERS_FETCH_FAILED } from './reducers/actions';
 
 const Api = {
   fetchUser: (id) => {
@@ -11,13 +12,19 @@ const Api = {
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchUser(action) {
-   try {
-     console.log(action);
-      const user = yield call(Api.fetchUser, action.userId);
-      yield put({type: 'USER_FETCH_SUCCEEDED', user: user});
-   } catch (e) {
-      yield put({type: 'USER_FETCH_FAILED', message: e.message});
-   }
+  try {
+    console.log(action);
+    const users = yield call(Api.fetchUser, action.userId);
+    yield put({
+      type: USERS_FETCH_SUCCEEDED,
+      users: users
+    });
+  } catch (e) {
+    yield put({
+      type: USERS_FETCH_FAILED,
+      message: e.message
+    });
+  }
 }
 
 /*
@@ -36,7 +43,7 @@ function* mySaga() {
   and only the latest one will be run.
 */
 function* mySaga() {
-  yield takeLatest('USER_FETCH_REQUESTED', fetchUser);
+  yield takeLatest(USERS_FETCH_REQUESTED, fetchUser);
 }
 
 export default mySaga;
