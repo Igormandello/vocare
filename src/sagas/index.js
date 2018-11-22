@@ -3,7 +3,7 @@ import usersSaga from './usersSaga';
 
 function* watchAll() {
   yield all([
-    usersSaga
+    ...usersSaga
   ]);
 }
 

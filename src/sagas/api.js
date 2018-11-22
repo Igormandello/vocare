@@ -1,5 +1,5 @@
 export default {
-  fetchUser: (id) => {
+  fetchUsers: (id) => {
     if (id && Number.isInteger(id) && id > 0)
       return fetch('http://localhost:8080/api/users/' + id).then(res => res.json());
 
