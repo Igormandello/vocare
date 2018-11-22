@@ -1,8 +1,21 @@
 export default {
-  fetchUsers: (id) => {
-    if (id && Number.isInteger(id) && id > 0)
-      return fetch('http://localhost:8080/api/users/' + id).then(res => res.json());
+  loginUser: (email, password) => {
+    return fetch('http://localhost:8080/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+    .then(res => {
+      if (!res.ok)
+        return null;
 
-    return fetch('http://localhost:8080/api/users/').then(res => res.json());
+      return res.json();
+    });
   }
 };
