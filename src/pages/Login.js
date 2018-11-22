@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from '../actions/authActions';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -6,7 +8,9 @@ import UserSocialMedias from '../components/UserSocialMedias';
 import Footer from '../components/Footer';
 import '../css/FormPages.css';
 
-function Login() {
+function Login(props) {
+  console.log(props.login);
+  
   return (
     <div className="login">
       <Header />
@@ -14,9 +18,9 @@ function Login() {
         <div>
           <h1>Login</h1>
           <form>
-            <Input label="Usuário"/>
-            <Input label="Senha" type="password"/>
-            <Button href="/vocare/dashboard" text="Entrar"/>
+            <Input id="email" label="Usuário"/>
+            <Input id="pass" label="Senha" type="password"/>
+            <Button onClick={() => props.loginUser(document.querySelector('#email').value, document.querySelector('#pass').value)} text="Entrar"/>
           </form>
           <p className="divider">ou acesse com:</p>
           <UserSocialMedias />
@@ -32,4 +36,7 @@ function Login() {
   );
 }
 
-export default Login;
+export default connect(
+  (state) => ({ login: state.auth.login }),
+  { loginUser }
+)(Login);
