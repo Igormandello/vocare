@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Icon from '@material-ui/core/Icon';
@@ -10,7 +11,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../actions/authActions';
 import SlideMenu from './SlideMenu';
 import Popover from './Popover';
 import '../css/Header.css';
@@ -30,6 +32,7 @@ class UserHeader extends React.Component {
   }
 
   render() {
+    console.log(this.props.auth);
     return (
       <AppBar position="static">
         <Toolbar className="header userHeader">
@@ -83,6 +86,13 @@ class UserHeader extends React.Component {
                   <ListItemText primary="Conhecendo profissões"/>
                 </ListItem>
               </Link>
+              <Divider />
+              <ListItem button onClick={this.props.logout}>
+                <ListItemIcon>
+                  <Icon>logout</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Sair"/>
+              </ListItem>
             </List>
           </SlideMenu>
           <Link to="/vocare/dashboard"> 
@@ -111,7 +121,7 @@ class UserHeader extends React.Component {
                 items={[
                   { onClick: this.handleContrast, text: 'Alto Contraste' },
                   { href: '/vocare/settings', text: 'Configurações' },
-                  { href: '/vocare/', text: 'Sair' }
+                  { onClick: this.props.logout, href: '/vocare/', text: 'Sair' }
                 ]}>
                 <Icon>settings</Icon>
               </Popover>
@@ -123,4 +133,7 @@ class UserHeader extends React.Component {
   }
 }
 
-export default UserHeader;
+export default connect(
+  (state) => ({ auth: state.auth }),
+  { logout }
+)(UserHeader);

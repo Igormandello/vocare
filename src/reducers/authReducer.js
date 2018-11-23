@@ -1,20 +1,34 @@
-import { combineReducers } from 'redux';
-import { LOGIN_SUCCEEDED, LOGIN_FAILED, LOGIN_REQUESTED } from '../actions/authActions';
+import {
+  LOGIN_REQUESTED,
+  LOGIN_SUCCEEDED,
+  LOGIN_FAILED,
+  LOGOUT_REQUESTED,
+  LOGOUT_SUCCEEDED,
+  LOGOUT_FAILED
+} from '../actions/authActions';
 
-function login(state = { error: false, logged: false, user: null }, action) {
+function auth(state = { error: false, logged: false }, action) {
   switch (action.type) {
     case LOGIN_SUCCEEDED:
-      localStorage.setItem('user', action.user);
+      localStorage.setItem('user', JSON.stringify(action.user));
       return {
-        ...state,
+        error: false,
         logged: true
       };
     case LOGIN_FAILED:
+    case LOGOUT_FAILED:
       return {
         ...state,
         error: true
       };
+    case LOGOUT_SUCCEEDED:
+      localStorage.removeItem('user');
+      return {
+        error: false,
+        logged: false
+      };
     case LOGIN_REQUESTED:
+    case LOGOUT_REQUESTED:
       return state;
     default:
       return {
@@ -24,6 +38,4 @@ function login(state = { error: false, logged: false, user: null }, action) {
   }
 }
 
-export default combineReducers({
-  login
-});
+export default auth;

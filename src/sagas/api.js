@@ -17,5 +17,21 @@ export default {
 
       return res.json();
     });
+  },
+  logout: (id, access_token) => {
+    return fetch('http://localhost:8080/api/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token,
+      },
+      body: JSON.stringify({
+        id
+      })
+    })
+    .then(res => {
+      return res.ok;
+    });
   }
 };

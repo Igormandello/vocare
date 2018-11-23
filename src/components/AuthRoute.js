@@ -9,7 +9,7 @@ function AuthRoute(props) {
       path={props.path}
       exact={props.exact}
       render={(routeProps) => {
-        if (props.login.logged)
+        if (props.auth.logged)
           return <props.component {...routeProps} />
         else
           return <Redirect to='/vocare/login'/>
@@ -20,7 +20,7 @@ function AuthRoute(props) {
       path={props.path}
       exact={props.exact}
       render={(routeProps) => {
-        if (!props.login.logged)
+        if (!props.auth.logged)
           return <props.component {...routeProps} />
         else
           return <Redirect to='/vocare/dashboard/'/>
@@ -29,5 +29,5 @@ function AuthRoute(props) {
 }
 
 export default withRouter(connect(
-  (state) => ({ login: state.auth.login })
+  (state) => ({ auth: state.auth })
 )(AuthRoute));
