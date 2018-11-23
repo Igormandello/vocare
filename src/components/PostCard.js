@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
@@ -19,7 +20,7 @@ function PostCard(props) {
 
   return (
     <Card className="postCard" elevation={2}>
-      <CardActionArea href={props.link}>
+      <CardActionArea component={Link} to={props.link}>
         <CardHeader
           avatar={
             <Avatar aria-label="User" src={require('./assets/' + props.user.image)}/>

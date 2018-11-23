@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import MaterialButton from '@material-ui/core/Button';
 import classNames from 'classnames';
@@ -6,15 +7,26 @@ import classNames from 'classnames';
 function Button(props) {
   const { classes, children, className, text, newTab, href, variant, color, noShadow, thickBorder, onClick } = props;
 
+  let linkProps = {};
+  if (href) {
+    if (!newTab) {
+      linkProps['component'] = Link;
+      linkProps['to'] = href;
+    } else {
+      linkProps['target'] = '_blank';
+      linkProps['rel'] = 'noopener noreferrer';
+      linkProps['href'] = href;
+    }
+  }
+
   return (
     <MaterialButton 
       variant={variant || 'outlined'}
       color={color || 'primary'}
       className={classNames(classes.root, className, noShadow ? classes.noShadow : {}, thickBorder ? classes.thick : {})}
       onClick={onClick}
-      href={href}
-      target={newTab ? '_blank' : '_self'}
-      rel={newTab ? 'noopener noreferrer' : ''}>
+      {...linkProps}
+      >
       {text}
       {children}
     </MaterialButton>
