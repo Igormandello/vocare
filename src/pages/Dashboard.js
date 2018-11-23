@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import UserHeader from '../components/UserHeader';
 import Button from '../components/Button';
@@ -60,7 +61,7 @@ class Dashboard extends Component {
           </div>
           <div>
             <h2>O que estão debatendo...</h2>
-            <a href="/vocare/post">
+            <Link to="/vocare/post">
               <Card 
                 className="post" 
                 elevation={this.state.elevation}
@@ -78,7 +79,7 @@ class Dashboard extends Component {
                   </div>
                 </div>
               </Card>
-            </a>
+            </Link>
             <Button text="Veja outras discussões" href="/vocare/discussion"/>
           </div>
         </section>

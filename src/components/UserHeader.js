@@ -85,9 +85,9 @@ class UserHeader extends React.Component {
               </Link>
             </List>
           </SlideMenu>
-          <a href="/vocare/dashboard"> 
+          <Link to="/vocare/dashboard"> 
             VOcAre
-          </a>
+          </Link>
           <div className="nav">
             <Popover ref="notificationsPop" target={this.notifications}
               items={[
@@ -101,12 +101,12 @@ class UserHeader extends React.Component {
                 </Badge>
               </div>
             </Popover>
-            <a className="name" href="/vocare/dashboard">Igor</a> 
+            <Link className="name" to="/vocare/dashboard">Igor</Link> 
  
             <div> 
-              <a href="/vocare/dashboard"> 
+              <Link to="/vocare/dashboard"> 
                 <img src={require('./assets/igor.jpg')} alt="profile"/> 
-              </a> 
+              </Link> 
               <Popover
                 items={[
                   { onClick: this.handleContrast, text: 'Alto Contraste' },

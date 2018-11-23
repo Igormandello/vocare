@@ -56,9 +56,9 @@ function Header() {
           <Button variant="text" color="secondary" href="/vocare/about" text="Sobre o projeto"/>
           <Button variant="text" color="secondary" href="/vocare/contact" text="Contato"/>
         </nav>
-        <a href="/vocare/">
+        <Link to="/vocare/">
           VOcAre
-        </a>
+        </Link>
         <nav>
           <Button variant="text" color="secondary" href="/vocare/login" text="Login"/>
           <Button color="secondary" href="/vocare/signup" text="Cadastre-se" noShadow thickBorder/>
