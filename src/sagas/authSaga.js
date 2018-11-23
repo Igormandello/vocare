@@ -12,13 +12,10 @@ import {
 function* loginUser(action) {
   try {
     const user = yield call(Api.loginUser, action.email, action.password);
-    if (user)
-      yield put({
-        type: LOGIN_SUCCEEDED,
-        user: user
-      });
-    else
-      throw user;
+    yield put({
+      type: LOGIN_SUCCEEDED,
+      user: user
+    });
   } catch (e) {
     yield put({
       type: LOGIN_FAILED
@@ -28,10 +25,7 @@ function* loginUser(action) {
 
 function* logout(action) {
   try {
-    let ok = yield call(Api.logout, action.id, action.access_token);
-    if (!ok)
-      throw ok;
-
+    yield call(Api.logout, action.id, action.access_token);
     yield put({
       type: LOGOUT_SUCCEEDED
     });
