@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import AuthRoute from './components/AuthRoute';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
@@ -18,17 +19,17 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Route exact path="/vocare/" component={Home}/>
-          <Route path="/vocare/about" component={About}/>
-          <Route path="/vocare/login" component={Login}/>
-          <Route path="/vocare/signup" component={Signup}/>
-          <Route path="/vocare/contact" component={Contact}/>
-          <Route path="/vocare/dashboard" component={Dashboard}/>
-          <Route path="/vocare/settings" component={Settings}/>
-          <Route path="/vocare/discover" component={Discover}/>
-          <Route path="/vocare/aboutCourse" component={AboutCourse}/>
-          <Route path="/vocare/discussion" component={Discussion}/>
-          <Route path="/vocare/post" component={Post}/>
+          <AuthRoute exact path="/vocare/" component={Home}/>
+          <AuthRoute path="/vocare/about" component={About}/>
+          <AuthRoute path="/vocare/login" component={Login}/>
+          <AuthRoute path="/vocare/signup" component={Signup}/>
+          <AuthRoute path="/vocare/contact" component={Contact}/>
+          <AuthRoute path="/vocare/dashboard" component={Dashboard} requireAuth/>
+          <AuthRoute path="/vocare/settings" component={Settings} requireAuth/>
+          <AuthRoute path="/vocare/discover" component={Discover} requireAuth/>
+          <AuthRoute path="/vocare/aboutCourse" component={AboutCourse} requireAuth/>
+          <AuthRoute path="/vocare/discussion" component={Discussion} requireAuth/>
+          <AuthRoute path="/vocare/post" component={Post} requireAuth/>
         </div>
       </BrowserRouter>
     );

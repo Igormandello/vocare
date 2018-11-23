@@ -9,8 +9,6 @@ import Footer from '../components/Footer';
 import '../css/FormPages.css';
 
 function Login(props) {
-  console.log(props.login);
-  
   return (
     <div className="login">
       <Header />
