@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AuthRoute from './components/AuthRoute';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
@@ -19,17 +20,19 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <AuthRoute exact path="/vocare/" component={Home}/>
-          <AuthRoute path="/vocare/about" component={About}/>
-          <AuthRoute path="/vocare/login" component={Login}/>
-          <AuthRoute path="/vocare/signup" component={Signup}/>
-          <AuthRoute path="/vocare/contact" component={Contact}/>
-          <AuthRoute path="/vocare/dashboard" component={Dashboard} requireAuth/>
-          <AuthRoute path="/vocare/settings" component={Settings} requireAuth/>
-          <AuthRoute path="/vocare/discover" component={Discover} requireAuth/>
-          <AuthRoute path="/vocare/aboutCourse" component={AboutCourse} requireAuth/>
-          <AuthRoute path="/vocare/discussion" component={Discussion} requireAuth/>
-          <AuthRoute path="/vocare/post" component={Post} requireAuth/>
+          <ScrollToTop>
+            <AuthRoute exact path="/vocare/" component={Home}/>
+            <AuthRoute path="/vocare/about" component={About}/>
+            <AuthRoute path="/vocare/login" component={Login}/>
+            <AuthRoute path="/vocare/signup" component={Signup}/>
+            <AuthRoute path="/vocare/contact" component={Contact}/>
+            <AuthRoute path="/vocare/dashboard" component={Dashboard} requireAuth/>
+            <AuthRoute path="/vocare/settings" component={Settings} requireAuth/>
+            <AuthRoute path="/vocare/discover" component={Discover} requireAuth/>
+            <AuthRoute path="/vocare/aboutCourse" component={AboutCourse} requireAuth/>
+            <AuthRoute path="/vocare/discussion" component={Discussion} requireAuth/>
+            <AuthRoute path="/vocare/post" component={Post} requireAuth/>
+          </ScrollToTop>
         </div>
       </BrowserRouter>
     );
