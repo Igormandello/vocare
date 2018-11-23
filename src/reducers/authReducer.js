@@ -7,13 +7,14 @@ import {
   LOGOUT_FAILED
 } from '../actions/authActions';
 
-function auth(state = { error: false, logged: false }, action) {
+function auth(state = { error: false, logged: false, user: null }, action) {
   switch (action.type) {
     case LOGIN_SUCCEEDED:
       localStorage.setItem('user', JSON.stringify(action.user));
       return {
         error: false,
-        logged: true
+        logged: true,
+        user: action.user
       };
     case LOGIN_FAILED:
     case LOGOUT_FAILED:
@@ -25,15 +26,24 @@ function auth(state = { error: false, logged: false }, action) {
       localStorage.removeItem('user');
       return {
         error: false,
-        logged: false
+        logged: false,
+        user: null
       };
     case LOGIN_REQUESTED:
     case LOGOUT_REQUESTED:
       return state;
     default:
+      let user;
+      try {
+        user = JSON.parse(localStorage.getItem('user'));
+      } catch (e) {
+        user = null;
+      }
+
       return {
         ...state,
-        logged: localStorage.getItem('user') != null
+        logged: user != null,
+        user: user
       };
   }
 }

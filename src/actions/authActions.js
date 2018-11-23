@@ -12,6 +12,8 @@ export const loginUser = (email, password) => ({
   password
 });
 
-export const logout = () => ({
+export const logout = (id, access_token) => ({
   type: LOGOUT_REQUESTED,
+  id,
+  access_token
 });

@@ -31,6 +31,10 @@ class UserHeader extends React.Component {
     this.setState({ showMore: !this.state.showMore });
   }
 
+  handleLogout = () => {
+    this.props.logout(this.props.auth.user.id, this.props.auth.user.access_token);
+  }
+
   render() {
     console.log(this.props.auth);
     return (
@@ -87,7 +91,7 @@ class UserHeader extends React.Component {
                 </ListItem>
               </Link>
               <Divider />
-              <ListItem button onClick={this.props.logout}>
+              <ListItem button onClick={this.handleLogout}>
                 <ListItemIcon>
                   <Icon>logout</Icon>
                 </ListItemIcon>
@@ -121,7 +125,7 @@ class UserHeader extends React.Component {
                 items={[
                   { onClick: this.handleContrast, text: 'Alto Contraste' },
                   { href: '/vocare/settings', text: 'Configurações' },
-                  { onClick: this.props.logout, href: '/vocare/', text: 'Sair' }
+                  { onClick: this.handleLogout, href: '/vocare/', text: 'Sair' }
                 ]}>
                 <Icon>settings</Icon>
               </Popover>

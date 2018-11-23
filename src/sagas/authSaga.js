@@ -26,10 +26,9 @@ function* loginUser(action) {
   }
 }
 
-function* logout() {
+function* logout(action) {
   try {
-    let user = JSON.parse(localStorage.getItem('user'));
-    let ok = yield call(Api.logout, user.id, user.access_token);
+    let ok = yield call(Api.logout, action.id, action.access_token);
     if (!ok)
       throw ok;
 
