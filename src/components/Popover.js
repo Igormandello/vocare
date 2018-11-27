@@ -21,22 +21,9 @@ const styles = theme => ({
 });
 
 class Popover extends React.Component {
-  constructor(props) {
-    super(props);
-
-    let items = [];
-    if (props.items)
-      for (let item of props.items)
-        if (item.href)
-          items.push(<Link key={item.text} to={item.href}><MenuItem onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
-        else
-          items.push(<MenuItem key={item.text} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
-
-    this.state = {
-      open: false,
-      items: items
-    };
-  }
+  state = {
+    open: false
+  };
 
   handleToggle = () => {
     if (this.props.onOpen && !this.state.open)
@@ -56,6 +43,14 @@ class Popover extends React.Component {
   render() {
     const { open } = this.state;
     const { classes } = this.props;
+
+    let items = [];
+    if (this.props.items)
+      for (let item of this.props.items)
+        if (item.href)
+          items.push(<Link key={item.text} to={item.href}><MenuItem onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
+        else
+          items.push(<MenuItem key={item.text} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
 
     return (
       <div>
@@ -80,7 +75,7 @@ class Popover extends React.Component {
               <Paper>
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList>
-                    {this.state.items}
+                    {items}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

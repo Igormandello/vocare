@@ -138,11 +138,9 @@ class UserHeader extends React.Component {
           <div className="nav">
             <Popover
               onOpen = {() => this.props.fetchNotifications(this.props.auth.user.id, this.props.auth.user.access_token)}
-              items={[
-                { text: 'Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!' },
-                { text: 'O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?' },
-                { text: '10 usuários gostaram de sua pergunta!' }
-              ]}>
+              items={this.props.notifications.loaded ? this.props.notifications.notifications.map(obj => (
+                { text: obj.message }
+              )) : [{ text: 'Não há notificações!'}]}>
               <Badge badgeContent={this.props.notifications.unreaden} invisible={!this.props.notifications.unreaden} color="secondary">
                 <Icon>notifications</Icon>
               </Badge>
