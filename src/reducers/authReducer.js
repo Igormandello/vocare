@@ -4,15 +4,35 @@ import {
   LOGIN_FAILED,
   LOGOUT_REQUESTED,
   LOGOUT_SUCCEEDED,
-  LOGOUT_FAILED
+  LOGOUT_FAILED,
+  VERIFICATION_REQUESTED,
+  VERIFICATION_SUCCEEDED,
+  VERIFICATION_FAILED,
 } from '../actions/authActions';
 
 function auth(state = { error: false, logged: false, user: null }, action) {
   switch (action.type) {
     case LOGIN_SUCCEEDED:
-      localStorage.setItem('user', JSON.stringify(action.user));
+      localStorage.setItem('user', JSON.stringify({ 
+        id: action.user.id,
+        access_token: action.user.access_token 
+      }));
       return {
         error: false,
+        logged: true,
+        user: action.user
+      };
+    case LOGOUT_SUCCEEDED:
+      localStorage.removeItem('user');
+      return {
+        error: false,
+        logged: false,
+        user: null
+      };
+    case VERIFICATION_SUCCEEDED:
+      console.log(state, action.user);
+      return {
+        ...state,
         logged: true,
         user: action.user
       };
@@ -22,29 +42,17 @@ function auth(state = { error: false, logged: false, user: null }, action) {
         ...state,
         error: true
       };
-    case LOGOUT_SUCCEEDED:
-      localStorage.removeItem('user');
+    case VERIFICATION_FAILED:
       return {
-        error: false,
-        logged: false,
-        user: null
-      };
+        error: true,
+        user: null,
+        logged: false
+      }
     case LOGIN_REQUESTED:
     case LOGOUT_REQUESTED:
-      return state;
+    case VERIFICATION_REQUESTED:
     default:
-      let user;
-      try {
-        user = JSON.parse(localStorage.getItem('user'));
-      } catch (e) {
-        user = null;
-      }
-
-      return {
-        ...state,
-        logged: user != null,
-        user: user
-      };
+      return state;
   }
 }
 

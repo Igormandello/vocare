@@ -26,6 +26,15 @@ export default {
         throw res.statusText;
     });
   },
+  verify: (id, access_token) => {
+    return authRequest(`http://localhost:8080/api/auth/verify/`, 'POST', access_token, { id })
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 
   //Notifications methods
   unreaden: (id, access_token) => {
@@ -45,7 +54,7 @@ export default {
 
       return res.json();
     });
-  }
+  },
 };
 
 function authRequest(url, method, access_token, body = {}) {

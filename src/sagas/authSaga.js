@@ -6,7 +6,10 @@ import {
   LOGIN_FAILED,
   LOGOUT_REQUESTED,
   LOGOUT_SUCCEEDED,
-  LOGOUT_FAILED
+  LOGOUT_FAILED,
+  VERIFICATION_REQUESTED,
+  VERIFICATION_SUCCEEDED,
+  VERIFICATION_FAILED
 } from '../actions/authActions';
 
 function* loginUser(action) {
@@ -36,9 +39,27 @@ function* logout(action) {
   }
 }
 
+function* verify(action) {
+  try {
+    console.log(action.id, action.access_token);
+    const user = yield call(Api.verify, action.id, action.access_token);
+    user.access_token = action.access_token;
+
+    yield put({
+      type: VERIFICATION_SUCCEEDED,
+      user
+    });
+  } catch (e) {
+    yield put({
+      type: VERIFICATION_FAILED
+    });
+  }
+}
+
 const saga = [
   takeEvery(LOGIN_REQUESTED, loginUser),
-  takeEvery(LOGOUT_REQUESTED, logout)
+  takeEvery(LOGOUT_REQUESTED, logout),
+  takeEvery(VERIFICATION_REQUESTED, verify)
 ];
 
 export default saga;
