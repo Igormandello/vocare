@@ -3,11 +3,13 @@ import Api from './api';
 import {
   UNREADEN_REQUESTED,
   UNREADEN_SUCCEEDED,
-  UNREADEN_FAILED
+  UNREADEN_FAILED,
+  NOTIFICATIONS_REQUESTED,
+  NOTIFICATIONS_SUCCEEDED,
+  NOTIFICATIONS_FAILED
 } from '../actions/notificationsActions';
 
 function* unreaden(action) {
-  console.log('oi');
   try {
     const unreaden = yield call(Api.unreaden, action.id, action.access_token);
     yield put({
@@ -21,8 +23,25 @@ function* unreaden(action) {
   }
 }
 
+function* fetchNotifications(action) {
+  try {
+    const notifications = yield call(Api.fetchNotifications, action.id, action.access_token);
+    yield put({
+      type: NOTIFICATIONS_SUCCEEDED,
+      notifications
+    });
+  } catch (e) {
+    yield put({
+      type: NOTIFICATIONS_FAILED
+    });
+  }
+
+  yield unreaden(action);
+}
+
 const saga = [
-  takeEvery(UNREADEN_REQUESTED, unreaden)
+  takeEvery(UNREADEN_REQUESTED, unreaden),
+  takeEvery(NOTIFICATIONS_REQUESTED, fetchNotifications)
 ];
 
 export default saga;
