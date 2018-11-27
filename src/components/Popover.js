@@ -39,6 +39,9 @@ class Popover extends React.Component {
   }
 
   handleToggle = () => {
+    if (this.props.onOpen && !this.state.open)
+      this.props.onOpen();
+
     this.setState(state => ({ open: !state.open }));
   };
 

@@ -15,7 +15,7 @@ import { withStyles } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import { connect } from 'react-redux';
 import { logout } from '../actions/authActions';
-import { unreaden } from '../actions/notificationsActions';
+import { unreaden, fetchNotifications } from '../actions/notificationsActions';
 import SlideMenu from './SlideMenu';
 import Popover from './Popover';
 import '../css/Header.css';
@@ -136,7 +136,8 @@ class UserHeader extends React.Component {
             VOcAre
           </Link>
           <div className="nav">
-            <Popover ref="notificationsPop" target={this.notifications}
+            <Popover
+              onOpen = {() => this.props.fetchNotifications(this.props.auth.user.id, this.props.auth.user.access_token)}
               items={[
                 { text: 'Parabéns! Você atingiu o nível 3. Continue firme na sua jornada!' },
                 { text: 'O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?' },
@@ -175,5 +176,5 @@ class UserHeader extends React.Component {
 
 export default withStyles(styles)(connect(
   (state) => ({ auth: state.auth, notifications: state.notifications }),
-  { logout, unreaden }
+  { logout, unreaden, fetchNotifications }
 )(UserHeader));
