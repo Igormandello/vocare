@@ -6,7 +6,8 @@ import {
   UNREADEN_FAILED,
   NOTIFICATIONS_REQUESTED,
   NOTIFICATIONS_SUCCEEDED,
-  NOTIFICATIONS_FAILED
+  NOTIFICATIONS_FAILED,
+  LOAD_MORE_SUCCEEDED
 } from '../actions/notificationsActions';
 
 function* unreaden(action) {
@@ -30,6 +31,23 @@ function* fetchNotifications(action) {
       type: NOTIFICATIONS_SUCCEEDED,
       notifications
     });
+
+    let { min } = action;
+    if (min) {
+      min -= 10;
+
+      let offset = 1;
+      while (min > 0) {
+        const notifications = yield call(Api.fetchNotifications, action.id, action.access_token, offset);
+        yield put({
+          type: LOAD_MORE_SUCCEEDED,
+          notifications
+        });
+
+        min -= 10;
+        offset++;
+      }
+    }
   } catch (e) {
     yield put({
       type: NOTIFICATIONS_FAILED

@@ -37,8 +37,8 @@ export default {
       return res.json();
     });
   },
-  fetchNotifications: (id, access_token) => {
-    return authRequest(`http://localhost:8080/api/users/${id}/notifications`, 'GET', access_token)
+  fetchNotifications: (id, access_token, page) => {
+    return authRequest(`http://localhost:8080/api/users/${id}/notifications?page=${page}`, 'GET', access_token)
     .then(res => {
       if (!res.ok)
         throw res.statusText;
