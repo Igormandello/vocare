@@ -13,6 +13,10 @@ const styles = theme => ({
   root: {
     zIndex: 1000,
     marginRight: '5px'
+  },
+  icon: {
+    width: '60px',
+    height: '60px'
   }
 });
 
@@ -59,7 +63,8 @@ class Popover extends React.Component {
           aria-owns={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={this.handleToggle}
-          color="secondary">
+          color="secondary"
+          className={classes.icon}>
           {this.props.children}
         </IconButton>
         <Popper open={open} anchorEl={this.anchorEl} className={classes.root} transition>

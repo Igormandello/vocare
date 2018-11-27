@@ -13,6 +13,7 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import { connect } from 'react-redux';
 import { logout } from '../actions/authActions';
+import { unreaden } from '../actions/notificationsActions';
 import SlideMenu from './SlideMenu';
 import Popover from './Popover';
 import '../css/Header.css';
@@ -23,6 +24,10 @@ class UserHeader extends React.Component {
     showMore: false
   }
 
+  componentDidMount = () => {
+    this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+  }
+  
   handleContrast = () => {
     console.log('To Do');
   }
@@ -36,7 +41,7 @@ class UserHeader extends React.Component {
   }
 
   render() {
-    console.log(this.props.auth);
+    console.log(this.props.notifications);
     return (
       <AppBar position="static">
         <Toolbar className="header userHeader">
@@ -109,11 +114,9 @@ class UserHeader extends React.Component {
                 { text: 'O usuário Vitor Bartier criou uma pergunta relacionada a você, que tal ajudá-lo?' },
                 { text: '10 usuários gostaram de sua pergunta!' }
               ]}>
-              <div>
-                <Badge badgeContent={13} color="secondary">
-                  <Icon>notifications</Icon>
-                </Badge>
-              </div>
+              <Badge badgeContent={this.props.notifications.unreaden} invisible={!this.props.notifications.unreaden} color="secondary">
+                <Icon>notifications</Icon>
+              </Badge>
             </Popover>
             <Link className="name" to="/vocare/dashboard">Igor</Link> 
  
@@ -138,6 +141,6 @@ class UserHeader extends React.Component {
 }
 
 export default connect(
-  (state) => ({ auth: state.auth }),
-  { logout }
+  (state) => ({ auth: state.auth, notifications: state.notifications }),
+  { logout, unreaden }
 )(UserHeader);
