@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { verifyUser } from './actions/authActions';
 import AuthRoute from './components/AuthRoute';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
@@ -17,6 +19,20 @@ import './css/App.css';
 
 class App extends Component {
   render() {
+    let user;
+    try {
+      user = JSON.parse(localStorage.getItem('user'));
+      console.log('oi', user);
+    } catch (e) {
+      user = null;
+    }
+
+    if (user) {
+      const { id, access_token } = user;
+      if (!this.props.user || (this.props.user.access_token !== access_token && this.props.user.id !== id))
+        this.props.verifyUser(id, access_token);
+    }
+
     return (
       <BrowserRouter>
         <div className="app">
@@ -39,4 +55,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({ user: state.auth.user }),
+  { verifyUser }
+)(App);
