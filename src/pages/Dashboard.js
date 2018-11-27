@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
+import { connect } from 'react-redux';
 import UserHeader from '../components/UserHeader';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
@@ -12,20 +13,25 @@ class Dashboard extends Component {
   }
 
   render() {
+    let { level } = this.props.user;
+
+    let levelDivs = [];
+    for (let i = 1; i < 6; i++)
+      if (i <= level)
+        levelDivs.push(<div key={i} className="active"/>);
+      else
+        levelDivs.push(<div key={i}/>);
+
     return (
       <div className="dashboard">
         <UserHeader />
         <section className="userData">
           <h1>Bem vindo, Igor</h1>
           <div>
-            <span>Seu nível atual: 3</span>
+            <span>Seu nível atual: {level}</span>
             <div className="level">
               <span></span>
-              <div className="active"></div>
-              <div className="active"></div>
-              <div className="active"></div>
-              <div></div>
-              <div></div>
+              {levelDivs}
             </div>
           </div>
         </section>
@@ -89,4 +95,6 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default connect(
+  (state) => ({ user: state.auth.user }),
+)(Dashboard);
