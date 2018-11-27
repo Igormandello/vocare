@@ -11,6 +11,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
+import { withStyles } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
 import { connect } from 'react-redux';
 import { logout } from '../actions/authActions';
 import { unreaden } from '../actions/notificationsActions';
@@ -19,13 +21,33 @@ import Popover from './Popover';
 import '../css/Header.css';
 import '../css/UserHeader.css';
 
-class UserHeader extends React.Component {
-  state = {
-    showMore: false
+const styles = theme => ({
+  avatar: {
+    backgroundColor: purple['A100']
+  },
+  bigAvatar: {
+    width: 50,
+    height: 50
   }
+})
 
-  componentDidMount = () => {
+class UserHeader extends React.Component {
+  constructor(props) {
+    super(props);
+
     this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+    this.userName = this.props.auth.user.username.split(' ')[0];
+    
+    this.hasPic = false;
+    if (this.props.auth.user.profile_picture) {
+      this.userPic = <Avatar src={this.props.auth.user.profile_picture}/>;
+      this.hasPic = true;
+    } else
+      this.userPic = <Avatar>{this.userName[0]}</Avatar>;
+
+    this.state = {
+      showMore: false,
+    }
   }
   
   handleContrast = () => {
@@ -41,15 +63,21 @@ class UserHeader extends React.Component {
   }
 
   render() {
-    console.log(this.props.notifications);
+    const { classes } = this.props;
+
     return (
       <AppBar position="static">
         <Toolbar className="header userHeader">
           <SlideMenu>
             <List>
               <ListItem button onClick={this.handleExpand}>
-                <Avatar sizes="width:10px; height:10px;" src={require('./assets/igor.jpg')}/>
-                <ListItemText primary="Igor"/>
+                {
+                  React.cloneElement(
+                    this.userPic,
+                    { className: (!this.hasPic ? classes.avatar : '') }
+                  )
+                }
+                <ListItemText primary={this.userName}/>
                 {this.state.showMore ? <Icon>expand_less</Icon> : <Icon>expand_more</Icon>}
               </ListItem>
               <Collapse in={this.state.showMore} timeout="auto" unmountOnExit>
@@ -118,11 +146,16 @@ class UserHeader extends React.Component {
                 <Icon>notifications</Icon>
               </Badge>
             </Popover>
-            <Link className="name" to="/vocare/dashboard">Igor</Link> 
+            <Link className="name" to="/vocare/dashboard">{this.userName}</Link> 
  
             <div> 
               <Link to="/vocare/dashboard"> 
-                <img src={require('./assets/igor.jpg')} alt="profile"/> 
+                {
+                  React.cloneElement(
+                    this.userPic,
+                    { className: [classes.bigAvatar, (!this.hasPic ? classes.avatar : '')].join(' ') }
+                  )
+                }
               </Link> 
               <Popover
                 items={[
@@ -140,7 +173,7 @@ class UserHeader extends React.Component {
   }
 }
 
-export default connect(
+export default withStyles(styles)(connect(
   (state) => ({ auth: state.auth, notifications: state.notifications }),
   { logout, unreaden }
-)(UserHeader);
+)(UserHeader));
