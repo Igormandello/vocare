@@ -12,8 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     zIndex: 1000,
-    marginRight: '5px',
-    width: '500px'
+    marginRight: '5px'
   },
   icon: {
     width: '60px',
@@ -25,7 +24,8 @@ const styles = theme => ({
     height: 'auto'
   },
   list: {
-    maxHeight: '80vh'
+    maxHeight: '80vh',
+    overflowY: 'auto'
   }
 });
 
@@ -57,9 +57,13 @@ class Popover extends React.Component {
     if (this.props.items)
       for (let item of this.props.items)
         if (item.href)
-          items.push(<Link key={item.text} to={item.href}><MenuItem className={classes.item} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
+          items.push(<Link key={item.key} to={item.href}><MenuItem className={classes.item} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
         else
-          items.push(<MenuItem className={classes.item} key={item.text} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
+          items.push(<MenuItem key={item.key} className={classes.item} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
+
+    let width = 'auto';
+    if (this.props.width)
+      width = this.props.width;
 
     return (
       <div>
@@ -74,7 +78,7 @@ class Popover extends React.Component {
           className={classes.icon}>
           {this.props.children}
         </IconButton>
-        <Popper open={open} anchorEl={this.anchorEl} className={classes.root} transition>
+        <Popper open={open} anchorEl={this.anchorEl} style={{ width }} className={classes.root} transition>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}

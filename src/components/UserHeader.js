@@ -36,8 +36,11 @@ class UserHeader extends React.Component {
     super(props);
 
     this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+    this.fetchUnreaden = setInterval(() => {
+      this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+    }, 5000);
+
     this.userName = this.props.auth.user.username.split(' ')[0];
-    
     this.hasPic = false;
     if (this.props.auth.user.profile_picture) {
       this.userPic = <Avatar src={this.props.auth.user.profile_picture}/>;
@@ -48,6 +51,10 @@ class UserHeader extends React.Component {
     this.state = {
       showMore: false,
     }
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.fetchUnreaden);
   }
   
   handleContrast = () => {
@@ -64,6 +71,7 @@ class UserHeader extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { unreaden, notifications, loaded } = this.props.notifications;
 
     return (
       <AppBar position="static">
@@ -137,11 +145,21 @@ class UserHeader extends React.Component {
           </Link>
           <div className="nav">
             <Popover
-              onOpen = {() => this.props.fetchNotifications(this.props.auth.user.id, this.props.auth.user.access_token)}
-              items={this.props.notifications.loaded ? this.props.notifications.notifications.map(obj => (
-                { text: obj.message }
-              )) : [{ text: 'Não há notificações!'}]}>
-              <Badge badgeContent={this.props.notifications.unreaden} invisible={!this.props.notifications.unreaden} color="secondary">
+              width='500px'
+              onOpen={() => this.props.fetchNotifications(this.props.auth.user.id, this.props.auth.user.access_token, unreaden)}
+              items={
+                loaded ?
+                notifications.map(obj => {
+                  return {
+                    text: obj.message,
+                    key: obj.number
+                  }
+                })
+                :
+                [{ key: 1, text: 'Não há notificações!'}]
+              }
+            >
+              <Badge badgeContent={unreaden ? unreaden : ''} invisible={!unreaden} color="secondary">
                 <Icon>notifications</Icon>
               </Badge>
             </Popover>
@@ -158,9 +176,9 @@ class UserHeader extends React.Component {
               </Link> 
               <Popover
                 items={[
-                  { onClick: this.handleContrast, text: 'Alto Contraste' },
-                  { href: '/vocare/settings', text: 'Configurações' },
-                  { onClick: this.handleLogout, href: '/vocare/', text: 'Sair' }
+                  { key: 1, onClick: this.handleContrast, text: 'Alto Contraste' },
+                  { key: 2, href: '/vocare/settings', text: 'Configurações' },
+                  { key: 3, onClick: this.handleLogout, href: '/vocare/', text: 'Sair' }
                 ]}>
                 <Icon>settings</Icon>
               </Popover>
