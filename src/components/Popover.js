@@ -12,11 +12,20 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     zIndex: 1000,
-    marginRight: '5px'
+    marginRight: '5px',
+    width: '500px'
   },
   icon: {
     width: '60px',
     height: '60px'
+  },
+  item: {
+    fontSize: '.9rem',
+    whiteSpace: 'normal',
+    height: 'auto'
+  },
+  list: {
+    maxHeight: '80vh'
   }
 });
 
@@ -48,9 +57,9 @@ class Popover extends React.Component {
     if (this.props.items)
       for (let item of this.props.items)
         if (item.href)
-          items.push(<Link key={item.text} to={item.href}><MenuItem onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
+          items.push(<Link key={item.text} to={item.href}><MenuItem className={classes.item} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem></Link>);
         else
-          items.push(<MenuItem key={item.text} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
+          items.push(<MenuItem className={classes.item} key={item.text} onClick={item.onClick || this.handleClose}>{item.text}</MenuItem>);
 
     return (
       <div>
@@ -74,7 +83,7 @@ class Popover extends React.Component {
             >
               <Paper>
                 <ClickAwayListener onClickAway={this.handleClose}>
-                  <MenuList>
+                  <MenuList className={classes.list}>
                     {items}
                   </MenuList>
                 </ClickAwayListener>
