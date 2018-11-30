@@ -26,16 +26,7 @@
     border-radius: 100%;
     background-color: $purple-3;
 
-    img {
-      height: inherit;
-      padding: inherit;
-    }
-
-    & > img {
-      border-radius: 100%;
-    }
-
-    & > div {
+    .edit {
       position: absolute;
       right: 15px;
       bottom: 0;
