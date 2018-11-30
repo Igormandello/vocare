@@ -22,7 +22,6 @@ class App extends Component {
     let user;
     try {
       user = JSON.parse(localStorage.getItem('user'));
-      console.log('oi', user);
     } catch (e) {
       user = null;
     }

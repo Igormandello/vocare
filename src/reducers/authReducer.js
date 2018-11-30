@@ -30,7 +30,6 @@ function auth(state = { error: false, logged: false, user: null }, action) {
         user: null
       };
     case VERIFICATION_SUCCEEDED:
-      console.log(state, action.user);
       return {
         ...state,
         logged: true,

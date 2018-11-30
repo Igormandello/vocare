@@ -41,7 +41,6 @@ function* logout(action) {
 
 function* verify(action) {
   try {
-    console.log(action.id, action.access_token);
     const user = yield call(Api.verify, action.id, action.access_token);
     user.access_token = action.access_token;
 

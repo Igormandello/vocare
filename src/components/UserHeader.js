@@ -29,7 +29,7 @@ const styles = theme => ({
     width: 50,
     height: 50
   }
-})
+});
 
 class UserHeader extends React.Component {
   constructor(props) {
