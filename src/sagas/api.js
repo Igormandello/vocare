@@ -1,7 +1,9 @@
+const API_HOST = 'http://localhost:8080';
+
 export default {
   //Auth methods
   loginUser: (email, password) => {
-    return fetch('http://localhost:8080/api/auth/login', {
+    return fetch(`${API_HOST}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -20,14 +22,14 @@ export default {
     });
   },
   logout: (id, access_token) => {
-    return authRequest('http://localhost:8080/api/auth/logout', 'POST', access_token, { id })
+    return authRequest(`${API_HOST}/api/auth/logout`, 'POST', access_token, { id })
     .then(res => {
       if (!res.ok)
         throw res.statusText;
     });
   },
   verify: (id, access_token) => {
-    return authRequest(`http://localhost:8080/api/auth/verify/`, 'POST', access_token, { id })
+    return authRequest(`${API_HOST}/api/auth/verify/`, 'POST', access_token, { id })
     .then(res => {
       if (!res.ok)
         throw res.statusText;
@@ -38,7 +40,7 @@ export default {
 
   //Notifications methods
   unreaden: (id, access_token) => {
-    return authRequest(`http://localhost:8080/api/users/${id}/notifications/unreaden`, 'GET', access_token)
+    return authRequest(`${API_HOST}/api/users/${id}/notifications/unreaden`, 'GET', access_token)
     .then(res => {
       if (!res.ok)
         throw res.statusText;
@@ -47,7 +49,7 @@ export default {
     });
   },
   fetchNotifications: (id, access_token, page) => {
-    return authRequest(`http://localhost:8080/api/users/${id}/notifications?page=${page}`, 'GET', access_token)
+    return authRequest(`${API_HOST}/api/users/${id}/notifications?page=${page}`, 'GET', access_token)
     .then(res => {
       if (!res.ok)
         throw res.statusText;
@@ -55,6 +57,17 @@ export default {
       return res.json();
     });
   },
+
+  //Users methods
+  editUserPicture: (newPicture, id, access_token) => {
+    return authRequest(`${API_HOST}/api/users/${id}/profile_picture`, 'PUT', access_token, { profile_picture: newPicture })
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  }
 };
 
 function authRequest(url, method, access_token, body = {}) {
