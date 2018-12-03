@@ -13,7 +13,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    let { level } = this.props.user;
+    let { level, username } = this.props.user;
 
     let levelDivs = [];
     for (let i = 1; i < 6; i++)
@@ -22,11 +22,13 @@ class Dashboard extends Component {
       else
         levelDivs.push(<div key={i}/>);
 
+    username = username.split(' ')[0];
+
     return (
       <div className="dashboard">
         <UserHeader />
         <section className="userData">
-          <h1>Bem vindo, Igor</h1>
+          <h1>Bem vindo, {username}</h1>
           <div>
             <span>Seu nível atual: {level}</span>
             <div className="level">

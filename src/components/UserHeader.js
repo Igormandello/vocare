@@ -69,9 +69,9 @@ class UserHeader extends React.Component {
 
     let userName = user.username.split(' ')[0];
     let userPic;
-    if (user.profile_picture) {
-      userPic = <Avatar className={classes.avatar} src={user.profile_picture}/>;
-    } else
+    if (user.profile_picture)
+      userPic = <Avatar src={user.profile_picture}/>;
+    else
       userPic = <Avatar className={classes.avatar}>{userName[0]}</Avatar>;
 
     return (
@@ -81,7 +81,7 @@ class UserHeader extends React.Component {
             <List>
               <ListItem button onClick={this.handleExpand}>
                 {userPic}
-                <ListItemText primary={this.userName}/>
+                <ListItemText primary={userName}/>
                 {this.state.showMore ? <Icon>expand_less</Icon> : <Icon>expand_more</Icon>}
               </ListItem>
               <Collapse in={this.state.showMore} timeout="auto" unmountOnExit>
@@ -159,14 +159,14 @@ class UserHeader extends React.Component {
                 <Icon>notifications</Icon>
               </Badge>
             </Popover>
-            <Link className="name" to="/vocare/dashboard">{this.userName}</Link> 
+            <Link className="name" to="/vocare/dashboard">{userName}</Link> 
  
             <div> 
               <Link to="/vocare/dashboard"> 
                 {
                   React.cloneElement(
                     userPic,
-                    { className: classes.bigAvatar }
+                    { className: [(!user.profile_picture ? classes.avatar : {}), classes.bigAvatar].join(' ') }
                   )
                 }
               </Link> 

@@ -18,7 +18,8 @@ const styles = theme => ({
   },
   bigAvatar: {
     width: 'inherit',
-    height: 'inherit'
+    height: 'inherit',
+    fontSize: '5rem'
   },
   hiddenInput: {
     display: 'none'
@@ -44,13 +45,15 @@ class Settings extends Component {
 
   handleSaveChanges = () => {
     const { username, email, password, confirmPassword } = this.refs;
+    if (password.getValue() !== confirmPassword.getValue())
+      return;
+
     const newUser = {
       username: username.getValue(),
       email: email.getValue(),
       password: password.getValue()
     };
 
-    console.log(this.props.user);
     this.props.editUserInfo(this.props.user, newUser);
   }
 
@@ -62,7 +65,7 @@ class Settings extends Component {
     if (profile_picture)
       userPic = <Avatar src={profile_picture} className={classes.bigAvatar}/>;
     else
-      userPic = <Avatar className={[classes.avatar, classes.bigAvatar]}>{username.split(' ')[0][0]}</Avatar>;
+      userPic = <Avatar className={[classes.avatar, classes.bigAvatar].join(' ')}>{username.split(' ')[0][0]}</Avatar>;
 
     return (
       <div className="settings">
