@@ -28,8 +28,11 @@ class Settings extends Component {
   componentDidMount() {
     document.querySelector('#uploadImage').addEventListener('change', function() {
       if (this.files && this.files[0]) {
-        let url = window.URL.createObjectURL(this.files[0]);
-        console.log(url);
+        let reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);
+        reader.onloadend = (event) => {
+          console.log(event.target.result)
+        };
       }
     });
   }
