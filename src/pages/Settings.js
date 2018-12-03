@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { editUserPicture } from '../actions/usersActions';
+import { editUserPicture, editUserInfo } from '../actions/usersActions';
 import Icon from '@material-ui/core/Icon';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
@@ -38,6 +38,22 @@ class Settings extends Component {
     });
   }
 
+  handleImageUpload = () => {
+    document.querySelector('#uploadImage').click();
+  }
+
+  handleSaveChanges = () => {
+    const { username, email, password, confirmPassword } = this.refs;
+    const newUser = {
+      username: username.getValue(),
+      email: email.getValue(),
+      password: password.getValue()
+    };
+
+    console.log(this.props.user);
+    this.props.editUserInfo(this.props.user, newUser);
+  }
+
   render() {
     const { classes, user } = this.props;
     const { username, profile_picture, email } = user;
@@ -56,7 +72,7 @@ class Settings extends Component {
           <div className="avatar">
             {userPic}
             <div className="edit">
-              <Button onClick={() => document.querySelector('#uploadImage').click()} color="primary">
+              <Button onClick={this.handleImageUpload} color="primary">
                 <Icon>edit</Icon>
               </Button>
             </div>
@@ -66,13 +82,13 @@ class Settings extends Component {
           <div className={classes.hiddenInput}>
             <Input id="uploadImage" type="file"/>
           </div>
-          <Input label="Nome" defaultValue={username}/>
-          <Input label="E-mail" type="email" defaultValue={email}/>
-          <Input label="Senha" type="password"/>
-          <Input label="Confirmar senha" type="password"/>
+          <Input ref="username" label="Nome" defaultValue={username}/>
+          <Input ref="email" label="E-mail" type="email" defaultValue={email}/>
+          <Input ref="password" label="Senha" type="password"/>
+          <Input ref="confirmPassword" label="Confirmar senha" type="password"/>
 
           <div className="options">
-            <Button text="Salvar" href="/vocare/dashboard" />
+            <Button text="Salvar" onClick={this.handleSaveChanges} />
             <Button text="Excluir conta"/>
           </div>
         </section>
@@ -84,5 +100,5 @@ class Settings extends Component {
 
 export default withStyles(styles)(connect(
   state => ({ user: state.auth.user }),
-  { editUserPicture }
+  { editUserPicture, editUserInfo }
 )(Settings));

@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../css/Input.css';
 
-function Input(props) {
-  let inputObj = Object.assign({}, props);
-  delete inputObj.label;
-  delete inputObj.type;
+class Input extends Component {
+  getValue = () => {
+    return this.refs.input.value;
+  }
 
-  return (
-    <div className="input">
-      { 
-        props.label &&
-        <label>{props.label}</label>
-      }
-      {
-        props.type === 'textarea' ? <textarea></textarea> : (
-          <input {...inputObj} type={props.type ? props.type : 'text'}/>
-        )
-      }
-    </div>
-  );
+  render() {
+    let inputObj = Object.assign({}, this.props);
+    delete inputObj.label;
+    delete inputObj.type;
+
+    return (
+      <div className="input">
+        { 
+          this.props.label &&
+          <label>{this.props.label}</label>
+        }
+        {
+          this.props.type === 'textarea' ? <textarea ref="input"></textarea> : (
+            <input ref="input" {...inputObj} type={this.props.type ? this.props.type : 'text'}/>
+          )
+        }
+      </div>
+    );
+  }
 }
 
 export default Input;

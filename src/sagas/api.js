@@ -48,7 +48,7 @@ export default {
       return res.json();
     });
   },
-  fetchNotifications: (id, access_token, page) => {
+  fetchNotifications: (id, access_token, page = 0) => {
     return authRequest(`${API_HOST}/api/users/${id}/notifications?page=${page}`, 'GET', access_token)
     .then(res => {
       if (!res.ok)
@@ -61,6 +61,15 @@ export default {
   //Users methods
   editUserPicture: (newPicture, id, access_token) => {
     return authRequest(`${API_HOST}/api/users/${id}/profile_picture`, 'PUT', access_token, { profile_picture: newPicture })
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
+  editUserInfo: (newUser, id, access_token) => {
+    return authRequest(`${API_HOST}/api/users/${id}`, 'PUT', access_token, { ...newUser })
     .then(res => {
       if (!res.ok)
         throw res.statusText;
