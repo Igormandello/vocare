@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { editUserPicture } from '../actions/usersActions';
 import Icon from '@material-ui/core/Icon';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
@@ -26,12 +27,12 @@ const styles = theme => ({
 
 class Settings extends Component {
   componentDidMount() {
-    document.querySelector('#uploadImage').addEventListener('change', function() {
-      if (this.files && this.files[0]) {
+    document.querySelector('#uploadImage').addEventListener('change', (event) => {
+      if (event.target.files && event.target.files[0]) {
         let reader = new FileReader();
-        reader.readAsDataURL(this.files[0]);
+        reader.readAsDataURL(event.target.files[0]);
         reader.onloadend = (event) => {
-          console.log(event.target.result)
+          this.props.editUserPicture(event.target.result, this.props.user.id, this.props.user.access_token);
         };
       }
     });
@@ -82,5 +83,6 @@ class Settings extends Component {
 }
 
 export default withStyles(styles)(connect(
-  state => ({ user: state.auth.user })
+  state => ({ user: state.auth.user }),
+  { editUserPicture }
 )(Settings));

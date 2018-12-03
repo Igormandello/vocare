@@ -35,18 +35,11 @@ class UserHeader extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+    const { user } = this.props.auth;
+    this.props.unreaden(user.id, user.access_token);
     this.fetchUnreaden = setInterval(() => {
-      this.props.unreaden(this.props.auth.user.id, this.props.auth.user.access_token);
+      this.props.unreaden(user.id, user.access_token);
     }, 5000);
-
-    this.userName = this.props.auth.user.username.split(' ')[0];
-    this.hasPic = false;
-    if (this.props.auth.user.profile_picture) {
-      this.userPic = <Avatar src={this.props.auth.user.profile_picture}/>;
-      this.hasPic = true;
-    } else
-      this.userPic = <Avatar>{this.userName[0]}</Avatar>;
 
     this.state = {
       showMore: false,
@@ -72,6 +65,14 @@ class UserHeader extends React.Component {
   render() {
     const { classes } = this.props;
     const { unreaden, notifications, loaded } = this.props.notifications;
+    const { user } = this.props.auth;
+
+    let userName = user.username.split(' ')[0];
+    let userPic;
+    if (user.profile_picture) {
+      userPic = <Avatar className={classes.avatar} src={user.profile_picture}/>;
+    } else
+      userPic = <Avatar className={classes.avatar}>{userName[0]}</Avatar>;
 
     return (
       <AppBar position="static">
@@ -79,12 +80,7 @@ class UserHeader extends React.Component {
           <SlideMenu>
             <List>
               <ListItem button onClick={this.handleExpand}>
-                {
-                  React.cloneElement(
-                    this.userPic,
-                    { className: (!this.hasPic ? classes.avatar : '') }
-                  )
-                }
+                {userPic}
                 <ListItemText primary={this.userName}/>
                 {this.state.showMore ? <Icon>expand_less</Icon> : <Icon>expand_more</Icon>}
               </ListItem>
@@ -169,8 +165,8 @@ class UserHeader extends React.Component {
               <Link to="/vocare/dashboard"> 
                 {
                   React.cloneElement(
-                    this.userPic,
-                    { className: [classes.bigAvatar, (!this.hasPic ? classes.avatar : '')].join(' ') }
+                    userPic,
+                    { className: classes.bigAvatar }
                   )
                 }
               </Link> 
