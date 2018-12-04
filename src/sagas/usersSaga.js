@@ -1,10 +1,13 @@
-import { takeEvery, put, call } from 'redux-saga/effects';
+import { takeEvery, put, call, all } from 'redux-saga/effects';
 import Api from './api';
 import {
   PICTURE_EDIT_REQUESTED,
   PICTURE_EDIT_FAILED,
   INFO_EDIT_REQUESTED,
-  INFO_EDIT_FAILED
+  INFO_EDIT_FAILED,
+  USERS_REQUESTED,
+  USERS_SUCCEEDED,
+  USERS_FAILED
 } from '../actions/usersActions';
 
 import {
@@ -39,9 +42,27 @@ function* editUserInfo(action) {
   }
 }
 
+function* fetchUsers(action) {
+  try {
+    const usersArr = yield all(action.ids.map(userId => call(Api.fetchUser, userId)));
+    const users = {};
+    usersArr.map(user => users[user.id] = user);
+
+    yield put({
+      type: USERS_SUCCEEDED,
+      users
+    });
+  } catch (e) {
+    yield put({
+      type: USERS_FAILED
+    });
+  }
+}
+
 const saga = [
   takeEvery(PICTURE_EDIT_REQUESTED, editUserPicture),
-  takeEvery(INFO_EDIT_REQUESTED, editUserInfo)
+  takeEvery(INFO_EDIT_REQUESTED, editUserInfo),
+  takeEvery(USERS_REQUESTED, fetchUsers)
 ];
 
 export default saga;

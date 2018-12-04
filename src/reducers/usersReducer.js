@@ -2,10 +2,13 @@ import {
   USERS_SUCCEEDED
 } from '../actions/usersActions';
 
-function users(state = {}, action) {
+function users(state = { }, action) {
   switch (action.type) {
     case USERS_SUCCEEDED:
-      return Object.assign(state, action.users);
+      return {
+        ...state,
+        ...action.users
+      }
     default:
       return state;
   }

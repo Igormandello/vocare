@@ -70,6 +70,15 @@ export default {
       return res.json();
     });
   },
+  fetchUser: (id) => {
+    return openRequest(`${API_HOST}/api/users/${id}`, 'GET')
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 
   //Posts methods
   fetchPosts: (page = 0) => {
