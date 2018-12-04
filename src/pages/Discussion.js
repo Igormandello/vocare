@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/postsActions';
+import { fetchUsers } from '../actions/usersActions';
 import Paper from '@material-ui/core/Paper';
 import UserHeader from '../components/UserHeader';
 import ComboBox from '../components/ComboBox';
@@ -16,9 +17,43 @@ class Discussion extends Component {
   }
 
   render() {
-    console.log(this.props.posts);
+    const { posts, users } = this.props;
+    let ids = new Set();
+    for (let post of posts.posts)
+      if (!users[post.user_id])
+        ids.add(post.user_id);
+
     let postsElements = [];
-    posts.forEach((post, i) => postsElements.push(<PostCard key={i} {...post}/>));
+    if (ids.size !== 0)
+      this.props.fetchUsers(Array.from(ids));
+    else {
+      const months = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+      ];
+
+      posts.posts.forEach((post, i) => {
+        const { posted_on, message, title, user_id } = post;
+        const { username, profile_picture } = users[user_id];
+
+        let data = new Date(posted_on);
+        let d = data.getDay();
+        let dataString = (d < 10 ? '0' : '') + d + ' de ' + months[data.getMonth()] + ' de ' + data.getFullYear();
+
+        postsElements.push(
+          <PostCard key={i} 
+            title={title}
+            message={message}
+            data={dataString}
+            user={{           
+              name: username,
+              image: profile_picture
+            }}
+            link='/vocare/post'
+          />
+        )}
+      );
+    }
 
     return (
       <div className="discussion">
@@ -87,6 +122,6 @@ const posts = [
 ]
 
 export default connect(
-  (state) => ({ posts: state.posts }),
-  { fetchPosts }
+  (state) => ({ users: state.users, posts: state.posts }),
+  { fetchPosts, fetchUsers }
 )(Discussion);

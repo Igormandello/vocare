@@ -18,13 +18,17 @@ const styles = theme => ({
 function PostCard(props) {
   const { classes } = props;
 
+  let avatar;
+  if (props.user.image)
+    avatar = <Avatar aria-label="User" src={props.user.image}/>;
+  else
+    avatar = <Avatar aria-label="User" className={classes.purpleAvatar}>{props.user.name.split(' ')[0][0]}</Avatar>;
+
   return (
     <Card className="postCard" elevation={2}>
       <CardActionArea component={Link} to={props.link}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="User" src={require('./assets/' + props.user.image)}/>
-          }
+          avatar={avatar}
           title={props.user.name}
           subheader={props.data}
           className={classes.header}
