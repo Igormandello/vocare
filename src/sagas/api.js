@@ -3,16 +3,9 @@ const API_HOST = 'http://localhost:8080';
 export default {
   //Auth methods
   loginUser: (email, password) => {
-    return fetch(`${API_HOST}/api/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        password
-      })
+    return openRequest(`${API_HOST}/api/auth/login`, 'POST', {
+      email,
+      password
     })
     .then(res => {
       if (!res.ok)
@@ -76,8 +69,32 @@ export default {
 
       return res.json();
     });
-  }
+  },
+
+  //Posts methods
+  fetchPosts: (page = 0) => {
+    return openRequest(`${API_HOST}/api/posts?page=${page}`, 'GET')
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 };
+
+function openRequest(url, method, body = {}) {
+  return fetch(url, {
+    method,
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: method !== 'GET' ? JSON.stringify({
+      ...body
+    }) : undefined
+  });
+}
 
 function authRequest(url, method, access_token, body = {}) {
   return fetch(url, {
