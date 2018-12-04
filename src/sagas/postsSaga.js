@@ -4,9 +4,9 @@ import {
   POSTS_REQUESTED,
   POSTS_SUCCEEDED,
   POSTS_FAILED,
-  LOAD_MORE_REQUESTED,
-  LOAD_MORE_SUCCEEDED,
-  LOAD_MORE_FAILED
+  //LOAD_MORE_REQUESTED,
+  //LOAD_MORE_SUCCEEDED,
+  //LOAD_MORE_FAILED
 } from '../actions/postsActions';
 
 function* fetchPosts(action) {
