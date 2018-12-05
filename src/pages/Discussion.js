@@ -33,7 +33,7 @@ class Discussion extends Component {
       ];
 
       posts.posts.forEach((post, i) => {
-        const { posted_on, message, title, user_id } = post;
+        const { posted_on, message, title, user_id, id } = post;
         const { username, profile_picture } = users[user_id];
 
         let data = new Date(posted_on);
@@ -49,7 +49,7 @@ class Discussion extends Component {
               name: username,
               image: profile_picture
             }}
-            link='/vocare/post'
+            link={'/vocare/post/' + id}
           />
         )}
       );
@@ -82,44 +82,6 @@ class Discussion extends Component {
     );
   }
 }
-
-const posts = [
-  {
-    key: 1,
-    title: 'Eu tenho uma dúvida: o que é melhor entre ciência da computação e engenharia da computação?',
-    message: `Então gente, acho que bastantes usuários tem essa mesma dúvida então estou lançando aqui
-      (claro que para me ajudar também 😅), quais são as diferenças entre os cursos, qual é melhor,
-      qual eu...`,
-    data: '07 de Setembro de 2018',
-    user: {
-      name: 'Vitor Bartier',
-      image: 'bart.jpg'
-    },
-    link: '/vocare/post'
-  }, {
-    key: 2,
-    title: 'Análise e Desenvolvimento de Sistemas vale a pena?',
-    message: `Galera, tava bem em dúvida entre ela, ciência da computação e engenharia da computação,
-      hoje em dia ainda vale a pena fazer esse curso? Se sim, por quê? Obrigado.`,
-    data: '03 de Setembro de 2018',
-    user: {
-      name: 'Igor Mandello',
-      image: 'igor.jpg'
-    },
-    link: '/vocare/post'
-  }, {
-    key: 3,
-    title: 'Engenharia da Computação é muito corrido?',
-    message: `Eu estou terminando meu técnico e provavelmente vou estagiar, será que se eu escolher
-      cursar Engenharia, eu vou acabar não dando conta do trabalho?`,
-    data: '28 de Agosto de 2018',
-    user: {
-      name: 'Lucas Valente',
-      image: 'valente.jpg'
-    },
-    link: '/vocare/post'
-  }
-]
 
 export default connect(
   (state) => ({ users: state.users, posts: state.posts }),

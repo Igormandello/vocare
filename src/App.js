@@ -46,7 +46,7 @@ class App extends Component {
             <AuthRoute path="/vocare/discover" component={Discover} requireAuth/>
             <AuthRoute path="/vocare/aboutCourse" component={AboutCourse} requireAuth/>
             <AuthRoute path="/vocare/discussion" component={Discussion} requireAuth/>
-            <AuthRoute path="/vocare/post" component={Post} requireAuth/>
+            <AuthRoute path="/vocare/post/:id" component={Post} requireAuth/>
           </ScrollToTop>
         </div>
       </BrowserRouter>
