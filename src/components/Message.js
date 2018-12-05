@@ -11,8 +11,8 @@ const styles = theme => ({
     fontSize: '2rem'
   },
   avatar: {
-    width: '100px',
-    height: '100px',
+    width: '120px',
+    height: '120px'
   }
 })
 

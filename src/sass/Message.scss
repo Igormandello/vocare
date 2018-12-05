@@ -4,19 +4,18 @@
   display: inline-flex;
 
   .userProfile {
-    flex: 2;
     margin-right: 10px;
 
     .badge > span {
       position: absolute;
-      left: 72px;
-      top: 72px;
+      left: 92px;
+      top: 92px;
       width: 30px;
       height: 30px;
       background-color: rgba($color: white, $alpha: 0.9);
       border: 1px solid $purple-3;
       font-weight: bold;
-    }
+    } 
 
     p {
       text-align: center;
@@ -31,7 +30,6 @@
   }
 
   .messageData {
-    flex: 8;
     margin-left: 10px;
 
     h1 {

@@ -12,6 +12,8 @@ import '../css/Post.css';
 function Post(props) {
   const { post, error, access_token, users } = props;
   const requested = props.match.params.id;
+  const complete = (i) => i < 10 ? '0' + i : i;
+
   if (String(post.id) !== requested && !error)
     props.viewPost(requested, access_token);
 
@@ -20,17 +22,38 @@ function Post(props) {
     if (!users[comment.user_id])
       ids.add(comment.user_id);
 
+  let postComponent;
+  if (post.user_id)
+    if (!users[post.user_id])
+      ids.add(post.user_id);
+    else {
+      const { posted_on, message, user_id, title } = post;
+      const { username, profile_picture, level } = users[user_id];
+      const date = new Date(posted_on);
+
+      postComponent = <Message
+        message={message}
+        title={title}
+        date={[complete(date.getDate()), complete(date.getMonth() + 1), date.getFullYear()].join('/')}
+        time={complete(date.getHours()) + 'h' + complete(date.getMinutes())}
+        user={{
+          name: username,
+          level: level,
+          messages: 0,
+          image: profile_picture
+        }}
+      >
+        <Button text="Responder"/>
+      </Message>;
+    }
+
   let comments = [];
-  console.log(ids);
   if (ids.size !== 0)
     props.fetchUsers(Array.from(ids));
   else
     post.comments.forEach(comment => {
       const { id, commented_on, message, user_id } = comment;
-      console.log(users, user_id);
       const { username, profile_picture, level } = users[user_id];
-
-      const complete = (i) => i < 10 ? '0' + i : i;
       const date = new Date(commented_on);
 
       comments.push(<Message key={id}
@@ -51,9 +74,7 @@ function Post(props) {
       <UserHeader />
       <section className="row">
         <div className="messages">
-          {/*<Message {...post.question}>
-            <Button text="Responder"/>
-          </Message>*/}
+          {postComponent}
           <h1>Respostas</h1>
           <div className="answers">
             {comments}

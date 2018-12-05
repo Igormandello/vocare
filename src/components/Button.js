@@ -4,6 +4,28 @@ import { withStyles } from '@material-ui/core/styles';
 import MaterialButton from '@material-ui/core/Button';
 import classNames from 'classnames';
 
+const styles = theme => ({
+  root: {
+    height: 50,
+    fontFamily: 'RobotoMedium',
+    letterSpacing: '.75px',
+    borderRadius: 25,
+    padding: '0 25px',
+    margin: '0 auto',
+    transitionDuration: '.4s',
+    textAlign: 'center'
+  },
+  noShadow: {
+    boxShadow: 'none'
+  },
+  thick: {
+    borderWidth: '2px',
+    '&:hover': {
+      borderWidth: '2px'
+    }
+  }
+})
+
 function Button(props) {
   const { classes, children, className, text, newTab, href, variant, color, noShadow, thickBorder, onClick } = props;
 
@@ -33,23 +55,4 @@ function Button(props) {
   );
 }
 
-export default withStyles({
-  root: {
-    height: 50,
-    fontFamily: 'RobotoMedium',
-    letterSpacing: '.75px',
-    borderRadius: 25,
-    padding: '0 25px',
-    margin: '0 auto',
-    transitionDuration: '.4s'
-  },
-  noShadow: {
-    boxShadow: 'none'
-  },
-  thick: {
-    borderWidth: '2px',
-    '&:hover': {
-      borderWidth: '2px'
-    }
-  }
-})(Button);
+export default withStyles(styles)(Button);
