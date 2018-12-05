@@ -6,7 +6,10 @@ import {
   POSTS_FAILED,
   //LOAD_MORE_REQUESTED,
   //LOAD_MORE_SUCCEEDED,
-  //LOAD_MORE_FAILED
+  //LOAD_MORE_FAILED,
+  VIEW_POST_REQUESTED,
+  VIEW_POST_SUCCEEDED,
+  VIEW_POST_FAILED
 } from '../actions/postsActions';
 
 function* fetchPosts(action) {
@@ -23,8 +26,26 @@ function* fetchPosts(action) {
   }
 }
 
+function* loadPost(action) {
+  try {
+    const post = yield call(Api.loadPost, action.id, action.access_token);
+    const comments = yield call(Api.loadComments, action.id, action.access_token);
+    
+    yield put({
+      type: VIEW_POST_SUCCEEDED,
+      post,
+      comments
+    });
+  } catch (e) {
+    yield put({
+      type: VIEW_POST_FAILED
+    });
+  }
+}
+
 const saga = [
-  takeEvery(POSTS_REQUESTED, fetchPosts)
+  takeEvery(POSTS_REQUESTED, fetchPosts),
+  takeEvery(VIEW_POST_REQUESTED, loadPost)
 ];
 
 export default saga;

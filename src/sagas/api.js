@@ -90,6 +90,24 @@ export default {
       return res.json();
     });
   },
+  loadPost: (postId, access_token) => {
+    return authRequest(`${API_HOST}/api/posts/${postId}`, 'GET', access_token)
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
+  loadComments: (postId, access_token) => {
+    return authRequest(`${API_HOST}/api/posts/${postId}/comments`, 'GET', access_token)
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 };
 
 function openRequest(url, method, body = {}) {
