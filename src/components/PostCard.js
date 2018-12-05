@@ -7,11 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { withStyles } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
 import '../css/PostCard.css';
 
 const styles = theme => ({
   header: {
     paddingBottom: 0
+  },
+  purpleAvatar: {
+    backgroundColor: purple['A100']
   }
 })
 
