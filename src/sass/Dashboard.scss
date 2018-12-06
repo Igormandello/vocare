@@ -86,8 +86,8 @@ $level-dot-size: 20px;
         flex-flow: column;
         margin-bottom: 1rem;
 
-        button, a {
-          text-align: center;
+        div > button, div > a {
+          width: 100%;
           margin: 5px 10px;
         }
       }
@@ -97,6 +97,10 @@ $level-dot-size: 20px;
       display: flex;
       flex-direction: column;
       padding: 0 10px;
+
+      & > div:not(.post) {
+        text-align: center;
+      }
 
       .post {
         border: 1px solid rgba(151, 151, 151, 0.2);

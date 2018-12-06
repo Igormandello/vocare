@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { editUserPicture, editUserInfo } from '../actions/usersActions';
 import Icon from '@material-ui/core/Icon';
 import Avatar from '@material-ui/core/Avatar';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { withStyles } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import UserHeader from '../components/UserHeader';
@@ -24,17 +23,7 @@ const styles = theme => ({
   },
   hiddenInput: {
     display: 'none'
-  },
-  buttonProgress: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    marginTop: -16,
-    marginLeft: -16,
-  },
-  wrapper: {
-    position: 'relative',
-  },
+  }
 });
 
 class Settings extends Component {
@@ -104,17 +93,12 @@ class Settings extends Component {
           <Input ref="confirmPassword" label="Confirmar senha" type="password"/>
 
           <div className="options">
-            <div className={classes.wrapper}>
-              <Button 
-                text="Salvar"
-                onClick={this.handleSaveChanges}
-                disabled={requestState.loading}
-              />
-              { requestState.loading && <CircularProgress size={32} className={classes.buttonProgress}/>}
-            </div>
-            <div className={classes.wrapper}>
-              <Button text="Excluir conta"/>
-            </div>
+            <Button 
+              text="Salvar"
+              onClick={this.handleSaveChanges}
+              loading={requestState.loading}
+            />
+            <Button text="Excluir conta"/>
           </div>
         </section>
         <Footer fill />

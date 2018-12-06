@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import MaterialButton from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import classNames from 'classnames';
 
 const styles = theme => ({
@@ -23,11 +24,21 @@ const styles = theme => ({
     '&:hover': {
       borderWidth: '2px'
     }
-  }
+  },
+  buttonProgress: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginTop: -16,
+    marginLeft: -16,
+  },
+  wrapper: {
+    position: 'relative',
+  },
 })
 
 function Button(props) {
-  const { classes, children, className, text, newTab, disabled, href, variant, color, noShadow, thickBorder, onClick } = props;
+  const { classes, children, className, text, newTab, href, variant, color, noShadow, thickBorder, onClick, loading } = props;
 
   let linkProps = {};
   if (href) {
@@ -47,17 +58,20 @@ function Button(props) {
   })
 
   return (
-    <MaterialButton 
-      variant={variant || 'outlined'}
-      color={color || 'primary'}
-      className={btnClassName}
-      onClick={onClick}
-      disabled={disabled}
-      {...linkProps}
-      >
-      {text}
-      {children}
-    </MaterialButton>
+    <div className={classes.wrapper}>
+      <MaterialButton 
+        variant={variant || 'outlined'}
+        color={color || 'primary'}
+        className={btnClassName}
+        onClick={onClick}
+        disabled={loading}
+        {...linkProps}
+        >
+        {text}
+        {children}
+      </MaterialButton>
+      { loading && <CircularProgress size={32} className={classes.buttonProgress}/> }
+    </div>
   );
 }
 

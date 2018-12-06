@@ -15,7 +15,7 @@
     }
 
     div:not(.userSocialMedias) form {
-      & > a, & > button {
+      & > div > a, & > div > button {
         width: 100%;
       }
     }
@@ -33,6 +33,8 @@
 @media only screen and (max-width: 992px) {
   .login, .signup, .contact {
     section {
+      min-height: calc(100vh - #{$header-height-sm + $footer-height});
+
       & > div:first-child {
         margin-right: 20px;
       }
