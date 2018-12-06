@@ -67,8 +67,6 @@ class Settings extends Component {
     else
       userPic = <Avatar className={[classes.avatar, classes.bigAvatar].join(' ')}>{username.split(' ')[0][0]}</Avatar>;
 
-    console.log(requestState);
-
     return (
       <div className="settings">
         <UserHeader />

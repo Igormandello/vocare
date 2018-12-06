@@ -18,7 +18,7 @@ function Login(props) {
           <form>
             <Input id="email" label="Usuário"/>
             <Input id="pass" label="Senha" type="password"/>
-            <Button onClick={() => props.loginUser(document.querySelector('#email').value, document.querySelector('#pass').value)} text="Entrar"/>
+            <Button loading={props.auth.loading} onClick={() => props.loginUser(document.querySelector('#email').value, document.querySelector('#pass').value)} text="Entrar"/>
           </form>
           <p className="divider">ou acesse com:</p>
           <UserSocialMedias />
@@ -35,6 +35,6 @@ function Login(props) {
 }
 
 export default connect(
-  (state) => ({ login: state.auth.login }),
+  (state) => ({ auth: state.auth }),
   { loginUser }
 )(Login);
