@@ -96,7 +96,7 @@ export default connect(
     post: state.posts.loadedPost,
     error: state.posts.error,
     access_token: state.auth.user.access_token,
-    users: state.users
+    users: state.users.users
   }),
   { viewPost, fetchUsers }
 )(Post);

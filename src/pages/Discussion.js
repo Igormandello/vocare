@@ -84,6 +84,6 @@ class Discussion extends Component {
 }
 
 export default connect(
-  (state) => ({ users: state.users, posts: state.posts }),
+  (state) => ({ users: state.users.users, posts: state.posts }),
   { fetchPosts, fetchUsers }
 )(Discussion);

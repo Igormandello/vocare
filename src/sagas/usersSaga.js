@@ -4,6 +4,7 @@ import {
   PICTURE_EDIT_REQUESTED,
   PICTURE_EDIT_FAILED,
   INFO_EDIT_REQUESTED,
+  INFO_EDIT_SUCCEEDED,
   INFO_EDIT_FAILED,
   USERS_REQUESTED,
   USERS_SUCCEEDED,
@@ -17,10 +18,10 @@ import {
 function* editUserPicture(action) {
   try {
     const user = yield call(Api.editUserPicture, action.profile_picture, action.id, action.access_token);
-    yield put({
+    yield put ({
       type: VERIFICATION_SUCCEEDED,
       user
-    });
+    })
   } catch (e) {
     yield put({
       type: PICTURE_EDIT_FAILED
@@ -31,10 +32,15 @@ function* editUserPicture(action) {
 function* editUserInfo(action) {
   try {
     const user = yield call(Api.editUserInfo, Object.assign(action.oldUser, action.newUser), action.id, action.access_token);
-    yield put({
-      type: VERIFICATION_SUCCEEDED,
-      user
-    });
+    yield all([
+      put ({
+        type: VERIFICATION_SUCCEEDED,
+        user
+      }), 
+      put({
+        type: INFO_EDIT_SUCCEEDED
+      })
+    ]);
   } catch (e) {
     yield put({
       type: INFO_EDIT_FAILED

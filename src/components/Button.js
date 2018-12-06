@@ -27,7 +27,7 @@ const styles = theme => ({
 })
 
 function Button(props) {
-  const { classes, children, className, text, newTab, href, variant, color, noShadow, thickBorder, onClick } = props;
+  const { classes, children, className, text, newTab, disabled, href, variant, color, noShadow, thickBorder, onClick } = props;
 
   let linkProps = {};
   if (href) {
@@ -41,12 +41,18 @@ function Button(props) {
     }
   }
 
+  const btnClassName = classNames(classes.root, className, {
+    [classes.noShadow]: noShadow,
+    [classes.thick]: thickBorder
+  })
+
   return (
     <MaterialButton 
       variant={variant || 'outlined'}
       color={color || 'primary'}
-      className={classNames(classes.root, className, noShadow ? classes.noShadow : {}, thickBorder ? classes.thick : {})}
+      className={btnClassName}
       onClick={onClick}
+      disabled={disabled}
       {...linkProps}
       >
       {text}

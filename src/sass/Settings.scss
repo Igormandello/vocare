@@ -51,8 +51,12 @@
     display: flex;
     width: 100%;
 
-    button, a {
+    & > div {
       flex: 1;
+
+      a, button {
+        width: 100%;
+      }
 
       &:last-child {
         margin-left: 20px;

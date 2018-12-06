@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { editUserPicture, editUserInfo } from '../actions/usersActions';
 import Icon from '@material-ui/core/Icon';
 import Avatar from '@material-ui/core/Avatar';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { withStyles } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import UserHeader from '../components/UserHeader';
@@ -23,7 +24,17 @@ const styles = theme => ({
   },
   hiddenInput: {
     display: 'none'
-  }
+  },
+  buttonProgress: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginTop: -16,
+    marginLeft: -16,
+  },
+  wrapper: {
+    position: 'relative',
+  },
 });
 
 class Settings extends Component {
@@ -58,7 +69,7 @@ class Settings extends Component {
   }
 
   render() {
-    const { classes, user } = this.props;
+    const { classes, user, requestState } = this.props;
     const { username, profile_picture, email } = user;
 
     let userPic;
@@ -66,6 +77,8 @@ class Settings extends Component {
       userPic = <Avatar src={profile_picture} className={classes.bigAvatar}/>;
     else
       userPic = <Avatar className={[classes.avatar, classes.bigAvatar].join(' ')}>{username.split(' ')[0][0]}</Avatar>;
+
+    console.log(requestState);
 
     return (
       <div className="settings">
@@ -91,8 +104,17 @@ class Settings extends Component {
           <Input ref="confirmPassword" label="Confirmar senha" type="password"/>
 
           <div className="options">
-            <Button text="Salvar" onClick={this.handleSaveChanges} />
-            <Button text="Excluir conta"/>
+            <div className={classes.wrapper}>
+              <Button 
+                text="Salvar"
+                onClick={this.handleSaveChanges}
+                disabled={requestState.loading}
+              />
+              { requestState.loading && <CircularProgress size={32} className={classes.buttonProgress}/>}
+            </div>
+            <div className={classes.wrapper}>
+              <Button text="Excluir conta"/>
+            </div>
           </div>
         </section>
         <Footer fill />
@@ -102,6 +124,13 @@ class Settings extends Component {
 }
 
 export default withStyles(styles)(connect(
-  state => ({ user: state.auth.user }),
+  state => ({ 
+    user: state.auth.user,
+    requestState: {
+      loading: state.users.loading,
+      done: state.users.loaded,
+      error: state.users.error
+    }
+  }),
   { editUserPicture, editUserInfo }
 )(Settings));
