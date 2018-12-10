@@ -14,10 +14,12 @@ class Signup extends Component {
           email = this.refs.email.getValue(),
           password = this.refs.password.getValue();
           
-    this.props.dispatch(registerUser(username, email, password));
+    this.props.registerUser(username, email, password);
   }
 
   render() {
+    const { loaded, loading, error } = this.props.signupState;
+
     return (
       <div className="signup">
         <Header />
@@ -29,7 +31,7 @@ class Signup extends Component {
               <Input ref="email" label="E-mail" type="email"/>
               <Input ref="password" label="Senha" type="password"/>
               <Input ref="confirmPassword" label="Confirmar senha" type="password"/>
-              <Button onClick={this.registerUser} text="Cadastrar-se"/>
+              <Button loading={loading} onClick={this.registerUser} text="Cadastrar-se"/>
             </form>
             <p className="divider">ou cadastre-se com:</p>
             <UserSocialMedias />
@@ -46,4 +48,7 @@ class Signup extends Component {
   }
 }
 
-export default connect()(Signup);
+export default connect(
+  (state) => ({ signupState: state.users }),
+  { registerUser }
+)(Signup);

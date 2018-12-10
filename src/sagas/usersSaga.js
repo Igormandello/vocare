@@ -15,8 +15,7 @@ import {
 } from '../actions/usersActions';
 
 import {
-  VERIFICATION_SUCCEEDED,
-  LOGIN_REQUESTED
+  VERIFICATION_SUCCEEDED
 } from '../actions/authActions';
 
 function* editUserPicture(action) {
@@ -78,9 +77,8 @@ function* registerUser(action) {
       type: REGISTER_SUCCEEDED
     });
     yield put({
-      type: LOGIN_REQUESTED,
-      email: action.email,
-      password: action.password
+      type: VERIFICATION_SUCCEEDED,
+      user: newUser
     })
   } catch (e) {
     yield put({

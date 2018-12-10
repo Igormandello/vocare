@@ -32,6 +32,11 @@ function auth(state = { error: false, logged: false, loading: false, user: null 
         user: null
       };
     case VERIFICATION_SUCCEEDED:
+      localStorage.setItem('user', JSON.stringify({ 
+        id: action.user.id,
+        access_token: action.user.access_token 
+      }));
+      
       return {
         ...state,
         logged: true,
