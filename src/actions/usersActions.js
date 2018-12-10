@@ -10,6 +10,10 @@ export const USERS_REQUESTED = 'USERS_REQUESTED';
 export const USERS_SUCCEEDED = 'USERS_SUCCEEDED';
 export const USERS_FAILED = 'USERS_FAILED';
 
+export const REGISTER_REQUESTED = 'REGISTER_REQUESTED';
+export const REGISTER_SUCCEEDED = 'REGISTER_SUCCEEDED';
+export const REGISTER_FAILED = 'REGISTER_FAILED';
+
 export const editUserPicture = (profile_picture, id, access_token) => ({
   type: PICTURE_EDIT_REQUESTED,
   profile_picture,
@@ -29,3 +33,10 @@ export const fetchUsers = (ids) => ({
   type: USERS_REQUESTED,
   ids
 });
+
+export const registerUser = (username, email, password) => ({
+  type: REGISTER_REQUESTED,
+  username,
+  email,
+  password
+})

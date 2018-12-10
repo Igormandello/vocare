@@ -88,6 +88,15 @@ export default {
       return res.json();
     });
   },
+  registerUser: (username, email, password) => {
+    return openRequest(`${API_HOST}/api/users`, 'POST', { username, email, password })
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 
   //Posts methods
   fetchPosts: (page = 0) => {

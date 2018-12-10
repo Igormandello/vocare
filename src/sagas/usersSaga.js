@@ -8,11 +8,15 @@ import {
   INFO_EDIT_FAILED,
   USERS_REQUESTED,
   USERS_SUCCEEDED,
-  USERS_FAILED
+  USERS_FAILED,
+  REGISTER_SUCCEEDED,
+  REGISTER_FAILED,
+  REGISTER_REQUESTED
 } from '../actions/usersActions';
 
 import {
-  VERIFICATION_SUCCEEDED
+  VERIFICATION_SUCCEEDED,
+  LOGIN_REQUESTED
 } from '../actions/authActions';
 
 function* editUserPicture(action) {
@@ -66,10 +70,30 @@ function* fetchUsers(action) {
   }
 }
 
+function* registerUser(action) {
+  try {
+    const newUser = yield call(Api.registerUser, action.username, action.email, action.password);
+
+    yield put({
+      type: REGISTER_SUCCEEDED
+    });
+    yield put({
+      type: LOGIN_REQUESTED,
+      email: action.email,
+      password: action.password
+    })
+  } catch (e) {
+    yield put({
+      type: REGISTER_FAILED
+    });
+  }
+}
+
 const saga = [
   takeEvery(PICTURE_EDIT_REQUESTED, editUserPicture),
   takeEvery(INFO_EDIT_REQUESTED, editUserInfo),
-  takeEvery(USERS_REQUESTED, fetchUsers)
+  takeEvery(USERS_REQUESTED, fetchUsers),
+  takeEvery(REGISTER_REQUESTED, registerUser)
 ];
 
 export default saga;
