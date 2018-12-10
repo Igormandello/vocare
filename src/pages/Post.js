@@ -28,7 +28,7 @@ function Post(props) {
       ids.add(post.user_id);
     else {
       const { posted_on, message, user_id, title } = post;
-      const { username, profile_picture, level } = users[user_id];
+      const { username, profile_picture, level, messages } = users[user_id];
       const date = new Date(posted_on);
 
       postComponent = <Message
@@ -39,7 +39,7 @@ function Post(props) {
         user={{
           name: username,
           level: level,
-          messages: 0,
+          messages: messages,
           image: profile_picture
         }}
       >
@@ -53,7 +53,7 @@ function Post(props) {
   else
     post.comments.forEach(comment => {
       const { id, commented_on, message, user_id } = comment;
-      const { username, profile_picture, level } = users[user_id];
+      const { username, profile_picture, level, messages } = users[user_id];
       const date = new Date(commented_on);
 
       comments.push(<Message key={id}
@@ -63,7 +63,7 @@ function Post(props) {
         user={{
           name: username,
           level: level,
-          messages: 0,
+          messages: messages,
           image: profile_picture
         }}
       />);

@@ -79,6 +79,15 @@ export default {
       return res.json();
     });
   },
+  countUserMessages: (id) => {
+    return openRequest(`${API_HOST}/api/users/${id}/messages`, 'GET')
+    .then(res => {
+      if (!res.ok)
+        throw res.statusText;
+
+      return res.json();
+    });
+  },
 
   //Posts methods
   fetchPosts: (page = 0) => {

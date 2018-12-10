@@ -51,8 +51,9 @@ function* editUserInfo(action) {
 function* fetchUsers(action) {
   try {
     const usersArr = yield all(action.ids.map(userId => call(Api.fetchUser, userId)));
+    const usersMessages = yield all(action.ids.map(userId => call(Api.countUserMessages, userId)));
     const users = {};
-    usersArr.map(user => users[user.id] = user);
+    usersArr.map((user, i) => users[user.id] = { ...user, messages: usersMessages[i].count });
 
     yield put({
       type: USERS_SUCCEEDED,
